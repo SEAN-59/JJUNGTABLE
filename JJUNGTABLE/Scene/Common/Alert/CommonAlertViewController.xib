@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommonAlertViewController" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWl-yJ-Rjr" userLabel="BackView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBM-kT-KHN" userLabel="BackBtn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain"/>
+                            <connections>
+                                <action selector="tapBackBtn:" destination="-1" eventType="touchUpInside" id="erT-7H-4df"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="cBM-kT-KHN" secondAttribute="trailing" id="U3x-eF-GXN"/>
+                        <constraint firstItem="cBM-kT-KHN" firstAttribute="leading" secondItem="WWl-yJ-Rjr" secondAttribute="leading" id="ZBg-uQ-kii"/>
+                        <constraint firstItem="cBM-kT-KHN" firstAttribute="top" secondItem="WWl-yJ-Rjr" secondAttribute="top" id="t1r-2T-Li9"/>
+                        <constraint firstAttribute="bottom" secondItem="cBM-kT-KHN" secondAttribute="bottom" id="uNk-vH-ICr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="WWl-yJ-Rjr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3zn-Ir-FtY"/>
+                <constraint firstItem="WWl-yJ-Rjr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8xk-u5-pgE"/>
+                <constraint firstAttribute="trailing" secondItem="WWl-yJ-Rjr" secondAttribute="trailing" id="EJg-hn-XtT"/>
+                <constraint firstAttribute="bottom" secondItem="WWl-yJ-Rjr" secondAttribute="bottom" id="hC8-ue-Lyw"/>
+            </constraints>
+            <point key="canvasLocation" x="50" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

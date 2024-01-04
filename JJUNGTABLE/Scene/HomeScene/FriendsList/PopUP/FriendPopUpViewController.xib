@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NPSfont_regular.otf">
+            <string>NPS-font-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendPopUpViewController" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="ThD-is-0nq" id="Nam-yE-Evs"/>
+                <outlet property="titleLbl" destination="KAT-jg-4d9" id="yBG-nN-Pub"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-uQ-yM1" userLabel="CloseBtn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                    <rect key="frame" x="333" y="73.666666666666671" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="TQf-F4-skS"/>
+                        <constraint firstAttribute="height" constant="40" id="oPZ-iy-gbp"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system" cornerStyle="large">
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20" scale="large"/>
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tapCloseBtn:" destination="-1" eventType="touchUpInside" id="fJ2-qs-60J"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ThD-is-0nq" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="128.33333333333331" width="393" height="689.66666666666674"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAT-jg-4d9">
+                    <rect key="frame" x="161" y="79" width="71" height="29.333333333333329"/>
+                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ThD-is-0nq" secondAttribute="bottom" id="15x-1I-cxp"/>
+                <constraint firstItem="KAT-jg-4d9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="35L-5F-33F"/>
+                <constraint firstItem="KAT-jg-4d9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="AeU-zH-BDy"/>
+                <constraint firstItem="3Vd-uQ-yM1" firstAttribute="centerY" secondItem="KAT-jg-4d9" secondAttribute="centerY" id="Gfa-OQ-xCT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Vd-uQ-yM1" secondAttribute="trailing" constant="20" id="IZ5-7b-5U7"/>
+                <constraint firstItem="ThD-is-0nq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JnI-mQ-4MA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ThD-is-0nq" secondAttribute="trailing" id="p9f-Se-fDG"/>
+                <constraint firstItem="ThD-is-0nq" firstAttribute="top" secondItem="KAT-jg-4d9" secondAttribute="bottom" constant="20" id="wAw-XY-COf"/>
+            </constraints>
+            <point key="canvasLocation" x="-60.305343511450381" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

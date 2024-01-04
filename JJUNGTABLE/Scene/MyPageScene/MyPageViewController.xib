@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageViewController" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="PFH-26-DtO" id="6Ti-wr-hbn"/>
+                <outlet property="scrollView" destination="coa-ET-LKX" id="C7d-Df-ghJ"/>
+                <outlet property="topView" destination="5Zv-19-gAI" id="nkd-9o-QcE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zv-19-gAI" userLabel="TopView" customClass="TopView" customModule="JJUNGTABLE" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="2EJ-v8-exH"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="coa-ET-LKX">
+                    <rect key="frame" x="0.0" y="119" width="393" height="502"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3GG-Bj-tV5" userLabel="ContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnx-wd-RKa" customClass="AppUserIDSettingView" customModule="JJUNGTABLE" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="20"/>
+                                </view>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pLe-2C-vIf" customClass="AppSettingView" customModule="JJUNGTABLE" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="40" width="393" height="20"/>
+                                </view>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wZS-rD-fAv" customClass="AppSupportView" customModule="JJUNGTABLE" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="80" width="393" height="20"/>
+                                </view>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Cz-6A-Z4D" customClass="AppTermsView" customModule="JJUNGTABLE" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="120" width="393" height="20"/>
+                                </view>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9rE-KX-gYL" customClass="AppInfoView" customModule="JJUNGTABLE" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="160" width="393" height="20"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="rnx-wd-RKa" firstAttribute="top" secondItem="3GG-Bj-tV5" secondAttribute="top" id="48U-l6-zDP"/>
+                                <constraint firstItem="9rE-KX-gYL" firstAttribute="leading" secondItem="3GG-Bj-tV5" secondAttribute="leading" id="9yf-Ds-JHn"/>
+                                <constraint firstItem="9rE-KX-gYL" firstAttribute="top" secondItem="1Cz-6A-Z4D" secondAttribute="bottom" constant="20" id="AWw-hK-Lt8"/>
+                                <constraint firstAttribute="trailing" secondItem="wZS-rD-fAv" secondAttribute="trailing" id="BDo-mg-dtO"/>
+                                <constraint firstAttribute="trailing" secondItem="9rE-KX-gYL" secondAttribute="trailing" id="PNp-SI-d0r"/>
+                                <constraint firstItem="wZS-rD-fAv" firstAttribute="top" secondItem="pLe-2C-vIf" secondAttribute="bottom" constant="20" id="SBH-fC-sLe"/>
+                                <constraint firstAttribute="trailing" secondItem="1Cz-6A-Z4D" secondAttribute="trailing" id="Wr3-SO-Tav"/>
+                                <constraint firstItem="1Cz-6A-Z4D" firstAttribute="top" secondItem="wZS-rD-fAv" secondAttribute="bottom" constant="20" id="Zb1-fw-zNt"/>
+                                <constraint firstItem="pLe-2C-vIf" firstAttribute="leading" secondItem="3GG-Bj-tV5" secondAttribute="leading" id="dW4-bX-RuQ"/>
+                                <constraint firstAttribute="trailing" secondItem="rnx-wd-RKa" secondAttribute="trailing" id="feV-ZB-WiL"/>
+                                <constraint firstItem="rnx-wd-RKa" firstAttribute="leading" secondItem="3GG-Bj-tV5" secondAttribute="leading" id="gut-Aq-gt0"/>
+                                <constraint firstItem="wZS-rD-fAv" firstAttribute="leading" secondItem="3GG-Bj-tV5" secondAttribute="leading" id="pJa-wJ-7LM"/>
+                                <constraint firstAttribute="bottom" secondItem="9rE-KX-gYL" secondAttribute="bottom" id="paC-lo-HcD"/>
+                                <constraint firstItem="pLe-2C-vIf" firstAttribute="top" secondItem="rnx-wd-RKa" secondAttribute="bottom" constant="20" id="qS3-iJ-en1"/>
+                                <constraint firstItem="1Cz-6A-Z4D" firstAttribute="leading" secondItem="3GG-Bj-tV5" secondAttribute="leading" id="rHX-1W-Obp"/>
+                                <constraint firstAttribute="trailing" secondItem="pLe-2C-vIf" secondAttribute="trailing" id="sgj-8W-lwW"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="3GG-Bj-tV5" firstAttribute="leading" secondItem="JdL-2z-BgZ" secondAttribute="leading" id="QYj-rg-5K6"/>
+                        <constraint firstItem="3GG-Bj-tV5" firstAttribute="trailing" secondItem="JdL-2z-BgZ" secondAttribute="trailing" id="iiQ-s2-Av7"/>
+                        <constraint firstItem="3GG-Bj-tV5" firstAttribute="top" secondItem="JdL-2z-BgZ" secondAttribute="top" id="l21-D2-2Id"/>
+                        <constraint firstItem="3GG-Bj-tV5" firstAttribute="width" secondItem="rrx-y8-LUZ" secondAttribute="width" id="mSB-8l-s0y"/>
+                        <constraint firstItem="3GG-Bj-tV5" firstAttribute="bottom" secondItem="JdL-2z-BgZ" secondAttribute="bottom" id="sOM-lr-22Z"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="JdL-2z-BgZ"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="rrx-y8-LUZ"/>
+                </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFH-26-DtO" userLabel="BottomView" customClass="BottomView" customModule="JJUNGTABLE" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="738" width="393" height="80"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="MzP-YG-iQI"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="PFH-26-DtO" secondAttribute="trailing" id="EXQ-rv-Z70"/>
+                <constraint firstItem="5Zv-19-gAI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="J75-XZ-dMe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="coa-ET-LKX" secondAttribute="trailing" id="VSp-aM-w5r"/>
+                <constraint firstItem="5Zv-19-gAI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aoW-JZ-t1F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PFH-26-DtO" secondAttribute="bottom" id="izg-bd-j7L"/>
+                <constraint firstItem="coa-ET-LKX" firstAttribute="top" secondItem="5Zv-19-gAI" secondAttribute="bottom" id="ppb-uX-y9x"/>
+                <constraint firstItem="coa-ET-LKX" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="q8B-un-jeO"/>
+                <constraint firstItem="PFH-26-DtO" firstAttribute="top" secondItem="coa-ET-LKX" secondAttribute="bottom" id="rPE-DV-B7g"/>
+                <constraint firstItem="coa-ET-LKX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tT9-07-hUf"/>
+                <constraint firstItem="PFH-26-DtO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="vue-JG-N42"/>
+                <constraint firstItem="5Zv-19-gAI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yq5-q7-1B8"/>
+            </constraints>
+            <point key="canvasLocation" x="142.74809160305344" y="-152.11267605633805"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

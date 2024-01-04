@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NPSfont_regular.otf">
+            <string>NPS-font-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReservationListView" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="SPj-L9-LqY" id="dWZ-yF-n5e"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="397"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoU-jM-tP9" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="397"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약 신청" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5H1-Hb-wiO">
+                            <rect key="frame" x="10" y="10" width="78.666666666666671" height="29"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SPj-L9-LqY">
+                            <rect key="frame" x="10" y="44" width="373" height="348"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="5H1-Hb-wiO" firstAttribute="leading" secondItem="yoU-jM-tP9" secondAttribute="leading" constant="10" id="Aku-kJ-bwM"/>
+                        <constraint firstAttribute="bottom" secondItem="SPj-L9-LqY" secondAttribute="bottom" constant="5" id="BSW-DJ-1EA"/>
+                        <constraint firstItem="5H1-Hb-wiO" firstAttribute="top" secondItem="yoU-jM-tP9" secondAttribute="top" constant="10" id="SMA-Fp-gjQ"/>
+                        <constraint firstItem="SPj-L9-LqY" firstAttribute="leading" secondItem="yoU-jM-tP9" secondAttribute="leading" constant="10" id="b6s-Ib-lAi"/>
+                        <constraint firstAttribute="trailing" secondItem="SPj-L9-LqY" secondAttribute="trailing" constant="10" id="eDs-K4-08j"/>
+                        <constraint firstItem="SPj-L9-LqY" firstAttribute="top" secondItem="5H1-Hb-wiO" secondAttribute="bottom" constant="5" id="weC-6W-rs4"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="yoU-jM-tP9" secondAttribute="trailing" id="6IG-XH-iDV"/>
+                <constraint firstItem="yoU-jM-tP9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7GD-po-qAN"/>
+                <constraint firstItem="yoU-jM-tP9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="crF-kt-NtL"/>
+                <constraint firstAttribute="bottom" secondItem="yoU-jM-tP9" secondAttribute="bottom" id="rga-YA-6Ur"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="0.76335877862595414" y="-15.140845070422536"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

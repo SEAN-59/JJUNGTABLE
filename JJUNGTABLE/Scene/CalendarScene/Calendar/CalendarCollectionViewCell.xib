@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NPSfont_regular.otf">
+            <string>NPS-font-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CalendarCollectionViewCell" customModule="JJUNGTABLE" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="305" height="127"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="305" height="127"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVN-g1-fv5" userLabel="BackView">
+                        <rect key="frame" x="2" y="2" width="301" height="123"/>
+                        <color key="backgroundColor" name="BrandColor"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbZ-tH-VIs" userLabel="lineView">
+                        <rect key="frame" x="2" y="2" width="301" height="123"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="2TQ-RK-Nhj" userLabel="Day Lbl">
+                        <rect key="frame" x="146" y="49" width="13.333333333333343" height="29"/>
+                        <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="YVN-g1-fv5" secondAttribute="trailing" constant="2" id="3m0-BH-YV0"/>
+                <constraint firstItem="YVN-g1-fv5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="5rH-zw-pgb"/>
+                <constraint firstItem="CbZ-tH-VIs" firstAttribute="trailing" secondItem="YVN-g1-fv5" secondAttribute="trailing" id="7I1-Vh-uWs"/>
+                <constraint firstItem="YVN-g1-fv5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="2" id="RA9-du-4uG"/>
+                <constraint firstAttribute="bottom" secondItem="YVN-g1-fv5" secondAttribute="bottom" constant="2" id="S2z-yQ-jfY"/>
+                <constraint firstItem="CbZ-tH-VIs" firstAttribute="top" secondItem="YVN-g1-fv5" secondAttribute="top" id="hS0-AA-zvL"/>
+                <constraint firstItem="CbZ-tH-VIs" firstAttribute="bottom" secondItem="YVN-g1-fv5" secondAttribute="bottom" id="iof-gS-bfM"/>
+                <constraint firstItem="2TQ-RK-Nhj" firstAttribute="centerY" secondItem="CbZ-tH-VIs" secondAttribute="centerY" id="lQa-Ou-7Ib"/>
+                <constraint firstItem="CbZ-tH-VIs" firstAttribute="leading" secondItem="YVN-g1-fv5" secondAttribute="leading" id="nNp-7T-7va"/>
+                <constraint firstItem="2TQ-RK-Nhj" firstAttribute="centerX" secondItem="CbZ-tH-VIs" secondAttribute="centerX" id="w3a-R9-lwF"/>
+            </constraints>
+            <size key="customSize" width="688" height="392"/>
+            <connections>
+                <outlet property="backView" destination="YVN-g1-fv5" id="Ezh-Vk-pMP"/>
+                <outlet property="dayLbl" destination="2TQ-RK-Nhj" id="fnj-gH-uFK"/>
+                <outlet property="lineView" destination="CbZ-tH-VIs" id="FGy-mq-Mn8"/>
+            </connections>
+            <point key="canvasLocation" x="570.2290076335878" y="136.26760563380282"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="BrandColor">
+            <color red="0.90200001001358032" green="0.32499998807907104" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

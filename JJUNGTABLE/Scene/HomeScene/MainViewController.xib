@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="s0g-QG-I1p" id="F6W-7S-9ED"/>
+                <outlet property="friendsListView" destination="uiw-Pn-aBJ" id="nI4-wc-F6w"/>
+                <outlet property="mtSeparateView" destination="cIN-FW-Wwe" id="m1R-8R-xZZ"/>
+                <outlet property="myInfoView" destination="Tat-a2-Swb" id="eG6-aX-dTO"/>
+                <outlet property="reservationListView" destination="06G-0F-ZRI" id="eht-uK-juC"/>
+                <outlet property="rfSeparateView" destination="Zgk-4t-cJt" id="2HW-oy-gCm"/>
+                <outlet property="scrollView" destination="fFd-Sj-L7d" id="lDZ-IN-QDL"/>
+                <outlet property="todayPlanView" destination="jDF-Ew-ea8" id="LIh-xj-6D7"/>
+                <outlet property="topView" destination="C6H-bb-1Dy" id="HVX-Wg-UwX"/>
+                <outlet property="trSeparateView" destination="mqj-Tt-Muh" id="4MP-OH-ZSB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6H-bb-1Dy" userLabel="TopView" customClass="TopView" customModule="JJUNGTABLE" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="EyK-DY-eoA"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttM-XR-ZhG" userLabel="MiddleView">
+                    <rect key="frame" x="0.0" y="119" width="393" height="619"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fFd-Sj-L7d">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="619"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jb9-BM-sqg" userLabel="ContentView">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tat-a2-Swb" userLabel="MyInfoView" customClass="MyInfoView" customModule="JJUNGTABLE" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="10" width="373" height="100"/>
+                                        </view>
+                                        <view alpha="0.5" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cIN-FW-Wwe" userLabel="MtoTSeparateView">
+                                            <rect key="frame" x="10" y="115" width="373" height="2"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="hbM-za-y5c"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jDF-Ew-ea8" userLabel="TodayPlanView" customClass="TodayPlanView" customModule="JJUNGTABLE" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="122" width="373" height="100"/>
+                                        </view>
+                                        <view alpha="0.5" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mqj-Tt-Muh" userLabel="TtoRSeparatView">
+                                            <rect key="frame" x="10" y="227" width="373" height="2"/>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="gz8-N6-1Mo"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="06G-0F-ZRI" userLabel="ReservationListView" customClass="ReservationListView" customModule="JJUNGTABLE" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="234" width="373" height="100"/>
+                                        </view>
+                                        <view alpha="0.5" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgk-4t-cJt" userLabel="RtoFSeparatView">
+                                            <rect key="frame" x="10" y="339" width="373" height="2"/>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="I8T-7C-GcO"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uiw-Pn-aBJ" userLabel="FriendsListView" customClass="FriendsListView" customModule="JJUNGTABLE" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="346" width="373" height="100"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Tat-a2-Swb" firstAttribute="top" secondItem="jb9-BM-sqg" secondAttribute="top" constant="10" id="0aK-er-DDm"/>
+                                        <constraint firstAttribute="trailing" secondItem="jDF-Ew-ea8" secondAttribute="trailing" constant="10" id="3ZP-JP-6ZM"/>
+                                        <constraint firstItem="jDF-Ew-ea8" firstAttribute="leading" secondItem="jb9-BM-sqg" secondAttribute="leading" constant="10" id="7cn-I2-gKz"/>
+                                        <constraint firstItem="uiw-Pn-aBJ" firstAttribute="leading" secondItem="jb9-BM-sqg" secondAttribute="leading" constant="10" id="A2w-6q-7TY"/>
+                                        <constraint firstItem="cIN-FW-Wwe" firstAttribute="top" secondItem="Tat-a2-Swb" secondAttribute="bottom" constant="5" id="CRl-IX-7ET"/>
+                                        <constraint firstAttribute="trailing" secondItem="cIN-FW-Wwe" secondAttribute="trailing" constant="10" id="D9a-I6-0zb"/>
+                                        <constraint firstAttribute="bottom" secondItem="uiw-Pn-aBJ" secondAttribute="bottom" constant="10" id="GLH-wo-34n"/>
+                                        <constraint firstAttribute="trailing" secondItem="Tat-a2-Swb" secondAttribute="trailing" constant="10" id="JeE-k7-qcl"/>
+                                        <constraint firstItem="Zgk-4t-cJt" firstAttribute="top" secondItem="06G-0F-ZRI" secondAttribute="bottom" constant="5" id="Jkn-fe-tAi"/>
+                                        <constraint firstAttribute="trailing" secondItem="mqj-Tt-Muh" secondAttribute="trailing" constant="10" id="Ktn-O7-v2m"/>
+                                        <constraint firstItem="06G-0F-ZRI" firstAttribute="top" secondItem="mqj-Tt-Muh" secondAttribute="bottom" constant="5" id="Qgg-e0-mZQ"/>
+                                        <constraint firstItem="jDF-Ew-ea8" firstAttribute="top" secondItem="cIN-FW-Wwe" secondAttribute="bottom" constant="5" id="Qmg-wF-SIf"/>
+                                        <constraint firstItem="06G-0F-ZRI" firstAttribute="leading" secondItem="jb9-BM-sqg" secondAttribute="leading" constant="10" id="Ti5-r1-RPW"/>
+                                        <constraint firstAttribute="trailing" secondItem="Zgk-4t-cJt" secondAttribute="trailing" constant="10" id="Zh5-fk-wsE"/>
+                                        <constraint firstItem="mqj-Tt-Muh" firstAttribute="top" secondItem="jDF-Ew-ea8" secondAttribute="bottom" constant="5" id="apw-yn-8TY"/>
+                                        <constraint firstItem="uiw-Pn-aBJ" firstAttribute="top" secondItem="Zgk-4t-cJt" secondAttribute="bottom" constant="5" id="e70-Bc-e44"/>
+                                        <constraint firstItem="Tat-a2-Swb" firstAttribute="leading" secondItem="jb9-BM-sqg" secondAttribute="leading" constant="10" id="hFE-vY-IV7"/>
+                                        <constraint firstItem="Zgk-4t-cJt" firstAttribute="leading" secondItem="jb9-BM-sqg" secondAttribute="leading" constant="10" id="jju-rR-YHV"/>
+                                        <constraint firstItem="mqj-Tt-Muh" firstAttribute="leading" secondItem="jb9-BM-sqg" secondAttribute="leading" constant="10" id="mCg-0x-5u5"/>
+                                        <constraint firstAttribute="trailing" secondItem="uiw-Pn-aBJ" secondAttribute="trailing" constant="10" id="r6p-Yl-GwA"/>
+                                        <constraint firstItem="cIN-FW-Wwe" firstAttribute="leading" secondItem="jb9-BM-sqg" secondAttribute="leading" constant="10" id="wot-ER-NDa"/>
+                                        <constraint firstAttribute="trailing" secondItem="06G-0F-ZRI" secondAttribute="trailing" constant="10" id="zJV-c2-i8K"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="jb9-BM-sqg" firstAttribute="leading" secondItem="eEU-7N-tVB" secondAttribute="leading" id="Ipu-b1-EWx"/>
+                                <constraint firstItem="jb9-BM-sqg" firstAttribute="bottom" secondItem="eEU-7N-tVB" secondAttribute="bottom" id="JhD-E2-0E0"/>
+                                <constraint firstItem="jb9-BM-sqg" firstAttribute="width" secondItem="N8f-JZ-B94" secondAttribute="width" id="O6k-kR-UJ2"/>
+                                <constraint firstItem="jb9-BM-sqg" firstAttribute="trailing" secondItem="eEU-7N-tVB" secondAttribute="trailing" id="R3B-dG-DIY"/>
+                                <constraint firstItem="eEU-7N-tVB" firstAttribute="top" secondItem="jb9-BM-sqg" secondAttribute="top" id="yh1-Db-kHJ"/>
+                            </constraints>
+                            <viewLayoutGuide key="contentLayoutGuide" id="eEU-7N-tVB"/>
+                            <viewLayoutGuide key="frameLayoutGuide" id="N8f-JZ-B94"/>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="fFd-Sj-L7d" secondAttribute="trailing" id="E5s-J6-Fkn"/>
+                        <constraint firstItem="fFd-Sj-L7d" firstAttribute="width" secondItem="ttM-XR-ZhG" secondAttribute="width" id="IvM-Ca-nK6"/>
+                        <constraint firstAttribute="bottom" secondItem="fFd-Sj-L7d" secondAttribute="bottom" id="dFj-dl-YDr"/>
+                        <constraint firstItem="fFd-Sj-L7d" firstAttribute="top" secondItem="ttM-XR-ZhG" secondAttribute="top" id="jQ3-yN-FYK"/>
+                        <constraint firstItem="fFd-Sj-L7d" firstAttribute="leading" secondItem="ttM-XR-ZhG" secondAttribute="leading" id="l1G-A6-gAU"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0g-QG-I1p" userLabel="BottomView" customClass="BottomView" customModule="JJUNGTABLE" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="738" width="393" height="80"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="ha7-YJ-b7Z"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="C6H-bb-1Dy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KJe-dW-TYR"/>
+                <constraint firstItem="ttM-XR-ZhG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="N0r-Xe-Kde"/>
+                <constraint firstItem="ttM-XR-ZhG" firstAttribute="top" secondItem="C6H-bb-1Dy" secondAttribute="bottom" id="N9A-Ip-dBI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="s0g-QG-I1p" secondAttribute="bottom" id="QEh-SJ-mCq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="s0g-QG-I1p" secondAttribute="trailing" id="Qdr-Zt-CSx"/>
+                <constraint firstItem="C6H-bb-1Dy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="V65-Tj-adj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ttM-XR-ZhG" secondAttribute="trailing" id="WdZ-cR-Aza"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C6H-bb-1Dy" secondAttribute="trailing" id="Xel-wp-aIY"/>
+                <constraint firstItem="ttM-XR-ZhG" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="jRM-uX-8Xo"/>
+                <constraint firstItem="s0g-QG-I1p" firstAttribute="top" secondItem="ttM-XR-ZhG" secondAttribute="bottom" id="oGO-g8-kVu"/>
+                <constraint firstItem="s0g-QG-I1p" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vT8-Sw-Thb"/>
+            </constraints>
+            <point key="canvasLocation" x="20.610687022900763" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

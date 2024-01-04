@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NPSfont_regular.otf">
+            <string>NPS-font-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReserveMapView" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="mapAddressTxf" destination="pXW-5G-Ccw" id="8tO-Dc-pAi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="주소를 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pXW-5G-Ccw">
+                    <rect key="frame" x="20" y="10" width="233" height="50"/>
+                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="18"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Skc-86-5Qj" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                    <rect key="frame" x="273" y="15" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Thk-55-ruS"/>
+                        <constraint firstAttribute="width" constant="40" id="cgu-6Y-1Xu"/>
+                    </constraints>
+                    <color key="tintColor" name="BrandColor"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" cornerStyle="large"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tapSearchAddressBtn:" destination="-1" eventType="touchUpInside" id="PXf-Zd-Vki"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeG-lA-hGU" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                    <rect key="frame" x="333" y="15" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="OSL-Zn-nXN"/>
+                        <constraint firstAttribute="width" constant="40" id="WgO-kU-YlZ"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system" cornerStyle="large">
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20" scale="large"/>
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tapCloseBtn:" destination="-1" eventType="touchUpInside" id="Kan-kd-2H7"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="XeG-lA-hGU" secondAttribute="trailing" constant="20" id="1D3-0N-Utn"/>
+                <constraint firstItem="pXW-5G-Ccw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2aY-Mu-4cN"/>
+                <constraint firstItem="XeG-lA-hGU" firstAttribute="leading" secondItem="Skc-86-5Qj" secondAttribute="trailing" constant="20" id="Eqf-4W-DrN"/>
+                <constraint firstItem="Skc-86-5Qj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ff5-iP-TaL"/>
+                <constraint firstItem="XeG-lA-hGU" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JaQ-gH-RFg"/>
+                <constraint firstItem="Skc-86-5Qj" firstAttribute="leading" relation="lessThanOrEqual" secondItem="pXW-5G-Ccw" secondAttribute="trailing" constant="20" id="Xhv-8A-5h7"/>
+                <constraint firstItem="pXW-5G-Ccw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="bsE-HW-ol5"/>
+                <constraint firstItem="pXW-5G-Ccw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="dpQ-Ar-anu"/>
+                <constraint firstAttribute="bottom" secondItem="pXW-5G-Ccw" secondAttribute="bottom" constant="10" id="myQ-vB-SXT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-25.190839694656489" y="-143.66197183098592"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="BrandColor">
+            <color red="0.90200001001358032" green="0.32499998807907104" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

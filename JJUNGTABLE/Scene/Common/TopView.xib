@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopView" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="fifthBtn" destination="FBW-cP-zXZ" id="4fz-bD-sEt"/>
+                <outlet property="firstBtn" destination="pc5-YB-Qbv" id="EQd-mT-rxP"/>
+                <outlet property="firstCircleImg" destination="PZd-1O-dZC" id="ely-cQ-d9q"/>
+                <outlet property="forthCircleImg" destination="cri-m9-sLh" id="a30-cq-c8L"/>
+                <outlet property="fourthBtn" destination="YjB-YK-5SW" id="BY7-bR-xsy"/>
+                <outlet property="secondBtn" destination="Oen-Xs-YUP" id="UaK-17-3Mb"/>
+                <outlet property="secondCircleImg" destination="qYr-MS-nOP" id="eI6-9a-GWo"/>
+                <outlet property="thirdBtn" destination="JjG-Q1-Fnb" id="xye-3R-Lwb"/>
+                <outlet property="thirdCircleImg" destination="ejw-1I-YAG" id="ZkB-iq-9gL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="609" height="108"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYf-2E-OUC" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="609" height="108"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pc5-YB-Qbv" userLabel="TitleBtn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                            <rect key="frame" x="20" y="0.0" width="65.666666666666671" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="d4P-1k-aeM"/>
+                            </constraints>
+                            <color key="tintColor" name="BrandColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="j.square.on.square" catalog="system">
+                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" scale="large" weight="medium"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="tapTopBtn:" destination="-1" eventType="touchUpInside" id="yJ7-KK-Kxt"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROx-Xu-Jio" userLabel="MainBtnView">
+                            <rect key="frame" x="419" y="11.333333333333332" width="190" height="37.666666666666671"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VWE-z1-daE">
+                                    <rect key="frame" x="0.0" y="0.0" width="170" height="37.666666666666664"/>
+                                    <subviews>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oen-Xs-YUP" userLabel="StateBtn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="35" height="37.666666666666664"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="hqX-4v-h7N"/>
+                                            </constraints>
+                                            <color key="tintColor" systemColor="labelColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20" scale="large" weight="regular"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tapTopBtn:" destination="-1" eventType="touchUpInside" id="YDo-TB-mLJ"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JjG-Q1-Fnb" userLabel="AddFriendBtn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                                            <rect key="frame" x="45" y="0.0" width="35" height="37.666666666666664"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="person.badge.plus" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20" scale="large" weight="regular"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tapTopBtn:" destination="-1" eventType="touchUpInside" id="85W-iL-TWw"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YjB-YK-5SW" userLabel="NotificationBtn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                                            <rect key="frame" x="90" y="0.0" width="35" height="37.666666666666664"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="bell" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20" scale="large" weight="regular"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tapTopBtn:" destination="-1" eventType="touchUpInside" id="g1b-o0-2hd"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBW-cP-zXZ" userLabel="SettingBtn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                                            <rect key="frame" x="135" y="0.0" width="35" height="37.666666666666664"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20" scale="large" weight="regular"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="tapTopBtn:" destination="-1" eventType="touchUpInside" id="ZD2-cl-TiX"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="VWE-z1-daE" secondAttribute="trailing" constant="20" id="8Wg-hx-NUq"/>
+                                <constraint firstItem="VWE-z1-daE" firstAttribute="leading" secondItem="ROx-Xu-Jio" secondAttribute="leading" id="DHz-8T-7ZI"/>
+                                <constraint firstAttribute="bottom" secondItem="VWE-z1-daE" secondAttribute="bottom" id="LMT-Bk-8eU"/>
+                                <constraint firstItem="VWE-z1-daE" firstAttribute="top" secondItem="ROx-Xu-Jio" secondAttribute="top" id="Nzm-JK-l7j"/>
+                            </constraints>
+                        </view>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PZd-1O-dZC" userLabel="FirstCircle">
+                            <rect key="frame" x="442" y="12.33333333333333" width="12" height="10.66666666666667"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="Fi2-YU-ByS"/>
+                                <constraint firstAttribute="width" constant="12" id="ToC-PQ-GrK"/>
+                            </constraints>
+                        </imageView>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qYr-MS-nOP" userLabel="SecondCircle">
+                            <rect key="frame" x="487" y="12.33333333333333" width="12" height="10.66666666666667"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="20e-eP-lzq"/>
+                                <constraint firstAttribute="width" constant="12" id="l8I-ud-md2"/>
+                            </constraints>
+                        </imageView>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ejw-1I-YAG" userLabel="ThirdCircle">
+                            <rect key="frame" x="532" y="12.33333333333333" width="12" height="10.66666666666667"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="12" id="VH0-1C-PBZ"/>
+                                <constraint firstAttribute="height" constant="12" id="gbM-jy-sWa"/>
+                            </constraints>
+                        </imageView>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cri-m9-sLh" userLabel="ForthCircle">
+                            <rect key="frame" x="577" y="12.33333333333333" width="12" height="10.66666666666667"/>
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="12" id="ZTR-RS-Mfe"/>
+                                <constraint firstAttribute="height" constant="12" id="eBZ-6R-eoO"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="qYr-MS-nOP" firstAttribute="top" secondItem="JjG-Q1-Fnb" secondAttribute="top" id="1Us-wk-FCd"/>
+                        <constraint firstItem="pc5-YB-Qbv" firstAttribute="top" secondItem="vYf-2E-OUC" secondAttribute="top" id="I5F-Yg-tz2"/>
+                        <constraint firstItem="cri-m9-sLh" firstAttribute="trailing" secondItem="FBW-cP-zXZ" secondAttribute="trailing" id="QTy-dW-P6f"/>
+                        <constraint firstAttribute="trailing" secondItem="ROx-Xu-Jio" secondAttribute="trailing" id="QZy-5H-ydo"/>
+                        <constraint firstItem="cri-m9-sLh" firstAttribute="top" secondItem="FBW-cP-zXZ" secondAttribute="top" id="YVR-cK-X9E"/>
+                        <constraint firstItem="ejw-1I-YAG" firstAttribute="trailing" secondItem="YjB-YK-5SW" secondAttribute="trailing" id="eON-Ec-VB9"/>
+                        <constraint firstItem="PZd-1O-dZC" firstAttribute="trailing" secondItem="Oen-Xs-YUP" secondAttribute="trailing" id="hhd-Qm-PHL"/>
+                        <constraint firstItem="pc5-YB-Qbv" firstAttribute="leading" secondItem="vYf-2E-OUC" secondAttribute="leading" constant="20" id="hxY-XG-glX"/>
+                        <constraint firstItem="PZd-1O-dZC" firstAttribute="top" secondItem="Oen-Xs-YUP" secondAttribute="top" id="lqf-sD-2gS"/>
+                        <constraint firstItem="ROx-Xu-Jio" firstAttribute="centerY" secondItem="pc5-YB-Qbv" secondAttribute="centerY" id="pEx-lw-qIx"/>
+                        <constraint firstItem="ejw-1I-YAG" firstAttribute="top" secondItem="YjB-YK-5SW" secondAttribute="top" id="tXD-S0-Ras"/>
+                        <constraint firstItem="qYr-MS-nOP" firstAttribute="trailing" secondItem="JjG-Q1-Fnb" secondAttribute="trailing" id="uBq-mN-uQL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="vYf-2E-OUC" secondAttribute="trailing" id="0Xq-vJ-76y"/>
+                <constraint firstItem="vYf-2E-OUC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="PKZ-fM-PPO"/>
+                <constraint firstItem="vYf-2E-OUC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RM3-G1-18A"/>
+                <constraint firstAttribute="bottom" secondItem="vYf-2E-OUC" secondAttribute="bottom" id="hsn-D1-b3g"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="301.52671755725191" y="-242.25352112676057"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bell" catalog="system" width="125" height="128"/>
+        <image name="circle" catalog="system" width="128" height="123"/>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="j.square.on.square" catalog="system" width="128" height="116"/>
+        <image name="person.badge.plus" catalog="system" width="128" height="124"/>
+        <namedColor name="BrandColor">
+            <color red="0.90200001001358032" green="0.32499998807907104" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

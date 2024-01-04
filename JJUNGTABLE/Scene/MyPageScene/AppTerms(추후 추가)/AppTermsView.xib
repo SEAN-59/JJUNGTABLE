@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NPSfont_regular.otf">
+            <string>NPS-font-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppTermsView" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="backView" destination="5KD-Sd-wsP" id="DIE-mb-Qeu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezB-Ac-x1e">
+                    <rect key="frame" x="20.000000000000004" y="19.999999999999972" width="44.333333333333343" height="489.33333333333326"/>
+                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KD-Sd-wsP">
+                    <rect key="frame" x="20" y="529.33333333333337" width="335" height="127.66666666666663"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKX-ld-G81" userLabel="Terms">
+                            <rect key="frame" x="0.0" y="10" width="335" height="43.333333333333336"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2i-4Q-bwf">
+                                    <rect key="frame" x="20" y="9.9999999999999982" width="59" height="23.333333333333329"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLS-8n-IZj" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                                    <rect key="frame" x="265.33333333333331" y="4.6666666666666288" width="39.666666666666686" height="34.333333333333336"/>
+                                    <color key="tintColor" name="BrandColor"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="tapTermsBtn:" destination="-1" eventType="touchUpInside" id="D9V-PX-YWC"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="MLS-8n-IZj" secondAttribute="trailing" constant="30" id="17K-O9-GXd"/>
+                                <constraint firstItem="v2i-4Q-bwf" firstAttribute="top" secondItem="XKX-ld-G81" secondAttribute="top" constant="10" id="XPD-s6-FEQ"/>
+                                <constraint firstItem="MLS-8n-IZj" firstAttribute="centerY" secondItem="v2i-4Q-bwf" secondAttribute="centerY" id="eWc-wM-b1O"/>
+                                <constraint firstItem="v2i-4Q-bwf" firstAttribute="leading" secondItem="XKX-ld-G81" secondAttribute="leading" constant="20" id="eer-tp-x4F"/>
+                                <constraint firstAttribute="bottom" secondItem="v2i-4Q-bwf" secondAttribute="bottom" constant="10" id="qIn-DD-xkg"/>
+                            </constraints>
+                        </view>
+                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VNV-US-RJy" userLabel="MtoTSeparateView">
+                            <rect key="frame" x="20" y="63.333333333333258" width="295" height="1"/>
+                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="4PN-Dk-SEq"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SW9-K7-vRJ" userLabel="PersonalInfomation">
+                            <rect key="frame" x="0.0" y="74.333333333333258" width="335" height="43.333333333333343"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 처리방침" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXf-h1-qe3">
+                                    <rect key="frame" x="20.000000000000007" y="9.9999999999999982" width="121.66666666666669" height="23.333333333333329"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpm-jz-9q5" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                                    <rect key="frame" x="265.33333333333331" y="4.6666666666667425" width="39.666666666666686" height="34.333333333333336"/>
+                                    <color key="tintColor" name="BrandColor"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="tapPersonalInfomationBtn:" destination="-1" eventType="touchUpInside" id="LfZ-Le-bIX"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="zXf-h1-qe3" firstAttribute="top" secondItem="SW9-K7-vRJ" secondAttribute="top" constant="10" id="9aG-vZ-DOM"/>
+                                <constraint firstItem="zXf-h1-qe3" firstAttribute="leading" secondItem="SW9-K7-vRJ" secondAttribute="leading" constant="20" id="CvF-3a-16Z"/>
+                                <constraint firstAttribute="trailing" secondItem="Zpm-jz-9q5" secondAttribute="trailing" constant="30" id="KXX-Ud-pG1"/>
+                                <constraint firstAttribute="bottom" secondItem="zXf-h1-qe3" secondAttribute="bottom" constant="10" id="Sg7-UG-ZEd"/>
+                                <constraint firstItem="Zpm-jz-9q5" firstAttribute="centerY" secondItem="SW9-K7-vRJ" secondAttribute="centerY" id="YX7-wk-VUP"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="SW9-K7-vRJ" firstAttribute="top" secondItem="VNV-US-RJy" secondAttribute="bottom" constant="10" id="3Fh-Vr-oIa"/>
+                        <constraint firstItem="VNV-US-RJy" firstAttribute="leading" secondItem="5KD-Sd-wsP" secondAttribute="leading" constant="20" id="9xP-rU-BX0"/>
+                        <constraint firstItem="XKX-ld-G81" firstAttribute="top" secondItem="5KD-Sd-wsP" secondAttribute="top" constant="10" id="AFE-qJ-DVx"/>
+                        <constraint firstAttribute="trailing" secondItem="VNV-US-RJy" secondAttribute="trailing" constant="20" id="fVj-2s-WJe"/>
+                        <constraint firstAttribute="trailing" secondItem="SW9-K7-vRJ" secondAttribute="trailing" id="koC-d3-RKc"/>
+                        <constraint firstItem="SW9-K7-vRJ" firstAttribute="leading" secondItem="5KD-Sd-wsP" secondAttribute="leading" id="nUl-eE-5kR"/>
+                        <constraint firstItem="XKX-ld-G81" firstAttribute="leading" secondItem="5KD-Sd-wsP" secondAttribute="leading" id="qX9-T9-Y93"/>
+                        <constraint firstItem="VNV-US-RJy" firstAttribute="top" secondItem="XKX-ld-G81" secondAttribute="bottom" constant="10" id="tJT-wk-OfR"/>
+                        <constraint firstAttribute="trailing" secondItem="XKX-ld-G81" secondAttribute="trailing" id="xR0-V9-TDq"/>
+                        <constraint firstItem="VNV-US-RJy" firstAttribute="centerX" secondItem="5KD-Sd-wsP" secondAttribute="centerX" id="z0K-kK-LK1"/>
+                        <constraint firstAttribute="bottom" secondItem="SW9-K7-vRJ" secondAttribute="bottom" constant="10" id="zSx-M2-wbL"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5KD-Sd-wsP" secondAttribute="bottom" constant="10" id="0qg-PO-pZm"/>
+                <constraint firstAttribute="trailing" secondItem="5KD-Sd-wsP" secondAttribute="trailing" constant="20" id="8SI-jS-2hu"/>
+                <constraint firstItem="ezB-Ac-x1e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="C5s-aQ-eFb"/>
+                <constraint firstItem="5KD-Sd-wsP" firstAttribute="top" secondItem="ezB-Ac-x1e" secondAttribute="bottom" constant="20" id="ILd-DX-9ed"/>
+                <constraint firstItem="ezB-Ac-x1e" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="hwO-P8-lnw"/>
+                <constraint firstItem="5KD-Sd-wsP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="kRO-9r-sds"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="6" y="0.0"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <namedColor name="BrandColor">
+            <color red="0.90200001001358032" green="0.32499998807907104" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

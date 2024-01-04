@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NPSfont_regular.otf">
+            <string>NPS-font-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TodayPlanView" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="YEM-Za-gwX" id="SRJ-UP-WXN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="667" height="329"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwg-iY-LCw" userLabel="ContetntView">
+                    <rect key="frame" x="0.0" y="0.0" width="667" height="329"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 일정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBP-48-phf">
+                            <rect key="frame" x="10" y="10" width="97" height="29"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YEM-Za-gwX">
+                            <rect key="frame" x="10" y="44" width="647" height="280"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="YEM-Za-gwX" firstAttribute="leading" secondItem="Kwg-iY-LCw" secondAttribute="leading" constant="10" id="97q-VW-GTX"/>
+                        <constraint firstItem="rBP-48-phf" firstAttribute="leading" secondItem="Kwg-iY-LCw" secondAttribute="leading" constant="10" id="GSg-fp-gvP"/>
+                        <constraint firstItem="YEM-Za-gwX" firstAttribute="top" secondItem="rBP-48-phf" secondAttribute="bottom" constant="5" id="K7C-g1-OYO"/>
+                        <constraint firstItem="rBP-48-phf" firstAttribute="top" secondItem="Kwg-iY-LCw" secondAttribute="top" constant="10" id="Pbb-xN-qvh"/>
+                        <constraint firstAttribute="bottom" secondItem="YEM-Za-gwX" secondAttribute="bottom" constant="5" id="biY-68-bnD"/>
+                        <constraint firstAttribute="trailing" secondItem="YEM-Za-gwX" secondAttribute="trailing" constant="10" id="n7h-6G-TE6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Kwg-iY-LCw" secondAttribute="trailing" id="iVp-sE-kdt"/>
+                <constraint firstAttribute="bottom" secondItem="Kwg-iY-LCw" secondAttribute="bottom" id="mIf-wk-fvt"/>
+                <constraint firstItem="Kwg-iY-LCw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="odm-a9-jV6"/>
+                <constraint firstItem="Kwg-iY-LCw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xUR-Od-9Ba"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="55.725190839694655" y="-164.43661971830986"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

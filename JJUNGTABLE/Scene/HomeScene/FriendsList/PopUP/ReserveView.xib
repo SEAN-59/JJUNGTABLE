@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NPSfont_regular.otf">
+            <string>NPS-font-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReserveView" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="addressLbl" destination="5Y0-HX-WQM" id="ODS-gy-Fly"/>
+                <outlet property="contentView" destination="gSz-Ad-uaj" id="0pT-kY-6dg"/>
+                <outlet property="dateBackView" destination="zPN-jr-7cq" id="0QZ-RF-y7v"/>
+                <outlet property="dateCheckBtn" destination="jxu-7M-eQF" id="cnd-iO-JdM"/>
+                <outlet property="dayLbl" destination="2bD-ym-Et5" id="lRt-H2-VDe"/>
+                <outlet property="endTimePicker" destination="UKR-rU-TiF" id="HI4-cp-TPa"/>
+                <outlet property="etcBackView" destination="IfN-k1-anw" id="ibj-BH-OBP"/>
+                <outlet property="etcTxf" destination="BgX-dl-FNB" id="hwt-TH-Q9D"/>
+                <outlet property="locationBackView" destination="Z2n-7P-lK0" id="yKw-ud-6j5"/>
+                <outlet property="monthLbl" destination="Zdq-HG-AGs" id="rrJ-nK-QCr"/>
+                <outlet property="startTimePicker" destination="qSm-AE-alC" id="yO7-fD-qkD"/>
+                <outlet property="timeBackView" destination="opF-jl-4Co" id="3GX-G4-363"/>
+                <outlet property="yearLbl" destination="jYf-01-bcO" id="znj-7G-hCU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="1117"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="날짜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzF-CA-il8">
+                    <rect key="frame" x="20.000000000000004" y="20" width="44.333333333333343" height="35"/>
+                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 달력에서 원하시는 날짜를 선택 후 확인 버튼을 눌러주세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x5D-RJ-nJy">
+                    <rect key="frame" x="20" y="56.999999999999993" width="353" height="17.666666666666664"/>
+                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPN-jr-7cq" userLabel="DateView">
+                    <rect key="frame" x="20" y="79.666666666666671" width="353" height="46.333333333333329"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYf-01-bcO">
+                            <rect key="frame" x="20.000000000000004" y="9.9999999999999982" width="47.333333333333343" height="26.333333333333329"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="년" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0c2-5Y-oHJ">
+                            <rect key="frame" x="69.333333333333329" y="11.666666666666655" width="15" height="23.333333333333329"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zdq-HG-AGs">
+                            <rect key="frame" x="94.333333333333329" y="9.9999999999999982" width="24" height="26.333333333333329"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNg-nx-dqi">
+                            <rect key="frame" x="120.33333333333334" y="11.666666666666655" width="15" height="23.333333333333329"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bD-ym-Et5">
+                            <rect key="frame" x="145.33333333333334" y="9.9999999999999982" width="24" height="26.333333333333329"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1I-ts-nfh">
+                            <rect key="frame" x="171.33333333333334" y="11.666666666666655" width="15" height="23.333333333333329"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxu-7M-eQF" userLabel="Check Btn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                            <rect key="frame" x="293" y="8.3333333333333286" width="40" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="6aQ-SK-hFU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="12"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="확인">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tapCheckbtn:" destination="-1" eventType="touchUpInside" id="bX5-BQ-04G"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="jYf-01-bcO" firstAttribute="top" secondItem="zPN-jr-7cq" secondAttribute="top" constant="10" id="Euw-Lv-Drr"/>
+                        <constraint firstItem="jYf-01-bcO" firstAttribute="leading" secondItem="zPN-jr-7cq" secondAttribute="leading" constant="20" id="Hwb-TB-hKl"/>
+                        <constraint firstItem="0c2-5Y-oHJ" firstAttribute="leading" secondItem="jYf-01-bcO" secondAttribute="trailing" constant="2" id="IaR-fG-qTU"/>
+                        <constraint firstAttribute="bottom" secondItem="jYf-01-bcO" secondAttribute="bottom" constant="10" id="LtY-kw-8VL"/>
+                        <constraint firstItem="dNg-nx-dqi" firstAttribute="leading" secondItem="Zdq-HG-AGs" secondAttribute="trailing" constant="2" id="N6B-QJ-AP6"/>
+                        <constraint firstItem="Zdq-HG-AGs" firstAttribute="centerY" secondItem="jYf-01-bcO" secondAttribute="centerY" id="QEP-zT-NfB"/>
+                        <constraint firstAttribute="trailing" secondItem="jxu-7M-eQF" secondAttribute="trailing" constant="20" id="WRU-fv-8st"/>
+                        <constraint firstItem="T1I-ts-nfh" firstAttribute="centerY" secondItem="jYf-01-bcO" secondAttribute="centerY" id="gmv-nB-77i"/>
+                        <constraint firstItem="dNg-nx-dqi" firstAttribute="centerY" secondItem="jYf-01-bcO" secondAttribute="centerY" id="m7e-82-qZT"/>
+                        <constraint firstItem="T1I-ts-nfh" firstAttribute="leading" secondItem="2bD-ym-Et5" secondAttribute="trailing" constant="2" id="mH7-Bz-a0N"/>
+                        <constraint firstItem="0c2-5Y-oHJ" firstAttribute="centerY" secondItem="jYf-01-bcO" secondAttribute="centerY" id="qY4-k0-g6g"/>
+                        <constraint firstItem="2bD-ym-Et5" firstAttribute="centerY" secondItem="jYf-01-bcO" secondAttribute="centerY" id="rJk-QL-fda"/>
+                        <constraint firstItem="jxu-7M-eQF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="T1I-ts-nfh" secondAttribute="trailing" constant="10" id="rvj-Tf-cCY"/>
+                        <constraint firstItem="2bD-ym-Et5" firstAttribute="leading" secondItem="dNg-nx-dqi" secondAttribute="trailing" constant="10" id="sED-iW-8o1"/>
+                        <constraint firstItem="jxu-7M-eQF" firstAttribute="centerY" secondItem="zPN-jr-7cq" secondAttribute="centerY" id="wbg-T0-YoR"/>
+                        <constraint firstItem="Zdq-HG-AGs" firstAttribute="leading" secondItem="0c2-5Y-oHJ" secondAttribute="trailing" constant="10" id="x7x-ew-aDL"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSz-Ad-uaj" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="126" width="393" height="991"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJG-f6-LIv">
+                            <rect key="frame" x="20.000000000000004" y="20" width="44.333333333333343" height="35"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opF-jl-4Co" userLabel="TimeView">
+                            <rect key="frame" x="20" y="60.000000000000014" width="353" height="188.33333333333337"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="시작" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEK-px-VEY">
+                                    <rect key="frame" x="76.666666666666671" y="4.9999999999999982" width="33.333333333333329" height="26.333333333333329"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="qSm-AE-alC">
+                                    <rect key="frame" x="5" y="33.333333333333343" width="176.66666666666666" height="150"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="150" id="ChF-eB-5CO"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="changeDatePicker:" destination="-1" eventType="valueChanged" id="NOu-nP-UE9"/>
+                                    </connections>
+                                </datePicker>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="종료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onY-Cm-fNR">
+                                    <rect key="frame" x="248.00000000000003" y="4.9999999999999982" width="33.333333333333343" height="26.333333333333329"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <datePicker tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="UKR-rU-TiF">
+                                    <rect key="frame" x="181.66666666666663" y="33.333333333333343" width="166.33333333333337" height="150"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="150" id="az7-mf-PFo"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="changeDatePicker:" destination="-1" eventType="valueChanged" id="SLT-jn-vUq"/>
+                                    </connections>
+                                </datePicker>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="yEK-px-VEY" firstAttribute="centerX" secondItem="qSm-AE-alC" secondAttribute="centerX" id="0uQ-kF-2Si"/>
+                                <constraint firstItem="qSm-AE-alC" firstAttribute="top" secondItem="yEK-px-VEY" secondAttribute="bottom" constant="2" id="5Ax-UU-X4f"/>
+                                <constraint firstItem="onY-Cm-fNR" firstAttribute="top" secondItem="opF-jl-4Co" secondAttribute="top" constant="5" id="JOl-Bz-3zO"/>
+                                <constraint firstItem="UKR-rU-TiF" firstAttribute="top" secondItem="onY-Cm-fNR" secondAttribute="bottom" constant="2" id="MJi-Ns-KMW"/>
+                                <constraint firstAttribute="bottom" secondItem="UKR-rU-TiF" secondAttribute="bottom" constant="5" id="NRk-RW-96o"/>
+                                <constraint firstAttribute="bottom" secondItem="qSm-AE-alC" secondAttribute="bottom" constant="5" id="RPZ-Ef-4Oa"/>
+                                <constraint firstItem="UKR-rU-TiF" firstAttribute="leading" secondItem="opF-jl-4Co" secondAttribute="centerX" constant="5" id="WWA-gC-99f"/>
+                                <constraint firstItem="UKR-rU-TiF" firstAttribute="centerX" secondItem="onY-Cm-fNR" secondAttribute="centerX" id="Xp4-BA-Ir0"/>
+                                <constraint firstItem="qSm-AE-alC" firstAttribute="leading" secondItem="opF-jl-4Co" secondAttribute="leading" constant="5" id="ifE-fQ-X7K"/>
+                                <constraint firstItem="qSm-AE-alC" firstAttribute="trailing" secondItem="opF-jl-4Co" secondAttribute="centerX" constant="5" id="jtK-EU-D0G"/>
+                                <constraint firstAttribute="trailing" secondItem="UKR-rU-TiF" secondAttribute="trailing" constant="5" id="oNn-VM-jSq"/>
+                                <constraint firstItem="yEK-px-VEY" firstAttribute="top" secondItem="opF-jl-4Co" secondAttribute="top" constant="5" id="r0u-oS-dUB"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="장소" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvP-46-aZ8">
+                            <rect key="frame" x="20.000000000000004" y="268.33333333333331" width="44.333333333333343" height="35"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2n-7P-lK0" userLabel="LocationView">
+                            <rect key="frame" x="20" y="308.33333333333331" width="353" height="46.333333333333314"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 검색하세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y0-HX-WQM">
+                                    <rect key="frame" x="20" y="9.9999999999999982" width="141.33333333333334" height="26.333333333333329"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4T-5C-kf5" userLabel="Search Location Btn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="11.333333333333371" width="313" height="25"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="12"/>
+                                    <color key="tintColor" name="BrandColor"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="magnifyingglass" catalog="system">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapSearchLocationBtn:" destination="-1" eventType="touchUpInside" id="cge-op-bcC"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="5Y0-HX-WQM" firstAttribute="top" secondItem="Z2n-7P-lK0" secondAttribute="top" constant="10" id="NlI-aE-0KV"/>
+                                <constraint firstAttribute="trailing" secondItem="Q4T-5C-kf5" secondAttribute="trailing" constant="20" id="Sev-oy-YY4"/>
+                                <constraint firstAttribute="bottom" secondItem="5Y0-HX-WQM" secondAttribute="bottom" constant="10" id="XWT-IE-mh6"/>
+                                <constraint firstItem="Q4T-5C-kf5" firstAttribute="leading" secondItem="5Y0-HX-WQM" secondAttribute="leading" id="cnd-zC-ko8"/>
+                                <constraint firstItem="5Y0-HX-WQM" firstAttribute="leading" secondItem="Z2n-7P-lK0" secondAttribute="leading" constant="20" id="lXL-82-hxX"/>
+                                <constraint firstItem="Q4T-5C-kf5" firstAttribute="bottom" secondItem="5Y0-HX-WQM" secondAttribute="bottom" id="sCn-97-goi"/>
+                                <constraint firstItem="Q4T-5C-kf5" firstAttribute="centerX" secondItem="Z2n-7P-lK0" secondAttribute="centerX" id="uG0-Vw-28e"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="기타" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2V-2P-czC">
+                            <rect key="frame" x="20.000000000000004" y="374.66666666666669" width="44.333333333333343" height="35"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IfN-k1-anw" userLabel="etcView">
+                            <rect key="frame" x="20" y="414.66666666666663" width="353" height="44"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="간단한 메모를 남기세요. (0~25글자)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BgX-dl-FNB">
+                                    <rect key="frame" x="20" y="5" width="313" height="34"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="BgX-dl-FNB" firstAttribute="top" secondItem="IfN-k1-anw" secondAttribute="top" constant="5" id="08K-E4-44r"/>
+                                <constraint firstItem="BgX-dl-FNB" firstAttribute="centerX" secondItem="IfN-k1-anw" secondAttribute="centerX" id="3cX-s7-QMd"/>
+                                <constraint firstItem="BgX-dl-FNB" firstAttribute="leading" secondItem="IfN-k1-anw" secondAttribute="leading" constant="20" id="FgC-hQ-XPB"/>
+                                <constraint firstAttribute="bottom" secondItem="BgX-dl-FNB" secondAttribute="bottom" constant="5" id="smh-yK-wOt"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS2-U7-l57" userLabel="Reserve Btn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                            <rect key="frame" x="20" y="478.66666666666663" width="353" height="492.33333333333337"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="20"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="예약하기">
+                                <color key="titleColor" name="BrandColor"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tapReserveBtn:" destination="-1" eventType="touchUpInside" id="5b3-cu-vej"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="FS2-U7-l57" firstAttribute="top" secondItem="IfN-k1-anw" secondAttribute="bottom" constant="20" id="1Sl-QL-0St"/>
+                        <constraint firstItem="nvP-46-aZ8" firstAttribute="leading" secondItem="PJG-f6-LIv" secondAttribute="leading" id="3A4-Qb-ZTl"/>
+                        <constraint firstItem="Z2n-7P-lK0" firstAttribute="top" secondItem="nvP-46-aZ8" secondAttribute="bottom" constant="5" id="4Aa-M5-HaN"/>
+                        <constraint firstItem="g2V-2P-czC" firstAttribute="leading" secondItem="PJG-f6-LIv" secondAttribute="leading" id="E9L-e1-f7R"/>
+                        <constraint firstItem="opF-jl-4Co" firstAttribute="centerX" secondItem="gSz-Ad-uaj" secondAttribute="centerX" id="N46-n4-YUj"/>
+                        <constraint firstItem="Z2n-7P-lK0" firstAttribute="centerX" secondItem="gSz-Ad-uaj" secondAttribute="centerX" id="Tzs-1s-Jby"/>
+                        <constraint firstAttribute="bottom" secondItem="FS2-U7-l57" secondAttribute="bottom" constant="20" id="VFY-S1-gLa"/>
+                        <constraint firstItem="nvP-46-aZ8" firstAttribute="top" secondItem="opF-jl-4Co" secondAttribute="bottom" constant="20" id="Vrv-8p-sv3"/>
+                        <constraint firstItem="IfN-k1-anw" firstAttribute="top" secondItem="g2V-2P-czC" secondAttribute="bottom" constant="5" id="X1n-Gt-zoA"/>
+                        <constraint firstItem="FS2-U7-l57" firstAttribute="leading" secondItem="gSz-Ad-uaj" secondAttribute="leading" constant="20" id="b0Q-gT-rK7"/>
+                        <constraint firstItem="opF-jl-4Co" firstAttribute="top" secondItem="PJG-f6-LIv" secondAttribute="bottom" constant="5" id="cA4-Vi-QD4"/>
+                        <constraint firstItem="g2V-2P-czC" firstAttribute="top" secondItem="Z2n-7P-lK0" secondAttribute="bottom" constant="20" id="fGw-ap-paZ"/>
+                        <constraint firstAttribute="trailing" secondItem="FS2-U7-l57" secondAttribute="trailing" constant="20" id="ihR-bF-7Uo"/>
+                        <constraint firstItem="IfN-k1-anw" firstAttribute="centerX" secondItem="gSz-Ad-uaj" secondAttribute="centerX" id="llc-Ea-MET"/>
+                        <constraint firstItem="Z2n-7P-lK0" firstAttribute="leading" secondItem="nvP-46-aZ8" secondAttribute="leading" id="qog-Ft-LN3"/>
+                        <constraint firstItem="PJG-f6-LIv" firstAttribute="top" secondItem="gSz-Ad-uaj" secondAttribute="top" constant="20" id="smb-ao-8g8"/>
+                        <constraint firstItem="opF-jl-4Co" firstAttribute="leading" secondItem="PJG-f6-LIv" secondAttribute="leading" id="sog-Oa-jxw"/>
+                        <constraint firstItem="IfN-k1-anw" firstAttribute="leading" secondItem="g2V-2P-czC" secondAttribute="leading" id="tJy-3d-mYM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="dzF-CA-il8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="7b9-jL-xEL"/>
+                <constraint firstAttribute="trailing" secondItem="x5D-RJ-nJy" secondAttribute="trailing" constant="20" id="Bsv-YN-78F"/>
+                <constraint firstItem="zPN-jr-7cq" firstAttribute="leading" secondItem="dzF-CA-il8" secondAttribute="leading" id="LeD-CB-AjT"/>
+                <constraint firstItem="x5D-RJ-nJy" firstAttribute="leading" secondItem="dzF-CA-il8" secondAttribute="leading" id="NOq-vW-71h"/>
+                <constraint firstItem="PJG-f6-LIv" firstAttribute="leading" secondItem="dzF-CA-il8" secondAttribute="leading" id="Tk6-v3-4op"/>
+                <constraint firstAttribute="bottom" secondItem="gSz-Ad-uaj" secondAttribute="bottom" id="ZGm-lh-QrR"/>
+                <constraint firstItem="x5D-RJ-nJy" firstAttribute="top" secondItem="dzF-CA-il8" secondAttribute="bottom" constant="2" id="aWz-mS-SVq"/>
+                <constraint firstItem="zPN-jr-7cq" firstAttribute="top" secondItem="x5D-RJ-nJy" secondAttribute="bottom" constant="5" id="i43-xt-v16"/>
+                <constraint firstAttribute="trailing" secondItem="gSz-Ad-uaj" secondAttribute="trailing" id="jGT-rw-xbk"/>
+                <constraint firstItem="gSz-Ad-uaj" firstAttribute="top" secondItem="zPN-jr-7cq" secondAttribute="bottom" id="kdZ-NU-VUC"/>
+                <constraint firstItem="gSz-Ad-uaj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lsA-uT-T5S"/>
+                <constraint firstItem="dzF-CA-il8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="oWZ-Rq-ChL"/>
+                <constraint firstItem="zPN-jr-7cq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="s0l-Hm-vbc"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="25.190839694656489" y="93.309859154929583"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="BrandColor">
+            <color red="0.90200001001358032" green="0.32499998807907104" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

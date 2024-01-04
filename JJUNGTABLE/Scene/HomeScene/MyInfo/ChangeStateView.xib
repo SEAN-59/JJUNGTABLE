@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NPSfont_regular.otf">
+            <string>NPS-font-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangeStateView" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="confirmBtn" destination="ggg-CY-tov" id="CDX-7x-6qa"/>
+                <outlet property="contentView" destination="uf5-hi-WmU" id="BIl-p2-sdz"/>
+                <outlet property="stateTxf" destination="NAA-9Y-dwt" id="Sry-Vb-mK1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uf5-hi-WmU">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상태메시지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khU-tz-ugq">
+                            <rect key="frame" x="139" y="20.000000000000004" width="115" height="36.333333333333343"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="20자까지 입력가능합니다." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NAA-9Y-dwt">
+                            <rect key="frame" x="20" y="76.333333333333314" width="353" height="665.33333333333348"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggg-CY-tov" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                            <rect key="frame" x="20" y="761.66666666666663" width="353" height="50.333333333333371"/>
+                            <color key="tintColor" name="BrandColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="확인">
+                                <fontDescription key="titleFontDescription" name="NPS-font-Regular" family="NPS font" pointSize="25"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tapConfirmBtn:" destination="-1" eventType="touchUpInside" id="CHy-qt-ysG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFf-f0-OPH" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                            <rect key="frame" x="333" y="18.333333333333329" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="RCJ-NR-V4u"/>
+                                <constraint firstAttribute="height" constant="40" id="uHw-1n-XSm"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system" cornerStyle="large">
+                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20" scale="large"/>
+                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tapCloseBtn:" destination="-1" eventType="touchUpInside" id="tTn-8e-wQz"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="GFf-f0-OPH" firstAttribute="trailing" secondItem="NAA-9Y-dwt" secondAttribute="trailing" id="3yD-ax-brb"/>
+                        <constraint firstItem="GFf-f0-OPH" firstAttribute="centerY" secondItem="khU-tz-ugq" secondAttribute="centerY" id="6Hf-Wl-LoZ"/>
+                        <constraint firstItem="khU-tz-ugq" firstAttribute="top" secondItem="uf5-hi-WmU" secondAttribute="top" constant="20" id="CM1-dH-nna"/>
+                        <constraint firstAttribute="bottom" secondItem="ggg-CY-tov" secondAttribute="bottom" constant="40" id="IVO-sB-5KD"/>
+                        <constraint firstItem="ggg-CY-tov" firstAttribute="leading" secondItem="uf5-hi-WmU" secondAttribute="leading" constant="20" id="ONq-ae-G5S"/>
+                        <constraint firstItem="ggg-CY-tov" firstAttribute="top" secondItem="NAA-9Y-dwt" secondAttribute="bottom" constant="20" id="db7-sL-Y3h"/>
+                        <constraint firstAttribute="trailing" secondItem="ggg-CY-tov" secondAttribute="trailing" constant="20" id="dmb-PH-nle"/>
+                        <constraint firstItem="NAA-9Y-dwt" firstAttribute="centerX" secondItem="uf5-hi-WmU" secondAttribute="centerX" id="jJj-1K-1v7"/>
+                        <constraint firstAttribute="trailing" secondItem="NAA-9Y-dwt" secondAttribute="trailing" constant="20" id="jNy-tu-Dn9"/>
+                        <constraint firstItem="NAA-9Y-dwt" firstAttribute="top" secondItem="khU-tz-ugq" secondAttribute="bottom" constant="20" id="s5p-Ac-SHp"/>
+                        <constraint firstItem="khU-tz-ugq" firstAttribute="centerX" secondItem="uf5-hi-WmU" secondAttribute="centerX" id="saz-jn-jUF"/>
+                        <constraint firstItem="NAA-9Y-dwt" firstAttribute="leading" secondItem="uf5-hi-WmU" secondAttribute="leading" constant="20" id="zd6-Sl-nE6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="uf5-hi-WmU" secondAttribute="trailing" id="CT0-s2-xjV"/>
+                <constraint firstItem="uf5-hi-WmU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Y1T-UI-zNS"/>
+                <constraint firstAttribute="bottom" secondItem="uf5-hi-WmU" secondAttribute="bottom" id="Zdb-eU-KFN"/>
+                <constraint firstItem="uf5-hi-WmU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xbi-Hp-Clf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-82" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="BrandColor">
+            <color red="0.90200001001358032" green="0.32499998807907104" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

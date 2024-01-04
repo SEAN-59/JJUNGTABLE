@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NPSfont_regular.otf">
+            <string>NPS-font-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationViewController" customModule="JJUNGTABLE" customModuleProvider="target">
+            <connections>
+                <outlet property="notiPermissionBtn" destination="FMj-eL-srB" id="Vmd-63-miQ"/>
+                <outlet property="separateView" destination="0nt-pL-BVy" id="gcd-Xy-j7t"/>
+                <outlet property="tableView" destination="xM8-zr-a4v" id="4Sc-tU-Kpf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkz-lZ-enQ" userLabel="CloseBtn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                    <rect key="frame" x="333" y="79" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="MdX-8j-ypb"/>
+                        <constraint firstAttribute="height" constant="40" id="iBd-Et-jfs"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system" cornerStyle="large">
+                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20" scale="large"/>
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tapCloseBtn:" destination="-1" eventType="touchUpInside" id="4g5-8o-8uh"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림 센터" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2D5-Fl-2zz">
+                    <rect key="frame" x="147.66666666666666" y="99" width="98" height="0.0"/>
+                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림 받기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apU-AB-F5U">
+                    <rect key="frame" x="275" y="118.99999999999999" width="63" height="23.333333333333329"/>
+                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="16"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMj-eL-srB" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                    <rect key="frame" x="343" y="112.66666666666669" width="30" height="36"/>
+                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="허용">
+                        <color key="titleColor" name="BrandColor"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="tapNotiPermissionBtn:" destination="-1" eventType="touchUpInside" id="cqm-jo-0mu"/>
+                    </connections>
+                </button>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nt-pL-BVy" userLabel="SeparateView">
+                    <rect key="frame" x="20" y="153.66666666666666" width="353" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Pm0-Y6-yg7"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xM8-zr-a4v">
+                    <rect key="frame" x="0.0" y="159.66666666666669" width="393" height="658.33333333333326"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xM8-zr-a4v" secondAttribute="trailing" id="3wg-RM-xDj"/>
+                <constraint firstItem="FMj-eL-srB" firstAttribute="centerY" secondItem="apU-AB-F5U" secondAttribute="centerY" id="AEe-6m-75y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tkz-lZ-enQ" secondAttribute="trailing" constant="20" id="DL2-4C-mtv"/>
+                <constraint firstItem="FMj-eL-srB" firstAttribute="leading" secondItem="apU-AB-F5U" secondAttribute="trailing" constant="5" id="FBa-kM-lfr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FMj-eL-srB" secondAttribute="trailing" constant="20" id="R5Y-xk-GhY"/>
+                <constraint firstItem="2D5-Fl-2zz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="RNE-OW-E7e"/>
+                <constraint firstItem="Tkz-lZ-enQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="SQU-zU-LUL"/>
+                <constraint firstItem="0nt-pL-BVy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UXn-6i-YEw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xM8-zr-a4v" secondAttribute="bottom" id="ZBE-up-1WB"/>
+                <constraint firstItem="xM8-zr-a4v" firstAttribute="top" secondItem="0nt-pL-BVy" secondAttribute="bottom" constant="5" id="Zuj-qf-Muq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0nt-pL-BVy" secondAttribute="trailing" constant="20" id="hPw-UZ-WEh"/>
+                <constraint firstItem="Tkz-lZ-enQ" firstAttribute="centerY" secondItem="2D5-Fl-2zz" secondAttribute="centerY" id="hU7-bS-ayK"/>
+                <constraint firstItem="apU-AB-F5U" firstAttribute="top" secondItem="2D5-Fl-2zz" secondAttribute="bottom" constant="20" id="ieN-ll-lru"/>
+                <constraint firstItem="2D5-Fl-2zz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="jtY-X1-pTC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Tkz-lZ-enQ" secondAttribute="trailing" constant="20" id="oLO-kw-8Xb"/>
+                <constraint firstItem="xM8-zr-a4v" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rxJ-3F-rnD"/>
+                <constraint firstItem="0nt-pL-BVy" firstAttribute="top" secondItem="FMj-eL-srB" secondAttribute="bottom" constant="5" id="wd8-zI-Cmk"/>
+            </constraints>
+            <point key="canvasLocation" x="12.977099236641221" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="BrandColor">
+            <color red="0.90200001001358032" green="0.32499998807907104" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
