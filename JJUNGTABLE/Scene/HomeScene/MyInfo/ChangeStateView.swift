@@ -33,10 +33,17 @@ class ChangeStateView: BaseView {
         self.state = text
         DatabaseManager().updateDataBase(.user, key: "\(loginId)/state", data: text) { dataBase in
             if let db = dataBase as? DB_SUCCESS {
+                let vc = viewControllers[viewControllers.count - 1] as? MainViewController
+                vc?.userData.state = self.state
                 
-            } 
+                if let name = vc?.userData.name {
+                    vc?.myInfoView.changeView(name, self.state)
+                }
+                
+                naviController.popViewController(animated: false)
+            }
             else if let db = dataBase as? DB_FAILURE {
-                
+                makeAlert(viewControllers[viewControllers.count - 1], title: "오류", message: "다시 한 번 시도해주세요.", actionTitle: ["확인"], handler: [{_ in}])
             }
         }
     }

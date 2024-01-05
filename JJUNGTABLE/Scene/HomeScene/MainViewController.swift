@@ -113,19 +113,49 @@ class MainViewController: BaseVC {
     
     /// user 를 read 함
     private func checkUserData() {
-        ConnectData().connectUser { userData in
-            printLog("USERDATA : \(userData)")
-            if userData.id == EMPTY_STR, userData.name == EMPTY_STR, userData.birth == EMPTY_STR, userData.isSwitch == EMPTY_STR, userData.pushToken == EMPTY_STR, userData.tableId == EMPTY_STR {
-                // faiure 부분
+        @UserDefault(key: "loginId", defaultValue: "") var loginId
+        @UserDefault(key: "tableId", defaultValue: "") var tableId
+        
+        DatabaseManager().readDataBase(.user, key: loginId) { dataBase in
+            if let db = dataBase as? DB_SUCCESS {
+                printLog("여긴가?")
+                var userData: UserData = .init(id: "", name: "", birth: "", isSwitch: "", pushToken: "", tableId: "")
+                if let data = db.value {
+                    userData.id           = optStr(data["id"])
+                    userData.name         = optStr(data["name"])
+                    userData.birth        = optStr(data["birth"])
+                    userData.isSwitch     = optStr(data["switch"])
+                    userData.pushToken    = optStr(data["pushToken"])
+                    userData.tableId      = optStr(data["tableId"])
+                    userData.email        = optStr(data["email"]) != "" ? optStr(data["email"]) : nil
+                    userData.state        = optStr(data["state"]) != "" ? optStr(data["state"]) : nil
+                    
+                    tableId = "\(userData.tableId)"
+                    
+                    self.userData = userData
+                    printLog(self.userData)
+                    // 상태 탑 바에서 알람 설정 위치 수정 -> 비동기 처리 아님
+                    self.toggleReserveStateBtn(isSwitch: self.userData.isSwitch)
+                    self.myInfoView.changeView(self.userData.name, self.userData.state)
+                }
+                else {
+                    let nextVC = CommonAlertViewController(nibName: "CommonAlertViewController", bundle: nil)
+                    
+                    let contentView: InputUserInfoView = {
+                        let view = InputUserInfoView()
+//                        view.initData(self.userData.tableId, getFriendLsit: self.getFriendList)
+                        return view
+                    }()
+                    
+                    nextVC.setUpAlertVC(contentView, animate: false, type: .center, isKeyBoard: true)
+                    self.pushVC(nextVC: nextVC)
+    
+                    // 여긴 아이디는 있는데 정보가 없는거임 즉 정보를 입력해주는 창을 열어줘야 함
+                }
+
+            } else if let db = dataBase as? DB_FAILURE {
+                // 비정상
                 self.dataCheckCount.1 -= 1
-            } else {
-                // 정상 동작
-                self.userData = userData
-                printLog(self.userData)
-                // 상태 탑 바에서 알람 설정 위치 수정 -> 비동기 처리 아님
-                self.toggleReserveStateBtn(isSwitch: self.userData.isSwitch)
-                self.myInfoView.changeView(self.userData.name, self.userData.state)
-                
             }
             self.addLoadCount()
         }

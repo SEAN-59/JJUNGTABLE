@@ -94,25 +94,26 @@ class InputUserInfoView: BaseView {
             else { self.data.email = nil }
             
             DatabaseManager().createDataBase(.tableId, key: tableId, data: ["userId":loginId]) { dataBase in
-                if let db = dataBase as? DB_SUCCESS {
-                    
+                if dataBase is DB_SUCCESS {
+                    DatabaseManager().createDataBase(.user, key: loginId, data: data) { dataBase in
+                        if dataBase is DB_SUCCESS {
+                            let vc = viewControllers[viewControllers.count - 2] as? MainViewController
+                            vc?.userData = self.data
+                            vc?.myInfoView.changeView(self.data.name, self.data.state)
+                            naviController.popViewController(animated: false)
+                        }
+                        else if dataBase is DB_FAILURE {
+                            self.showError()
+                        }
+                    }
                 }
-                else if let db = dataBase as? DB_FAILURE {
+                else if dataBase is DB_FAILURE {
                     self.showError()
                 }
             }
             
-            DatabaseManager().createDataBase(.user, key: loginId, data: data) { dataBase in
-                if let db = dataBase as? DB_SUCCESS {
-                    let vc = viewControllers[viewControllers.count - 2] as? MainViewController
-                    vc?.userData = self.data
-                    vc?.myInfoView.changeView(self.data.name, self.data.state)
-                    naviController.popViewController(animated: false)
-                }
-                else if let db = dataBase as? DB_FAILURE {
-                    self.showError()
-                }
-            }
+            
+            
         }
     }
     
