@@ -62,6 +62,7 @@ class ReserveView: BaseView {
         self.setDate(isToggleDate: F)
         self.startTimePicker.date = "0000".convertDate("HHmm").1
         self.endTimePicker.date = "0000".convertDate("HHmm").1
+//        self.checkDate()
     }
     
     func setDate(_ data: CalendarDay? = nil, isToggleDate: Bool) {
@@ -129,7 +130,18 @@ class ReserveView: BaseView {
     
     private func checkDate() {
         if let date = self.selectDay {
-            let dateChange = "\(date.year)\(date.month)\(date.day)"
+            // year, month, day 가 전부 Int형이라서 두자리수가 아닌 경우에는
+            // yyyyMMdd 형태가 아닌 yyyyMd 같은 이상한 경우가 발생함 그거 방지 목적
+            let dateChange = {
+                var dateSet = ("\(date.year)", "\(date.month)", "\(date.day)")
+                if date.month < 10 {
+                    dateSet.1 = "0\(date.month)"
+                }
+                if date.day < 10 {
+                    dateSet.2 = "0\(date.day)"
+                }
+                return "\(dateSet.0)\(dateSet.1)\(dateSet.2)"
+            }()
             
             // 오늘날짜 예약인 경우는 현재 시간보다 앞쪽에는 예약 못하게 해야함
             if Date().convertString() == dateChange {
@@ -162,13 +174,11 @@ class ReserveView: BaseView {
         }
     }
     
+    @objc func closeVC() {
+        
+    }
+    
     @IBAction func tapSearchLocationBtn(_ sender: UICustomButton) {
-        let closeBtn: UICustomButton = {
-            let button = UICustomButton()
-            button.animateBig = T
-            button.setImage(.init(systemName: "xmark"), for: .normal)
-            return button
-        }()
         
         let mapView: MapView = {
             let view = MapView()
@@ -180,6 +190,7 @@ class ReserveView: BaseView {
             return view
         }()
         
+        
         let contentView: UIView = {
             let view = UIView()
             [
@@ -190,6 +201,7 @@ class ReserveView: BaseView {
             searchView.snp.updateConstraints {
                 $0.centerX.equalToSuperview()
                 $0.top.equalToSuperview()
+                $0.leading.trailing.equalToSuperview()
 //                $0.height.equalTo(50)
 //                $0.width.equalTo(200)
             }
@@ -206,6 +218,8 @@ class ReserveView: BaseView {
         }()
         
         let data = [ReserveView.identifier : contentView]
+        
+        searchView.delegate = self
         self.delegate?.sendVCData(data)
         
     }
@@ -229,6 +243,12 @@ class ReserveView: BaseView {
     
 }
 
+extension ReserveView: ViewDelegate {
+    func tapCloseBtn() {
+        self.delegate?.sendVCData("close")
+    }
+}
+
 // MARK: - TEXTFIELD DELEGATE
 extension ReserveView {
     func textFieldDidChangeSelection(_ textField: UITextField) {
@@ -239,3 +259,4 @@ extension ReserveView {
         }
     }
 }
+

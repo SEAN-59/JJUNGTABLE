@@ -268,6 +268,10 @@ extension FriendPopUpViewController: BaseVCDelegate {
             }
             
         }
-        
+        if let data = data as? String {
+            if data == "close" {
+                self.dismiss(animated: F)
+            }
+        }
     }
 }
