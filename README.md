@@ -18,8 +18,6 @@ README.md
     -  지도 확인을 위해 띄우는 VC에서 AutoLayout 설정과 꺼졌다 켜짐 등에 대한 부분을 수정
 </details>  
 
----
-
 ### 2024.01.05
 <details>
 <summary>내용</summary>
