@@ -385,11 +385,16 @@ extension UIViewController {
         printLog(naviController.viewControllers)
     }
     
+    /// presentVC()
+    ///
+    /// Present 에서는 dismiss로 날려 버리는 겁니다~
     func presentVC(fromVC: UIViewController, nextVC: UIViewController, modalStyle: UIModalPresentationStyle = .fullScreen, transitionStyle: UIModalTransitionStyle = .coverVertical, presentAnimate: Bool, completion: (() -> ())? = nil){
         nextVC.modalPresentationStyle = modalStyle
         nextVC.modalTransitionStyle = transitionStyle
         fromVC.present(nextVC, animated: presentAnimate,completion: completion)
     }
+    
+    
 }
 
 extension UILabel {
