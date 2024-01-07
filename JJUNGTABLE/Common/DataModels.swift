@@ -303,3 +303,12 @@ struct GetFriendData {
 //        self.day = day
 //    }
 //}
+
+struct Coordniate {
+    var lat, lng : Double
+    
+    init(lat: Double, lng: Double) {
+        self.lat = lat
+        self.lng = lng
+    }
+}

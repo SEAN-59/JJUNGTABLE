@@ -266,8 +266,8 @@ extension FriendPopUpViewController: BaseVCDelegate {
                 nextVC.setUpAlertVC(view, animate: F, type: .center, isKeyBoard: T)
                 self.presentVC(fromVC: self, nextVC: nextVC, presentAnimate: F)
             }
-            
         }
+        
         if let data = data as? String {
             if data == "close" {
                 self.dismiss(animated: F)

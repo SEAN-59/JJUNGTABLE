@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>예약 장소를 정하기 위해서 위치 정보를 활용합니다.</string>
 	<key>NMFClientId</key>
 	<string>qc2z3auwbq</string>
 	<key>FirebaseAppDelegateProxyEnabled</key>
