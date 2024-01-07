@@ -7,6 +7,15 @@ README.md
 ---
 
 # 개발 기록
+### 2024.01.07
+<details>
+<summary>내용</summary>
+
+1. MapView
+    - 지도의 권한 허용 팝업 멘트 설정 및 권한 동작 구현
+    - 현재 위치의 좌표를 받아와 현재 위치로 이동
+</details>  
+
 ### 2024.01.06
 <details>
 <summary>내용</summary>
