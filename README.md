@@ -6,7 +6,15 @@ README.md
 ---   
 ---
 
-# 개발 기록
+# 개발 일지
+### 2024.01.09
+<details>
+<summary>내용</summary>
+
+1. View 다듬기
+    - NaverView 와 ReserveView 가 조금더 자연스러울 수 있게 다듬기
+</details> 
+
 ### 2024.01.07
 <details>
 <summary>내용</summary>
