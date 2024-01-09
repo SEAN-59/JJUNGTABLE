@@ -31,6 +31,15 @@ class MapView: BaseView {
     
     private lazy var marker: NMFMarker = {
         let marker = NMFMarker()
+        marker.width = CGFloat(NMF_MARKER_SIZE_AUTO)
+        marker.height = CGFloat(NMF_MARKER_SIZE_AUTO)
+        
+        marker.isHideCollidedMarkers = true // 마커와 다른 마커가 겹쳐질 때 마커를 자동으로 숨기도록 하기
+        
+        marker.touchHandler = { (overlay) in
+            printLog("TAPPED MARKER")
+            return true
+        }
         return marker
     }()
     
@@ -48,6 +57,28 @@ class MapView: BaseView {
     deinit {
         printLog("MapView_deinit")
         self.locationManager.stopUpdatingLocation()
+    }
+    
+    /// Map 그림 그리기
+    ///
+    /// 4분면 방향
+    ///
+    /// layerMaxXMinYCorner :    1사분면
+    /// layerMinXMinYCorner  :    2사분면
+    /// layerMinXMaxYCorner :    3사분면
+    /// layerMaxXMaxYCorner:    4사분면
+    func drawMap(corner: CGFloat = 0,
+                 mask: CACornerMask = CACornerMask(arrayLiteral:.layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner),
+                 color: UIColor? = nil, width: CGFloat = 0) {
+        self.naverMap.layer.maskedCorners = mask
+        self.naverMap.layer.cornerRadius = corner
+        self.naverMap.layer.borderColor = color?.cgColor
+        self.naverMap.layer.borderWidth = width
+    }
+    
+    func setAddressMap(addr: NaverGeocode) {
+        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: Double(addr.addresses[0].lng)!, lng: Double(addr.addresses[0].lat)!))
+        self.naverMap.moveCamera(cameraUpdate)
     }
     
     private func setMapLayout() {

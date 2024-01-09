@@ -312,3 +312,18 @@ struct Coordniate {
         self.lng = lng
     }
 }
+
+
+struct NaverGeocode: Codable {
+    let addresses: [AddressCoord]
+}
+
+struct AddressCoord: Codable {
+    let lat, lng, addr: String
+    
+    enum CodingKeys: String, CodingKey {
+        case lng = "y"
+        case lat = "x"
+        case addr = "roadAddress"
+    }
+}

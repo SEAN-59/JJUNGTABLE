@@ -179,47 +179,40 @@ class ReserveView: BaseView {
     }
     
     @IBAction func tapSearchLocationBtn(_ sender: UICustomButton) {
-        
-        let mapView: MapView = {
-            let view = MapView()
-            return view
-        }()
-        
-        let searchView: ReserveMapView = {
+        let reserveMapView: ReserveMapView = {
             let view = ReserveMapView()
             return view
         }()
-        
-        
-        let contentView: UIView = {
-            let view = UIView()
-            [
-                searchView,
-                mapView
-            ].forEach{ view.addSubview($0)}
-            
-            searchView.snp.updateConstraints {
-                $0.centerX.equalToSuperview()
-                $0.top.equalToSuperview()
-                $0.leading.trailing.equalToSuperview()
-//                $0.height.equalTo(50)
-//                $0.width.equalTo(200)
-            }
-            
-            mapView.snp.updateConstraints {
-                $0.centerX.equalToSuperview()
-                $0.top.equalTo(searchView.snp.bottom)
-                $0.leading.trailing.bottom.equalToSuperview()
-                $0.height.equalTo(500)
-                $0.width.equalTo(400)
-            }
 
-            return view
-        }()
+//        let contentView: UIView = {
+//            let view = UIView()
+//            [
+//                searchView,
+//                mapView
+//            ].forEach{ view.addSubview($0)}
+//
+//            searchView.snp.updateConstraints {
+//                $0.centerX.equalToSuperview()
+//                $0.top.equalToSuperview()
+//                $0.leading.trailing.equalToSuperview()
+////                $0.height.equalTo(50)
+////                $0.width.equalTo(200)
+//            }
+//
+//            mapView.snp.updateConstraints {
+//                $0.centerX.equalToSuperview()
+//                $0.top.equalTo(searchView.snp.bottom)
+//                $0.leading.trailing.bottom.equalToSuperview()
+//                $0.height.equalTo(500)
+//                $0.width.equalTo(400)
+//            }
+//
+//            return view
+//        }()
+//
+        let data = [ReserveView.identifier : reserveMapView]
         
-        let data = [ReserveView.identifier : contentView]
-        
-        searchView.delegate = self
+        reserveMapView.delegate = self
         self.delegate?.sendVCData(data)
         
     }
