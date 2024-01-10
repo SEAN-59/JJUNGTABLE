@@ -61,12 +61,12 @@ extension ConnectDelegate {
 protocol BaseVCDelegate: AnyObject {
     func reloadVC()
     func doVCSomething()
-    func sendVCData(_ data: Any)
+    func sendVCData(identifier: String, data: Any)
 }
 extension BaseVCDelegate {
     func reloadVC() {}
     func doVCSomething() {}
-    func sendVCData(_ data: Any){}
+    func sendVCData(identifier: String, data: Any){}
 }
 // MARK: - CELL
 // 이건 어느거든 cell 이 값을 보낼때 사용
@@ -84,13 +84,13 @@ extension CellDelegate {
 // 이건 View -> View 로 보내는 경우?
 protocol ViewDelegate: AnyObject {
     func doViewSomething()
-    func sendViewData(_ data: Any)
+    func sendViewData(identifier: String, data: Any)
     func tapCloseBtn()
 }
 
 extension ViewDelegate {
     func doViewSomething() {}
-    func sendViewData(_ data: Any) {}
+    func sendViewData(identifier: String, data: Any) {}
     func tapCloseBtn() {}
 }
 

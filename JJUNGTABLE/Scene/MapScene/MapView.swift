@@ -26,6 +26,10 @@ class MapView: BaseView {
         let map = NMFMapView(frame: frame)
         map.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
+        map.mapType = .basic
+        map.isIndoorMapEnabled = T
+        map.positionMode = .direction
+        
         return map
     }()
     
@@ -52,6 +56,8 @@ class MapView: BaseView {
         self.cameraPosition = self.naverMap.cameraPosition
         
         self.projection = self.naverMap.projection
+        
+//        self.naverMap.show
     }
     
     deinit {
@@ -79,7 +85,10 @@ class MapView: BaseView {
     func setAddressMap(addr: NaverGeocode) {
         let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: Double(addr.addresses[0].lng)!, lng: Double(addr.addresses[0].lat)!))
         self.naverMap.moveCamera(cameraUpdate)
+//        self.naver
     }
+    
+//    func check Mark
     
     private func setMapLayout() {
         self.addSubview(self.naverMap)
@@ -87,6 +96,8 @@ class MapView: BaseView {
         self.naverMap.snp.updateConstraints {
             $0.edges.equalToSuperview()
         }
+        
+//        self.naverMap.positionMode = .normal
         
     }
     

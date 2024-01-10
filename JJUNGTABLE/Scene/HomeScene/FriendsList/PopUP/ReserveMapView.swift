@@ -9,33 +9,33 @@ import UIKit
 import SnapKit
 
 class ReserveMapView: BaseView {
+    static let identifier = "ReserveMapView"
     weak var delegate: ViewDelegate?
     
-    @IBOutlet weak var mapAddressTxf: UITextField!
-    
-    
     @IBOutlet weak var contentView: UIView!
-    @IBOutlet weak var mapView: MapView!
+    @IBOutlet weak var searchAddressView: SearchAddressView!
     
     override func viewLoad() {
-        self.mapAddressTxf.delegate = self
+        self.searchAddressView.delegate = self
         
         self.contentView.layer.borderColor = UIColor.brandColor?.cgColor
         self.contentView.layer.borderWidth = 2
         self.contentView.layer.cornerRadius = 20.0
-        self.mapView.drawMap(corner: 20, mask: CACornerMask(arrayLiteral: .layerMinXMaxYCorner,.layerMaxXMaxYCorner), color: nil, width: 0)
-        self.mapView.snp.updateConstraints {
+        
+        self.searchAddressView.drawMap(corner: 20, mask: CACornerMask(arrayLiteral: .layerMinXMaxYCorner,.layerMaxXMaxYCorner), color: nil, width: 0)
+        
+        self.searchAddressView.snp.updateConstraints {
             $0.height.equalTo(getDeviceHeight()/2)
         }
+        
     }
     
     @IBAction func tapSearchAddressBtn(_ sender: UICustomButton) {
-        let text = getTextfieldValue(self.mapAddressTxf.text)
-        self.delegate?.sendViewData(text)
+        //        self.delegate?.sendViewData(text)
         
-        APICall().geocordingAPI(query: "\(text)") { result in
-            self.mapView.setAddressMap(addr: result)
-        }
+        //        APICall().geocordingAPI(query: "\(text)") { result in
+        //            self.mapView.setAddressMap(addr: result)
+        //        }
         
     }
     
@@ -44,10 +44,15 @@ class ReserveMapView: BaseView {
     }
     
 }
-
-extension ReserveMapView {
-    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        self.mapAddressTxf
-        self.endEditing(T)
+extension ReserveMapView: ViewDelegate {
+    func sendViewData(identifier: String, data: Any) {
+        if identifier == SearchAddressView.identifier {
+            if data is String {
+                self.delegate?.sendViewData(identifier: ReserveMapView.identifier, data: data)
+            }
+        }
+        self.delegate?.tapCloseBtn()
+        
+        printLog("HERE is ReserveMapView: \(data)")
     }
 }

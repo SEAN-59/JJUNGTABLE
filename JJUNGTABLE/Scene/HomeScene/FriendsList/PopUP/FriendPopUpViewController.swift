@@ -240,7 +240,9 @@ extension FriendPopUpViewController: CalendarViewDelegate {
         printLog("\(data)")
         
         if let data = data as? (CalendarDay, Bool) {
-            if self.viewName == "reserve" {self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+            if self.viewName == "reserve" {
+                self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+                
                 self.reserveView.setDate(data.0, isToggleDate: data.1)
             }
         }
@@ -258,19 +260,25 @@ extension FriendPopUpViewController: CalendarViewDelegate {
 
 extension FriendPopUpViewController: BaseVCDelegate {
     // ReserveView에서 뭔가를 보낼건데 그게 여기들어오는걸 구분 해야 함
-    func sendVCData(_ data: Any) {
-        if let data = data as? [String: Any] {
-            if let view = data["\(ReserveView.identifier)"] as? UIView {
+    func sendVCData(identifier: String, data: Any) {
+        if identifier == ReserveView.identifier {
+            if let view = data as? UIView {
                 let nextVC = CommonAlertViewController(nibName: "CommonAlertViewController",
                                                        bundle: nil)
                 nextVC.setUpAlertVC(view, animate: F, type: .center, isKeyBoard: T)
                 self.presentVC(fromVC: self, nextVC: nextVC, presentAnimate: F)
             }
-        }
-        
-        if let data = data as? String {
-            if data == "close" {
-                self.dismiss(animated: F)
+            
+            else if let data = data as? String {
+                if data == "close" {
+                    self.dismiss(animated: F)
+                }
+                else if data == "StopScroll" {
+                    self.scrollView.isScrollEnabled = F
+                }
+                else if data == "StartScroll" {
+                    self.scrollView.isScrollEnabled = T
+                }
             }
         }
     }

@@ -12,10 +12,11 @@ class ReserveView: BaseView {
     static let identifier = "ReserveView"
     weak var delegate: BaseVCDelegate?
     
-    
     private var isCheckDate: Bool = F
     private var selectDay: CalendarDay?
-    private var selectTime : (String, String) = ("","")
+//    private var selectTime : (String, String) = ("","")
+    
+    private var reserveData = ["date": String(), "startTime":String(), "endTime":String(), "location": String()]
     
     @IBOutlet weak var dateCheckBtn: UICustomButton!
     
@@ -24,7 +25,6 @@ class ReserveView: BaseView {
     @IBOutlet weak var dateBackView: UIView!
     @IBOutlet weak var timeBackView: UIView!
     @IBOutlet weak var locationBackView: UIView!
-    @IBOutlet weak var etcBackView: UIView!
     
     @IBOutlet weak var yearLbl: UILabel!
     @IBOutlet weak var monthLbl: UILabel!
@@ -34,8 +34,6 @@ class ReserveView: BaseView {
     @IBOutlet weak var endTimePicker: UIDatePicker!
     
     @IBOutlet weak var addressLbl: UILabel!
-    
-    @IBOutlet weak var etcTxf: UITextField!
     
     private lazy var emptyDateView: UIView = {
         let view = UIView()
@@ -62,23 +60,30 @@ class ReserveView: BaseView {
         self.setDate(isToggleDate: F)
         self.startTimePicker.date = "0000".convertDate("HHmm").1
         self.endTimePicker.date = "0000".convertDate("HHmm").1
+//        self.keyboardLayoutGuide.topAnchor.constraint(equalTo: self.etcTxf.bottomAnchor).isActive = true
 //        self.checkDate()
     }
     
     func setDate(_ data: CalendarDay? = nil, isToggleDate: Bool) {
         self.selectDay = data
-        if let day = self.selectDay, isToggleDate == T {
-            self.isCheckDate = F
-            self.yearLbl.text = "\(day.year)"
-            self.monthLbl.text = "\(day.month)"
-            self.dayLbl.text = "\(day.day)"
-
-            self.dateBackView.isHidden = F
-            self.emptyDateView.isHidden = T
-            self.changeCheckBtnImage(btn: self.dateCheckBtn)
-            
+        if isToggleDate == T {
+            if let day = self.selectDay{
+                self.delegate?.sendVCData(identifier: ReserveView.identifier, data: "StopScroll")
+                self.isCheckDate = F
+                self.yearLbl.text = "\(day.year)"
+                self.monthLbl.text = "\(day.month)"
+                self.dayLbl.text = "\(day.day)"
+                
+                self.dateBackView.isHidden = F
+                self.emptyDateView.isHidden = T
+                self.changeCheckBtnImage(btn: self.dateCheckBtn)
+                
+            }
         }
         else {
+            self.delegate?.sendVCData(identifier: ReserveView.identifier, data: "StopScroll")
+            self.contentView.isHidden = T
+            
             self.dateBackView.isHidden = T
             self.emptyDateView.isHidden = F
             self.emptyDateView.snp.updateConstraints {
@@ -94,7 +99,6 @@ class ReserveView: BaseView {
             self.dateBackView,
             self.timeBackView,
             self.locationBackView,
-            self.etcBackView
         ].forEach {
             $0?.layer.cornerRadius = 15
             $0?.backgroundColor = .lightGray.withAlphaComponent(0.1)
@@ -119,6 +123,7 @@ class ReserveView: BaseView {
             btn.setTitle("", for: .normal)
             btn.layer.borderWidth = 0
             self.contentView.isHidden = F
+            self.delegate?.sendVCData(identifier: ReserveView.identifier, data: "StartScroll")
         }
         else {
             btn.setImage(.none, for: .normal)
@@ -158,8 +163,11 @@ class ReserveView: BaseView {
             }
             self.endTimePicker.minimumDate = self.startTimePicker.date
             
-            self.selectTime = (self.startTimePicker.date.convertString("HHmm"),
-                               self.endTimePicker.date.convertString("HHmm"))
+//            self.selectTime = (self.startTimePicker.date.convertString("HHmm"),
+//                               self.endTimePicker.date.convertString("HHmm"))
+            self.reserveData["date"] = dateChange
+            self.reserveData["startTime"] = self.startTimePicker.date.convertString("HHmm")
+            self.reserveData["endTime"] = self.endTimePicker.date.convertString("HHmm")
         }
         
     }
@@ -174,62 +182,33 @@ class ReserveView: BaseView {
         }
     }
     
-    @objc func closeVC() {
-        
-    }
-    
     @IBAction func tapSearchLocationBtn(_ sender: UICustomButton) {
         let reserveMapView: ReserveMapView = {
             let view = ReserveMapView()
             return view
         }()
-
-//        let contentView: UIView = {
-//            let view = UIView()
-//            [
-//                searchView,
-//                mapView
-//            ].forEach{ view.addSubview($0)}
-//
-//            searchView.snp.updateConstraints {
-//                $0.centerX.equalToSuperview()
-//                $0.top.equalToSuperview()
-//                $0.leading.trailing.equalToSuperview()
-////                $0.height.equalTo(50)
-////                $0.width.equalTo(200)
-//            }
-//
-//            mapView.snp.updateConstraints {
-//                $0.centerX.equalToSuperview()
-//                $0.top.equalTo(searchView.snp.bottom)
-//                $0.leading.trailing.bottom.equalToSuperview()
-//                $0.height.equalTo(500)
-//                $0.width.equalTo(400)
-//            }
-//
-//            return view
-//        }()
-//
-        let data = [ReserveView.identifier : reserveMapView]
         
         reserveMapView.delegate = self
-        self.delegate?.sendVCData(data)
+        self.delegate?.sendVCData(identifier: ReserveView.identifier, data: reserveMapView)
         
     }
     
     @IBAction func tapReserveBtn(_ sender: UICustomButton) {
-        printLog("selectTime: \(self.selectTime)")
+        printLog("reseultResrve: \(self.reserveData)")
+        // 이제 확인 창 하나 띄우고 다음 예약 페이지로 넘어가는거 만들면 됨
+        
+        
     }
     
     @IBAction func changeDatePicker(_ sender: UIDatePicker) {
         if sender.tag == 0 {
             self.endTimePicker.minimumDate = sender.date
             self.endTimePicker.date = sender.date
-            self.selectTime = (sender.date.convertString("HHmm"), "")
+            self.reserveData["startTime"] = sender.date.convertString("HHmm")
+            self.reserveData["endTime"] = String()
         }
         else if sender.tag == 1 {
-            printLog(sender.date.convertString("HHmm"))
-            self.selectTime.1 = sender.date.convertString("HHmm")
+            self.reserveData["endTime"] = sender.date.convertString("HHmm")
         }
     }
     
@@ -238,18 +217,29 @@ class ReserveView: BaseView {
 
 extension ReserveView: ViewDelegate {
     func tapCloseBtn() {
-        self.delegate?.sendVCData("close")
+        self.delegate?.sendVCData(identifier: ReserveView.identifier, data: "close")
+    }
+    
+    func sendViewData(identifier: String, data: Any) {
+        if identifier == ReserveMapView.identifier {
+            // 여기서 주소를 받아옴
+            if let data = data as? String {
+                self.addressLbl.text = data
+                self.reserveData["location"] = data
+            }
+            printLog("HERE is ReserveView: \(data)")
+        }
     }
 }
 
 // MARK: - TEXTFIELD DELEGATE
 extension ReserveView {
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        let text = getTextfieldValue(self.etcTxf.text)
-        printLog(text)
-        if text.count > 25 {
-            textField.text = "\(text.dropLast(1))"
-        }
+//        let text = getTextfieldValue(self.etcTxf.text)
+//        printLog(text)
+//        if text.count > 25 {
+//            textField.text = "\(text.dropLast(1))"
+//        }
     }
 }
 

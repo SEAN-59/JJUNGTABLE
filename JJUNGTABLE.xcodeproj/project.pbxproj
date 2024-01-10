@@ -70,6 +70,8 @@
 		A7959AAF2B43A95E00FBC31A /* ConnectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7959AAE2B43A95E00FBC31A /* ConnectData.swift */; };
 		A7A6BD932B19B99300B2CCEB /* ReserveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6BD922B19B99300B2CCEB /* ReserveView.swift */; };
 		A7A6BD952B19B99B00B2CCEB /* ReserveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6BD942B19B99A00B2CCEB /* ReserveView.xib */; };
+		A7AABEA02B4E50E60061F7CB /* SearchAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AABE9F2B4E50E60061F7CB /* SearchAddressView.swift */; };
+		A7AABEA22B4E5ED30061F7CB /* SearchAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7AABEA12B4E5ED30061F7CB /* SearchAddressView.xib */; };
 		A7AF70322AEF9F290016E790 /* ReservationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF70312AEF9F290016E790 /* ReservationListView.swift */; };
 		A7AF70372AEF9F680016E790 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AF70362AEF9F680016E790 /* FriendsListView.swift */; };
 		A7AF70392AEF9F7E0016E790 /* ReservationListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7AF70382AEF9F7E0016E790 /* ReservationListView.xib */; };
@@ -219,6 +221,8 @@
 		A7959AAE2B43A95E00FBC31A /* ConnectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectData.swift; sourceTree = "<group>"; };
 		A7A6BD922B19B99300B2CCEB /* ReserveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveView.swift; sourceTree = "<group>"; };
 		A7A6BD942B19B99A00B2CCEB /* ReserveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReserveView.xib; sourceTree = "<group>"; };
+		A7AABE9F2B4E50E60061F7CB /* SearchAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressView.swift; sourceTree = "<group>"; };
+		A7AABEA12B4E5ED30061F7CB /* SearchAddressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchAddressView.xib; sourceTree = "<group>"; };
 		A7AF70312AEF9F290016E790 /* ReservationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListView.swift; sourceTree = "<group>"; };
 		A7AF70362AEF9F680016E790 /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
 		A7AF70382AEF9F7E0016E790 /* ReservationListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationListView.xib; sourceTree = "<group>"; };
@@ -405,6 +409,8 @@
 				A7F7F1682AEE84B00029EA6D /* MapViewController.xib */,
 				A71381E62B32C6CA009DA477 /* MapView.swift */,
 				A71381E82B32C6CF009DA477 /* MapView.xib */,
+				A7AABE9F2B4E50E60061F7CB /* SearchAddressView.swift */,
+				A7AABEA12B4E5ED30061F7CB /* SearchAddressView.xib */,
 			);
 			path = MapScene;
 			sourceTree = "<group>";
@@ -828,6 +834,7 @@
 				A7AF70432AEFA3BC0016E790 /* FriendsListTableViewCell.xib in Resources */,
 				A7E2E0BD2AFCCDCE00A09B9F /* ChangeStateView.xib in Resources */,
 				A7AF70472AEFA3DE0016E790 /* EmptyTableViewCell.xib in Resources */,
+				A7AABEA22B4E5ED30061F7CB /* SearchAddressView.xib in Resources */,
 				A7AF703F2AEFA3AC0016E790 /* ReservationListTableViewCell.xib in Resources */,
 				A780F8672AED02C4003E3367 /* IntroViewController.xib in Resources */,
 				A75F34522B033E96005F04B0 /* GoogleService-Info.plist in Resources */,
@@ -915,6 +922,7 @@
 				A7AF70372AEF9F680016E790 /* FriendsListView.swift in Sources */,
 				A7DA1A472B21A8B2001DB15C /* CalendarSituationView.swift in Sources */,
 				A7C240C82AE9F967001E0925 /* BaseVC.swift in Sources */,
+				A7AABEA02B4E50E60061F7CB /* SearchAddressView.swift in Sources */,
 				A7F7F1692AEE84B00029EA6D /* MapViewController.swift in Sources */,
 				A7097DEC2B19AC7A001BF022 /* FriendPopUpViewController.swift in Sources */,
 				A77645E62B26E47100A7E94E /* AppSettingView.swift in Sources */,

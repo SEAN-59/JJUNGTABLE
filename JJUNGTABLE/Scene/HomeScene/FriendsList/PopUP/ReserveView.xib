@@ -21,8 +21,6 @@
                 <outlet property="dateCheckBtn" destination="jxu-7M-eQF" id="cnd-iO-JdM"/>
                 <outlet property="dayLbl" destination="2bD-ym-Et5" id="lRt-H2-VDe"/>
                 <outlet property="endTimePicker" destination="UKR-rU-TiF" id="HI4-cp-TPa"/>
-                <outlet property="etcBackView" destination="IfN-k1-anw" id="ibj-BH-OBP"/>
-                <outlet property="etcTxf" destination="BgX-dl-FNB" id="hwt-TH-Q9D"/>
                 <outlet property="locationBackView" destination="Z2n-7P-lK0" id="yKw-ud-6j5"/>
                 <outlet property="monthLbl" destination="Zdq-HG-AGs" id="rrJ-nK-QCr"/>
                 <outlet property="startTimePicker" destination="qSm-AE-alC" id="yO7-fD-qkD"/>
@@ -47,7 +45,7 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPN-jr-7cq" userLabel="DateView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPN-jr-7cq" userLabel="DateBackView">
                     <rect key="frame" x="20" y="79.666666666666671" width="353" height="46.333333333333329"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYf-01-bcO">
@@ -190,7 +188,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2n-7P-lK0" userLabel="LocationView">
                             <rect key="frame" x="20" y="308.33333333333331" width="353" height="46.333333333333314"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 검색하세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y0-HX-WQM">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 검색하세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="5Y0-HX-WQM">
                                     <rect key="frame" x="20" y="9.9999999999999982" width="141.33333333333334" height="26.333333333333329"/>
                                     <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="18"/>
                                     <nil key="textColor"/>
@@ -220,30 +218,8 @@
                                 <constraint firstItem="Q4T-5C-kf5" firstAttribute="centerX" secondItem="Z2n-7P-lK0" secondAttribute="centerX" id="uG0-Vw-28e"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="기타" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2V-2P-czC">
-                            <rect key="frame" x="20.000000000000004" y="374.66666666666669" width="44.333333333333343" height="35"/>
-                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="24"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IfN-k1-anw" userLabel="etcView">
-                            <rect key="frame" x="20" y="414.66666666666663" width="353" height="44"/>
-                            <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="간단한 메모를 남기세요. (0~25글자)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BgX-dl-FNB">
-                                    <rect key="frame" x="20" y="5" width="313" height="34"/>
-                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </textField>
-                            </subviews>
-                            <constraints>
-                                <constraint firstItem="BgX-dl-FNB" firstAttribute="top" secondItem="IfN-k1-anw" secondAttribute="top" constant="5" id="08K-E4-44r"/>
-                                <constraint firstItem="BgX-dl-FNB" firstAttribute="centerX" secondItem="IfN-k1-anw" secondAttribute="centerX" id="3cX-s7-QMd"/>
-                                <constraint firstItem="BgX-dl-FNB" firstAttribute="leading" secondItem="IfN-k1-anw" secondAttribute="leading" constant="20" id="FgC-hQ-XPB"/>
-                                <constraint firstAttribute="bottom" secondItem="BgX-dl-FNB" secondAttribute="bottom" constant="5" id="smh-yK-wOt"/>
-                            </constraints>
-                        </view>
                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS2-U7-l57" userLabel="Reserve Btn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
-                            <rect key="frame" x="20" y="478.66666666666663" width="353" height="492.33333333333337"/>
+                            <rect key="frame" x="20" y="374.66666666666674" width="353" height="596.33333333333326"/>
                             <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="20"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="예약하기">
@@ -256,26 +232,29 @@
                                 <action selector="tapReserveBtn:" destination="-1" eventType="touchUpInside" id="5b3-cu-vej"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 선택 사항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7i0-yA-igp">
+                            <rect key="frame" x="69.333333333333329" y="282.33333333333331" width="60.999999999999986" height="17.666666666666686"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="12"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="FS2-U7-l57" firstAttribute="top" secondItem="IfN-k1-anw" secondAttribute="bottom" constant="20" id="1Sl-QL-0St"/>
                         <constraint firstItem="nvP-46-aZ8" firstAttribute="leading" secondItem="PJG-f6-LIv" secondAttribute="leading" id="3A4-Qb-ZTl"/>
                         <constraint firstItem="Z2n-7P-lK0" firstAttribute="top" secondItem="nvP-46-aZ8" secondAttribute="bottom" constant="5" id="4Aa-M5-HaN"/>
-                        <constraint firstItem="g2V-2P-czC" firstAttribute="leading" secondItem="PJG-f6-LIv" secondAttribute="leading" id="E9L-e1-f7R"/>
                         <constraint firstItem="opF-jl-4Co" firstAttribute="centerX" secondItem="gSz-Ad-uaj" secondAttribute="centerX" id="N46-n4-YUj"/>
                         <constraint firstItem="Z2n-7P-lK0" firstAttribute="centerX" secondItem="gSz-Ad-uaj" secondAttribute="centerX" id="Tzs-1s-Jby"/>
                         <constraint firstAttribute="bottom" secondItem="FS2-U7-l57" secondAttribute="bottom" constant="20" id="VFY-S1-gLa"/>
                         <constraint firstItem="nvP-46-aZ8" firstAttribute="top" secondItem="opF-jl-4Co" secondAttribute="bottom" constant="20" id="Vrv-8p-sv3"/>
-                        <constraint firstItem="IfN-k1-anw" firstAttribute="top" secondItem="g2V-2P-czC" secondAttribute="bottom" constant="5" id="X1n-Gt-zoA"/>
                         <constraint firstItem="FS2-U7-l57" firstAttribute="leading" secondItem="gSz-Ad-uaj" secondAttribute="leading" constant="20" id="b0Q-gT-rK7"/>
                         <constraint firstItem="opF-jl-4Co" firstAttribute="top" secondItem="PJG-f6-LIv" secondAttribute="bottom" constant="5" id="cA4-Vi-QD4"/>
-                        <constraint firstItem="g2V-2P-czC" firstAttribute="top" secondItem="Z2n-7P-lK0" secondAttribute="bottom" constant="20" id="fGw-ap-paZ"/>
+                        <constraint firstItem="FS2-U7-l57" firstAttribute="top" secondItem="Z2n-7P-lK0" secondAttribute="bottom" constant="20" id="e8d-XZ-j5z"/>
+                        <constraint firstItem="7i0-yA-igp" firstAttribute="leading" secondItem="nvP-46-aZ8" secondAttribute="trailing" constant="5" id="guI-fa-T3T"/>
+                        <constraint firstItem="7i0-yA-igp" firstAttribute="firstBaseline" secondItem="nvP-46-aZ8" secondAttribute="firstBaseline" id="hRJ-JM-Hgf"/>
                         <constraint firstAttribute="trailing" secondItem="FS2-U7-l57" secondAttribute="trailing" constant="20" id="ihR-bF-7Uo"/>
-                        <constraint firstItem="IfN-k1-anw" firstAttribute="centerX" secondItem="gSz-Ad-uaj" secondAttribute="centerX" id="llc-Ea-MET"/>
                         <constraint firstItem="Z2n-7P-lK0" firstAttribute="leading" secondItem="nvP-46-aZ8" secondAttribute="leading" id="qog-Ft-LN3"/>
                         <constraint firstItem="PJG-f6-LIv" firstAttribute="top" secondItem="gSz-Ad-uaj" secondAttribute="top" constant="20" id="smb-ao-8g8"/>
                         <constraint firstItem="opF-jl-4Co" firstAttribute="leading" secondItem="PJG-f6-LIv" secondAttribute="leading" id="sog-Oa-jxw"/>
-                        <constraint firstItem="IfN-k1-anw" firstAttribute="leading" secondItem="g2V-2P-czC" secondAttribute="leading" id="tJy-3d-mYM"/>
                     </constraints>
                 </view>
             </subviews>
