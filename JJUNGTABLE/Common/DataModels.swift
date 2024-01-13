@@ -241,6 +241,22 @@ struct UserData {
         self.tableId = tableId
     }
 }
+struct ReserveData {
+    var date, startTime, endTime, location: String
+    var title, etc: String
+    var lat, lng: String
+    
+    init(date: String = String(), startTime: String = String(), endTime: String = String(), location: String = String(), title: String = String(), etc: String = String(), lat: String = String(), lng: String = String()) {
+        self.date = date
+        self.startTime = startTime
+        self.endTime = endTime
+        self.location = location
+        self.title = title
+        self.etc = etc
+        self.lat = lat
+        self.lng = lng
+    }
+}
 
 struct MessageData {
     var messageId: String

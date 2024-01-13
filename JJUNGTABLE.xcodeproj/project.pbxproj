@@ -41,6 +41,8 @@
 		A75F34562B05D623005F04B0 /* CloudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F34552B05D623005F04B0 /* CloudFunctions.swift */; };
 		A75F34592B067AF8005F04B0 /* AddFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75F34582B067AF8005F04B0 /* AddFriendView.xib */; };
 		A75F345B2B067B02005F04B0 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F345A2B067B02005F04B0 /* AddFriendView.swift */; };
+		A76668192B5230B600874B98 /* SecondReserveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76668182B5230B600874B98 /* SecondReserveView.swift */; };
+		A766681B2B5230BA00874B98 /* SecondReserveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A766681A2B5230BA00874B98 /* SecondReserveView.xib */; };
 		A768757C2B3417CB00044807 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A768757B2B3417CB00044807 /* KakaoSDK */; };
 		A768757E2B3417CB00044807 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A768757D2B3417CB00044807 /* KakaoSDKAuth */; };
 		A76875802B3417CB00044807 /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = A768757F2B3417CB00044807 /* KakaoSDKCert */; };
@@ -197,6 +199,8 @@
 		A75F34552B05D623005F04B0 /* CloudFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudFunctions.swift; sourceTree = "<group>"; };
 		A75F34582B067AF8005F04B0 /* AddFriendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFriendView.xib; sourceTree = "<group>"; };
 		A75F345A2B067B02005F04B0 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddFriendView.swift; path = ../AddFriendView.swift; sourceTree = "<group>"; };
+		A76668182B5230B600874B98 /* SecondReserveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondReserveView.swift; sourceTree = "<group>"; };
+		A766681A2B5230BA00874B98 /* SecondReserveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondReserveView.xib; sourceTree = "<group>"; };
 		A7689BA62B3E963F00A520A4 /* ReserveMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveMapView.swift; sourceTree = "<group>"; };
 		A7689BA82B3E964600A520A4 /* ReserveMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReserveMapView.xib; sourceTree = "<group>"; };
 		A7739BE82B4D76C3009B2DC0 /* KEY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KEY.swift; sourceTree = "<group>"; };
@@ -351,6 +355,8 @@
 				A7097DEB2B19AC7A001BF022 /* FriendPopUpViewController.xib */,
 				A7A6BD922B19B99300B2CCEB /* ReserveView.swift */,
 				A7A6BD942B19B99A00B2CCEB /* ReserveView.xib */,
+				A76668182B5230B600874B98 /* SecondReserveView.swift */,
+				A766681A2B5230BA00874B98 /* SecondReserveView.xib */,
 				A7689BA62B3E963F00A520A4 /* ReserveMapView.swift */,
 				A7689BA82B3E964600A520A4 /* ReserveMapView.xib */,
 				A7DA1A462B21A8B2001DB15C /* CalendarSituationView.swift */,
@@ -827,6 +833,7 @@
 				A7689BA92B3E964600A520A4 /* ReserveMapView.xib in Resources */,
 				A77857CD2AED059800621BB7 /* NPSfont_extrabold.otf in Resources */,
 				A72BE8D82B28563100C37B40 /* JJUNGIcon.png in Resources */,
+				A766681B2B5230BA00874B98 /* SecondReserveView.xib in Resources */,
 				A77857CC2AED059800621BB7 /* NPSfont_bold.otf in Resources */,
 				A71381E92B32C6CF009DA477 /* MapView.xib in Resources */,
 				A7E2E0B92AFCB1D200A09B9F /* MyInfoView.xib in Resources */,
@@ -946,6 +953,7 @@
 				A7097DE72B15E052001BF022 /* GetFriendTableViewCell.swift in Sources */,
 				A7739BEB2B4D76C3009B2DC0 /* APICall.swift in Sources */,
 				A7C240AE2AE9F60D001E0925 /* SceneDelegate.swift in Sources */,
+				A76668192B5230B600874B98 /* SecondReserveView.swift in Sources */,
 				A7F7F1652AEE847E0029EA6D /* CalendarViewController.swift in Sources */,
 				A75F345B2B067B02005F04B0 /* AddFriendView.swift in Sources */,
 				A7B4672B2AEF73CF00A6A559 /* AES.swift in Sources */,

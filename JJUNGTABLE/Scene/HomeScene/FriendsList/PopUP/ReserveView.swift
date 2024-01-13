@@ -16,7 +16,9 @@ class ReserveView: BaseView {
     private var selectDay: CalendarDay?
 //    private var selectTime : (String, String) = ("","")
     
-    private var reserveData = ["date": String(), "startTime":String(), "endTime":String(), "location": String()]
+//    private var reserveData2 = ["date": String(), "startTime":String(), "endTime":String(), "location": String()]
+    
+    private var reserveData = ReserveData()
     
     @IBOutlet weak var dateCheckBtn: UICustomButton!
     
@@ -52,6 +54,11 @@ class ReserveView: BaseView {
             $0.leading.equalToSuperview().offset(20)
         }
         
+        return view
+    }()
+    
+    private lazy var secondeReseveView: SecondReserveView = {
+        let view = SecondReserveView()
         return view
     }()
     
@@ -165,9 +172,15 @@ class ReserveView: BaseView {
             
 //            self.selectTime = (self.startTimePicker.date.convertString("HHmm"),
 //                               self.endTimePicker.date.convertString("HHmm"))
-            self.reserveData["date"] = dateChange
-            self.reserveData["startTime"] = self.startTimePicker.date.convertString("HHmm")
-            self.reserveData["endTime"] = self.endTimePicker.date.convertString("HHmm")
+            
+        
+//            self.reserveData2["date"] = dateChange
+//            self.reserveData2["startTime"] = self.startTimePicker.date.convertString("HHmm")
+//            self.reserveData2["endTime"] = self.startTimePicker.date.convertString("HHmm")
+            
+            self.reserveData.date = dateChange
+            self.reserveData.startTime = self.startTimePicker.date.convertString("HHmm")
+            self.reserveData.endTime = self.startTimePicker.date.convertString("HHmm")
         }
         
     }
@@ -196,6 +209,11 @@ class ReserveView: BaseView {
     @IBAction func tapReserveBtn(_ sender: UICustomButton) {
         printLog("reseultResrve: \(self.reserveData)")
         // 이제 확인 창 하나 띄우고 다음 예약 페이지로 넘어가는거 만들면 됨
+        let vc = viewControllers.last as? FriendPopUpViewController
+        vc?.contentView.addSubview(self.secondeReseveView)
+        self.secondeReseveView.snp.updateConstraints {
+            $0.edges.equalToSuperview()
+        }
         
         
     }
@@ -204,11 +222,15 @@ class ReserveView: BaseView {
         if sender.tag == 0 {
             self.endTimePicker.minimumDate = sender.date
             self.endTimePicker.date = sender.date
-            self.reserveData["startTime"] = sender.date.convertString("HHmm")
-            self.reserveData["endTime"] = String()
+//            self.reserveData2["startTime"] = sender.date.convertString("HHmm")
+//            self.reserveData2["endTime"] = String()
+            
+            self.reserveData.startTime = sender.date.convertString("HHmm")
+            self.reserveData.endTime = String()
         }
         else if sender.tag == 1 {
-            self.reserveData["endTime"] = sender.date.convertString("HHmm")
+//            self.reserveData2["endTime"] = sender.date.convertString("HHmm")
+            self.reserveData.endTime = sender.date.convertString("HHmm")
         }
     }
     
@@ -225,7 +247,8 @@ extension ReserveView: ViewDelegate {
             // 여기서 주소를 받아옴
             if let data = data as? String {
                 self.addressLbl.text = data
-                self.reserveData["location"] = data
+//                self.reserveData2["location"] = data
+                self.reserveData.location = data
             }
             printLog("HERE is ReserveView: \(data)")
         }
