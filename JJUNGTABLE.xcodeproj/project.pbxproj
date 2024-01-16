@@ -41,8 +41,6 @@
 		A75F34562B05D623005F04B0 /* CloudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F34552B05D623005F04B0 /* CloudFunctions.swift */; };
 		A75F34592B067AF8005F04B0 /* AddFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75F34582B067AF8005F04B0 /* AddFriendView.xib */; };
 		A75F345B2B067B02005F04B0 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F345A2B067B02005F04B0 /* AddFriendView.swift */; };
-		A76668192B5230B600874B98 /* SecondReserveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76668182B5230B600874B98 /* SecondReserveView.swift */; };
-		A766681B2B5230BA00874B98 /* SecondReserveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A766681A2B5230BA00874B98 /* SecondReserveView.xib */; };
 		A768757C2B3417CB00044807 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A768757B2B3417CB00044807 /* KakaoSDK */; };
 		A768757E2B3417CB00044807 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A768757D2B3417CB00044807 /* KakaoSDKAuth */; };
 		A76875802B3417CB00044807 /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = A768757F2B3417CB00044807 /* KakaoSDKCert */; };
@@ -142,6 +140,8 @@
 		A7C241292AE9FC42001E0925 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A7C241282AE9FC42001E0925 /* FirebaseStorageCombine-Community */; };
 		A7C241302AEA1DCC001E0925 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A7C2412F2AEA1DCC001E0925 /* SnapKit */; };
 		A7CEF7D42B0C89CA00714BDB /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEF7D32B0C89CA00714BDB /* Animation.swift */; };
+		A7CF5ACA2B5515CC00BA5BBB /* InputPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF5AC82B5515CC00BA5BBB /* InputPopUpViewController.swift */; };
+		A7CF5ACB2B5515CC00BA5BBB /* InputPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7CF5AC92B5515CC00BA5BBB /* InputPopUpViewController.xib */; };
 		A7DA1A472B21A8B2001DB15C /* CalendarSituationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DA1A462B21A8B2001DB15C /* CalendarSituationView.swift */; };
 		A7DA1A492B21A8B8001DB15C /* CalendarSituationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7DA1A482B21A8B8001DB15C /* CalendarSituationView.xib */; };
 		A7E2E0B72AFCB1CD00A09B9F /* MyInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E2E0B62AFCB1CD00A09B9F /* MyInfoView.swift */; };
@@ -199,8 +199,6 @@
 		A75F34552B05D623005F04B0 /* CloudFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudFunctions.swift; sourceTree = "<group>"; };
 		A75F34582B067AF8005F04B0 /* AddFriendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFriendView.xib; sourceTree = "<group>"; };
 		A75F345A2B067B02005F04B0 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddFriendView.swift; path = ../AddFriendView.swift; sourceTree = "<group>"; };
-		A76668182B5230B600874B98 /* SecondReserveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondReserveView.swift; sourceTree = "<group>"; };
-		A766681A2B5230BA00874B98 /* SecondReserveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondReserveView.xib; sourceTree = "<group>"; };
 		A7689BA62B3E963F00A520A4 /* ReserveMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveMapView.swift; sourceTree = "<group>"; };
 		A7689BA82B3E964600A520A4 /* ReserveMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReserveMapView.xib; sourceTree = "<group>"; };
 		A7739BE82B4D76C3009B2DC0 /* KEY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KEY.swift; sourceTree = "<group>"; };
@@ -257,6 +255,8 @@
 		A7C240CF2AE9FA68001E0925 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A7C240D02AE9FA68001E0925 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		A7CEF7D32B0C89CA00714BDB /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		A7CF5AC82B5515CC00BA5BBB /* InputPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPopUpViewController.swift; sourceTree = "<group>"; };
+		A7CF5AC92B5515CC00BA5BBB /* InputPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputPopUpViewController.xib; sourceTree = "<group>"; };
 		A7DA1A462B21A8B2001DB15C /* CalendarSituationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarSituationView.swift; sourceTree = "<group>"; };
 		A7DA1A482B21A8B8001DB15C /* CalendarSituationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarSituationView.xib; sourceTree = "<group>"; };
 		A7E2E0B62AFCB1CD00A09B9F /* MyInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoView.swift; sourceTree = "<group>"; };
@@ -355,8 +355,6 @@
 				A7097DEB2B19AC7A001BF022 /* FriendPopUpViewController.xib */,
 				A7A6BD922B19B99300B2CCEB /* ReserveView.swift */,
 				A7A6BD942B19B99A00B2CCEB /* ReserveView.xib */,
-				A76668182B5230B600874B98 /* SecondReserveView.swift */,
-				A766681A2B5230BA00874B98 /* SecondReserveView.xib */,
 				A7689BA62B3E963F00A520A4 /* ReserveMapView.swift */,
 				A7689BA82B3E964600A520A4 /* ReserveMapView.xib */,
 				A7DA1A462B21A8B2001DB15C /* CalendarSituationView.swift */,
@@ -374,6 +372,8 @@
 				A71C23422AEA434100E06BD3 /* BottomView.xib */,
 				A780F8642AED02C4003E3367 /* IntroViewController.swift */,
 				A780F8652AED02C4003E3367 /* IntroViewController.xib */,
+				A7CF5AC82B5515CC00BA5BBB /* InputPopUpViewController.swift */,
+				A7CF5AC92B5515CC00BA5BBB /* InputPopUpViewController.xib */,
 				A70670D12AF23D92006A982D /* Alert */,
 				A71DE6962AED762600EF6EC7 /* Login */,
 			);
@@ -650,6 +650,7 @@
 				A7C240C52AE9F967001E0925 /* BaseView.swift */,
 				A7739BE92B4D76C3009B2DC0 /* APICall.swift */,
 				A7739BE82B4D76C3009B2DC0 /* KEY.swift */,
+				A7B4672A2AEF73CF00A6A559 /* AES.swift */,
 				A7C240C32AE9F967001E0925 /* Prefix.swift */,
 				A7C240C02AE9F967001E0925 /* Protocol.swift */,
 				A70670CF2AF236C4006A982D /* DatabaseManager.swift */,
@@ -659,7 +660,6 @@
 				A7CEF7D32B0C89CA00714BDB /* Animation.swift */,
 				A75F344F2B02F80F005F04B0 /* pushManager.swift */,
 				A75F34552B05D623005F04B0 /* CloudFunctions.swift */,
-				A7B4672A2AEF73CF00A6A559 /* AES.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -833,7 +833,6 @@
 				A7689BA92B3E964600A520A4 /* ReserveMapView.xib in Resources */,
 				A77857CD2AED059800621BB7 /* NPSfont_extrabold.otf in Resources */,
 				A72BE8D82B28563100C37B40 /* JJUNGIcon.png in Resources */,
-				A766681B2B5230BA00874B98 /* SecondReserveView.xib in Resources */,
 				A77857CC2AED059800621BB7 /* NPSfont_bold.otf in Resources */,
 				A71381E92B32C6CF009DA477 /* MapView.xib in Resources */,
 				A7E2E0B92AFCB1D200A09B9F /* MyInfoView.xib in Resources */,
@@ -848,6 +847,7 @@
 				A70B0A122AF2B9B6002E310B /* InputUserInfoView.xib in Resources */,
 				A7097DED2B19AC7A001BF022 /* FriendPopUpViewController.xib in Resources */,
 				A78DAF252B09021D003955EE /* NotificationViewController.xib in Resources */,
+				A7CF5ACB2B5515CC00BA5BBB /* InputPopUpViewController.xib in Resources */,
 				A78DAF292B09221E003955EE /* NotificationTableViewCell.xib in Resources */,
 				A77645EC2B26E48900A7E94E /* AppSupportView.xib in Resources */,
 				A75F34592B067AF8005F04B0 /* AddFriendView.xib in Resources */,
@@ -953,7 +953,6 @@
 				A7097DE72B15E052001BF022 /* GetFriendTableViewCell.swift in Sources */,
 				A7739BEB2B4D76C3009B2DC0 /* APICall.swift in Sources */,
 				A7C240AE2AE9F60D001E0925 /* SceneDelegate.swift in Sources */,
-				A76668192B5230B600874B98 /* SecondReserveView.swift in Sources */,
 				A7F7F1652AEE847E0029EA6D /* CalendarViewController.swift in Sources */,
 				A75F345B2B067B02005F04B0 /* AddFriendView.swift in Sources */,
 				A7B4672B2AEF73CF00A6A559 /* AES.swift in Sources */,
@@ -965,6 +964,7 @@
 				A78DAF282B09221E003955EE /* NotificationTableViewCell.swift in Sources */,
 				A7959AAF2B43A95E00FBC31A /* ConnectData.swift in Sources */,
 				A77645EA2B26E48400A7E94E /* AppSupportView.swift in Sources */,
+				A7CF5ACA2B5515CC00BA5BBB /* InputPopUpViewController.swift in Sources */,
 				A71381E72B32C6CA009DA477 /* MapView.swift in Sources */,
 				A71C23522AEB9B5200E06BD3 /* MyPageViewController.swift in Sources */,
 				A7C240CA2AE9F967001E0925 /* CommonUtils.swift in Sources */,

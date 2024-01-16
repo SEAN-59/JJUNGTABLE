@@ -102,9 +102,11 @@ public func isIllegalDevice() -> Bool {
         return false
     }
 }
-
-// <최상단 VC에 올리는 방법>
-// makeAlert(naviController.viewControllers[naviController.viewControllers.count - 1], title: "오류", message: "다시 한 번 시도해주세요.", actionTitle: ["확인"], handler: [{_ in}])
+/// ALERT 띄우기
+///
+/// <최상단 VC에 올리는 방법>
+///
+/// makeAlert(naviController.viewControllers[naviController.viewControllers.count - 1], title: "오류", message: "다시 한 번 시도해주세요.", actionTitle: ["확인"], handler: [{_ in}])
 public func makeAlert(_ vc: UIViewController, title: String, message: String, actionTitle: [String], style: [UIAlertAction.Style] = [.default], handler: [((UIAlertAction)->())?]) {
     
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -757,6 +759,18 @@ extension String {
         return "\(year * 10000 + month * 100 + day)"
     }
     
+    /// "00000000" 으로 들어온 값을 "["0000","00","00"]" 으로 변환
+    func separateDate() -> [String] {
+        let letter = self.letter()
+        return ["\(letter[0])\(letter[1])\(letter[2])\(letter[3])","\(letter[4])\(letter[5])","\(letter[6])\(letter[7])"]
+    }
+    
+    /// "0000" 으로 들어온 값을 ["00","00"] 으로 변환
+    func separateTime() -> [String] {
+        let letter = self.letter()
+        return ["\(letter[0])\(letter[1])","\(letter[2])\(letter[3])"]
+    }
+    
     func stringToInt() -> Int {
         if let intValue = Int(self) {
             return intValue
@@ -764,6 +778,7 @@ extension String {
             return 0
         }
     }
+    
 }
 
 extension Date {

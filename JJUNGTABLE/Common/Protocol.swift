@@ -57,7 +57,7 @@ extension ConnectDelegate {
 }
 
 // MARK: - View Move
-// view에서 VC로 데이터를 연결해야 하는데 할 마땅한 방법이 없을 경우 이용
+/// view에서 VC로 데이터를 연결해야 하는데 할 마땅한 방법이 없을 경우 이용
 protocol BaseVCDelegate: AnyObject {
     func reloadVC()
     func doVCSomething()
@@ -69,7 +69,7 @@ extension BaseVCDelegate {
     func sendVCData(identifier: String, data: Any){}
 }
 // MARK: - CELL
-// 이건 어느거든 cell 이 값을 보낼때 사용
+/// 이건 어느거든 cell 이 값을 보낼때 사용
 protocol CellDelegate: AnyObject {
     func doCellSomething()
     func sendCellData(_ data: Any)
@@ -81,7 +81,7 @@ extension CellDelegate {
     func sendTapCellInfo(_ data: Any) {}
 }
 // MARK: - VIEW
-// 이건 View -> View 로 보내는 경우?
+/// 이건 View -> View 로 보내는 경우?
 protocol ViewDelegate: AnyObject {
     func doViewSomething()
     func sendViewData(identifier: String, data: Any)

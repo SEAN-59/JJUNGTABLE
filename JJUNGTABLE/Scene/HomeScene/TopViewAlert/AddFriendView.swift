@@ -214,6 +214,7 @@ class AddFriendView: BaseView {
                                     self.errorAlert(message: "ID를 확인 후 다시 시도해주세요.", isAction: T)
                                 }
                                 else {
+//                                    [24.01.16] 이거 왜 안들와지냐??
                                     self.friendId = userData.id
                                     self.friendNameLbl.text = userData.name
                                     let date = userData.birth.convertDate()

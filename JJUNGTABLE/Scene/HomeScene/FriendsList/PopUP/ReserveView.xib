@@ -16,15 +16,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReserveView" customModule="JJUNGTABLE" customModuleProvider="target">
             <connections>
                 <outlet property="addressLbl" destination="5Y0-HX-WQM" id="ODS-gy-Fly"/>
+                <outlet property="checkAllDay" destination="e7G-ui-uxV" id="Fw3-J1-Htl"/>
                 <outlet property="contentView" destination="gSz-Ad-uaj" id="0pT-kY-6dg"/>
                 <outlet property="dateBackView" destination="zPN-jr-7cq" id="0QZ-RF-y7v"/>
                 <outlet property="dateCheckBtn" destination="jxu-7M-eQF" id="cnd-iO-JdM"/>
                 <outlet property="dayLbl" destination="2bD-ym-Et5" id="lRt-H2-VDe"/>
                 <outlet property="endTimePicker" destination="UKR-rU-TiF" id="HI4-cp-TPa"/>
+                <outlet property="etcBackView" destination="yNA-mc-ckE" id="nxJ-RE-LZK"/>
+                <outlet property="etcLbl" destination="s1v-zg-Jc2" id="JNW-fS-oym"/>
                 <outlet property="locationBackView" destination="Z2n-7P-lK0" id="yKw-ud-6j5"/>
                 <outlet property="monthLbl" destination="Zdq-HG-AGs" id="rrJ-nK-QCr"/>
                 <outlet property="startTimePicker" destination="qSm-AE-alC" id="yO7-fD-qkD"/>
                 <outlet property="timeBackView" destination="opF-jl-4Co" id="3GX-G4-363"/>
+                <outlet property="titleBackView" destination="rg9-93-XGT" id="UcO-FO-jZJ"/>
+                <outlet property="titleLbl" destination="m3e-kn-Qpr" id="0ub-i5-Ufi"/>
                 <outlet property="yearLbl" destination="jYf-01-bcO" id="znj-7G-hCU"/>
             </connections>
         </placeholder>
@@ -124,14 +129,69 @@
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSz-Ad-uaj" userLabel="ContentView">
                     <rect key="frame" x="0.0" y="126" width="393" height="991"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJG-f6-LIv">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="약속" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlO-BF-yjI">
                             <rect key="frame" x="20.000000000000004" y="20" width="44.333333333333343" height="35"/>
                             <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rg9-93-XGT" userLabel="TitleView">
+                            <rect key="frame" x="20" y="60" width="353" height="50.666666666666657"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="눌러서 제목을 입력해주세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3e-kn-Qpr">
+                                    <rect key="frame" x="20" y="10.000000000000002" width="313" height="30.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="21"/>
+                                    <color key="textColor" name="BackColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujl-6T-gXJ" userLabel="Search Location Btn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="10.000000000000002" width="313" height="30.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="12"/>
+                                    <color key="tintColor" name="BrandColor"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOpenInputPopUp:" destination="-1" eventType="touchUpInside" id="1o0-5t-Vmp"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="m3e-kn-Qpr" firstAttribute="top" secondItem="rg9-93-XGT" secondAttribute="top" constant="10" id="0mh-Sy-IUx"/>
+                                <constraint firstItem="Ujl-6T-gXJ" firstAttribute="leading" secondItem="m3e-kn-Qpr" secondAttribute="leading" id="6Mk-Hs-47A"/>
+                                <constraint firstItem="Ujl-6T-gXJ" firstAttribute="bottom" secondItem="m3e-kn-Qpr" secondAttribute="bottom" id="Esc-Zi-002"/>
+                                <constraint firstItem="Ujl-6T-gXJ" firstAttribute="trailing" secondItem="m3e-kn-Qpr" secondAttribute="trailing" id="M2N-cF-94j"/>
+                                <constraint firstAttribute="bottom" secondItem="m3e-kn-Qpr" secondAttribute="bottom" constant="10" id="u7b-Av-W2A"/>
+                                <constraint firstItem="m3e-kn-Qpr" firstAttribute="leading" secondItem="rg9-93-XGT" secondAttribute="leading" constant="20" id="ui1-rc-Tjs"/>
+                                <constraint firstItem="m3e-kn-Qpr" firstAttribute="centerX" secondItem="rg9-93-XGT" secondAttribute="centerX" id="zCD-Hq-LHE"/>
+                                <constraint firstItem="Ujl-6T-gXJ" firstAttribute="top" secondItem="m3e-kn-Qpr" secondAttribute="top" id="zGJ-IP-sls"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJG-f6-LIv">
+                            <rect key="frame" x="20.000000000000004" y="130.66666666666669" width="44.333333333333343" height="35"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7G-ui-uxV" userLabel="Check Btn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                            <rect key="frame" x="298" y="136.33333333333331" width="75" height="23.666666666666657"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="12"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title=" 하루 종일" image="square" catalog="system">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="animateBig" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tapCheckAllDay:" destination="-1" eventType="touchUpInside" id="0Ke-cb-3cD"/>
+                            </connections>
+                        </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opF-jl-4Co" userLabel="TimeView">
-                            <rect key="frame" x="20" y="60.000000000000014" width="353" height="188.33333333333337"/>
+                            <rect key="frame" x="20" y="170.66666666666669" width="353" height="188.33333333333331"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="시작" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEK-px-VEY">
                                     <rect key="frame" x="76.666666666666671" y="4.9999999999999982" width="33.333333333333329" height="26.333333333333329"/>
@@ -140,7 +200,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="qSm-AE-alC">
-                                    <rect key="frame" x="5" y="33.333333333333343" width="176.66666666666666" height="150"/>
+                                    <rect key="frame" x="5" y="33.333333333333314" width="176.66666666666666" height="150"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="ChF-eB-5CO"/>
                                     </constraints>
@@ -155,7 +215,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <datePicker tag="1" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="UKR-rU-TiF">
-                                    <rect key="frame" x="181.66666666666663" y="33.333333333333343" width="166.33333333333337" height="150"/>
+                                    <rect key="frame" x="181.66666666666663" y="33.333333333333314" width="166.33333333333337" height="150"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="150" id="az7-mf-PFo"/>
                                     </constraints>
@@ -180,13 +240,19 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="장소" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvP-46-aZ8">
-                            <rect key="frame" x="20.000000000000004" y="268.33333333333331" width="44.333333333333343" height="35"/>
+                            <rect key="frame" x="20.000000000000004" y="379" width="44.333333333333343" height="35"/>
                             <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 선택 사항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7i0-yA-igp">
+                            <rect key="frame" x="69.333333333333329" y="393" width="60.999999999999986" height="17.666666666666686"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="12"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2n-7P-lK0" userLabel="LocationView">
-                            <rect key="frame" x="20" y="308.33333333333331" width="353" height="46.333333333333314"/>
+                            <rect key="frame" x="20" y="419" width="353" height="46.333333333333314"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 검색하세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="5Y0-HX-WQM">
                                     <rect key="frame" x="20" y="9.9999999999999982" width="141.33333333333334" height="26.333333333333329"/>
@@ -219,7 +285,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FS2-U7-l57" userLabel="Reserve Btn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
-                            <rect key="frame" x="20" y="374.66666666666674" width="353" height="596.33333333333326"/>
+                            <rect key="frame" x="20" y="596" width="353" height="375"/>
                             <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="20"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="예약하기">
@@ -232,29 +298,81 @@
                                 <action selector="tapReserveBtn:" destination="-1" eventType="touchUpInside" id="5b3-cu-vej"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 선택 사항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7i0-yA-igp">
-                            <rect key="frame" x="69.333333333333329" y="282.33333333333331" width="60.999999999999986" height="17.666666666666686"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yNA-mc-ckE" userLabel="EtcView">
+                            <rect key="frame" x="20" y="525.33333333333337" width="353" height="50.666666666666629"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="눌러서 내용을 입력해주세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1v-zg-Jc2">
+                                    <rect key="frame" x="20" y="10.000000000000002" width="313" height="30.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="21"/>
+                                    <color key="textColor" name="BackColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1We-Oh-Udl" userLabel="Search Location Btn" customClass="UICustomButton" customModule="JJUNGTABLE" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="10.000000000000002" width="313" height="30.666666666666671"/>
+                                    <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="12"/>
+                                    <color key="tintColor" name="BrandColor"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOpenInputPopUp:" destination="-1" eventType="touchUpInside" id="zdw-WH-p3s"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="1We-Oh-Udl" firstAttribute="leading" secondItem="s1v-zg-Jc2" secondAttribute="leading" id="4fe-Xv-bCF"/>
+                                <constraint firstItem="s1v-zg-Jc2" firstAttribute="top" secondItem="yNA-mc-ckE" secondAttribute="top" constant="10" id="7YX-bC-AhW"/>
+                                <constraint firstItem="s1v-zg-Jc2" firstAttribute="leading" secondItem="yNA-mc-ckE" secondAttribute="leading" constant="20" id="7ap-hd-AbE"/>
+                                <constraint firstItem="1We-Oh-Udl" firstAttribute="bottom" secondItem="s1v-zg-Jc2" secondAttribute="bottom" id="9Qf-81-qDz"/>
+                                <constraint firstAttribute="bottom" secondItem="s1v-zg-Jc2" secondAttribute="bottom" constant="10" id="9WN-EP-bF2"/>
+                                <constraint firstItem="1We-Oh-Udl" firstAttribute="trailing" secondItem="s1v-zg-Jc2" secondAttribute="trailing" id="J1j-K7-v7I"/>
+                                <constraint firstItem="s1v-zg-Jc2" firstAttribute="centerX" secondItem="yNA-mc-ckE" secondAttribute="centerX" id="XNb-H2-nbl"/>
+                                <constraint firstItem="1We-Oh-Udl" firstAttribute="top" secondItem="s1v-zg-Jc2" secondAttribute="top" id="cr7-Ay-zXf"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※ 선택 사항" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VLC-x7-wsd">
+                            <rect key="frame" x="69.333333333333329" y="502.66666666666663" width="60.999999999999986" height="17.666666666666629"/>
                             <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="12"/>
                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="기타" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boo-Kh-4LT">
+                            <rect key="frame" x="20.000000000000004" y="485.33333333333337" width="44.333333333333343" height="35"/>
+                            <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="24"/>
+                            <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <constraints>
                         <constraint firstItem="nvP-46-aZ8" firstAttribute="leading" secondItem="PJG-f6-LIv" secondAttribute="leading" id="3A4-Qb-ZTl"/>
                         <constraint firstItem="Z2n-7P-lK0" firstAttribute="top" secondItem="nvP-46-aZ8" secondAttribute="bottom" constant="5" id="4Aa-M5-HaN"/>
+                        <constraint firstItem="rg9-93-XGT" firstAttribute="leading" secondItem="qlO-BF-yjI" secondAttribute="leading" id="Iej-Mq-yYY"/>
+                        <constraint firstItem="yNA-mc-ckE" firstAttribute="centerX" secondItem="gSz-Ad-uaj" secondAttribute="centerX" id="LQ4-bd-Tjl"/>
+                        <constraint firstItem="rg9-93-XGT" firstAttribute="top" secondItem="qlO-BF-yjI" secondAttribute="bottom" constant="5" id="MFh-MC-SvJ"/>
                         <constraint firstItem="opF-jl-4Co" firstAttribute="centerX" secondItem="gSz-Ad-uaj" secondAttribute="centerX" id="N46-n4-YUj"/>
+                        <constraint firstItem="e7G-ui-uxV" firstAttribute="trailing" secondItem="opF-jl-4Co" secondAttribute="trailing" id="Spz-7P-4MK"/>
+                        <constraint firstItem="boo-Kh-4LT" firstAttribute="top" secondItem="Z2n-7P-lK0" secondAttribute="bottom" constant="20" id="TWU-hl-tDb"/>
                         <constraint firstItem="Z2n-7P-lK0" firstAttribute="centerX" secondItem="gSz-Ad-uaj" secondAttribute="centerX" id="Tzs-1s-Jby"/>
                         <constraint firstAttribute="bottom" secondItem="FS2-U7-l57" secondAttribute="bottom" constant="20" id="VFY-S1-gLa"/>
+                        <constraint firstItem="VLC-x7-wsd" firstAttribute="bottom" secondItem="boo-Kh-4LT" secondAttribute="bottom" id="Vjy-Oe-fTb"/>
                         <constraint firstItem="nvP-46-aZ8" firstAttribute="top" secondItem="opF-jl-4Co" secondAttribute="bottom" constant="20" id="Vrv-8p-sv3"/>
+                        <constraint firstItem="VLC-x7-wsd" firstAttribute="leading" secondItem="boo-Kh-4LT" secondAttribute="trailing" constant="5" id="a68-db-e4F"/>
                         <constraint firstItem="FS2-U7-l57" firstAttribute="leading" secondItem="gSz-Ad-uaj" secondAttribute="leading" constant="20" id="b0Q-gT-rK7"/>
+                        <constraint firstItem="qlO-BF-yjI" firstAttribute="top" secondItem="gSz-Ad-uaj" secondAttribute="top" constant="20" id="bRw-6G-6b8"/>
                         <constraint firstItem="opF-jl-4Co" firstAttribute="top" secondItem="PJG-f6-LIv" secondAttribute="bottom" constant="5" id="cA4-Vi-QD4"/>
-                        <constraint firstItem="FS2-U7-l57" firstAttribute="top" secondItem="Z2n-7P-lK0" secondAttribute="bottom" constant="20" id="e8d-XZ-j5z"/>
+                        <constraint firstItem="FS2-U7-l57" firstAttribute="top" secondItem="yNA-mc-ckE" secondAttribute="bottom" constant="20" id="cCd-53-frI"/>
+                        <constraint firstItem="e7G-ui-uxV" firstAttribute="centerY" secondItem="PJG-f6-LIv" secondAttribute="centerY" id="d9e-oX-Tx9"/>
+                        <constraint firstItem="yNA-mc-ckE" firstAttribute="leading" secondItem="boo-Kh-4LT" secondAttribute="leading" id="gXo-e6-Z0U"/>
                         <constraint firstItem="7i0-yA-igp" firstAttribute="leading" secondItem="nvP-46-aZ8" secondAttribute="trailing" constant="5" id="guI-fa-T3T"/>
                         <constraint firstItem="7i0-yA-igp" firstAttribute="firstBaseline" secondItem="nvP-46-aZ8" secondAttribute="firstBaseline" id="hRJ-JM-Hgf"/>
                         <constraint firstAttribute="trailing" secondItem="FS2-U7-l57" secondAttribute="trailing" constant="20" id="ihR-bF-7Uo"/>
+                        <constraint firstItem="boo-Kh-4LT" firstAttribute="leading" secondItem="nvP-46-aZ8" secondAttribute="leading" id="qCF-s9-Xen"/>
                         <constraint firstItem="Z2n-7P-lK0" firstAttribute="leading" secondItem="nvP-46-aZ8" secondAttribute="leading" id="qog-Ft-LN3"/>
-                        <constraint firstItem="PJG-f6-LIv" firstAttribute="top" secondItem="gSz-Ad-uaj" secondAttribute="top" constant="20" id="smb-ao-8g8"/>
+                        <constraint firstItem="PJG-f6-LIv" firstAttribute="top" secondItem="rg9-93-XGT" secondAttribute="bottom" constant="20" id="s8R-61-ciH"/>
                         <constraint firstItem="opF-jl-4Co" firstAttribute="leading" secondItem="PJG-f6-LIv" secondAttribute="leading" id="sog-Oa-jxw"/>
+                        <constraint firstItem="rg9-93-XGT" firstAttribute="centerX" secondItem="gSz-Ad-uaj" secondAttribute="centerX" id="tSH-Wg-Mhh"/>
+                        <constraint firstItem="yNA-mc-ckE" firstAttribute="top" secondItem="boo-Kh-4LT" secondAttribute="bottom" constant="5" id="ztY-CF-71o"/>
                     </constraints>
                 </view>
             </subviews>
@@ -266,6 +384,7 @@
                 <constraint firstItem="PJG-f6-LIv" firstAttribute="leading" secondItem="dzF-CA-il8" secondAttribute="leading" id="Tk6-v3-4op"/>
                 <constraint firstAttribute="bottom" secondItem="gSz-Ad-uaj" secondAttribute="bottom" id="ZGm-lh-QrR"/>
                 <constraint firstItem="x5D-RJ-nJy" firstAttribute="top" secondItem="dzF-CA-il8" secondAttribute="bottom" constant="2" id="aWz-mS-SVq"/>
+                <constraint firstItem="qlO-BF-yjI" firstAttribute="leading" secondItem="dzF-CA-il8" secondAttribute="leading" id="h4o-jb-PSo"/>
                 <constraint firstItem="zPN-jr-7cq" firstAttribute="top" secondItem="x5D-RJ-nJy" secondAttribute="bottom" constant="5" id="i43-xt-v16"/>
                 <constraint firstAttribute="trailing" secondItem="gSz-Ad-uaj" secondAttribute="trailing" id="jGT-rw-xbk"/>
                 <constraint firstItem="gSz-Ad-uaj" firstAttribute="top" secondItem="zPN-jr-7cq" secondAttribute="bottom" id="kdZ-NU-VUC"/>
@@ -279,6 +398,10 @@
     </objects>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <namedColor name="BackColor">
+            <color red="0.69900000095367432" green="0.69900000095367432" blue="0.69900000095367432" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="BrandColor">
             <color red="0.90200001001358032" green="0.32499998807907104" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

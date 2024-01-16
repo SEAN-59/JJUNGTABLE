@@ -40,6 +40,7 @@ class FriendPopUpViewController: BaseVC {
         return view
     }()
     
+    
     private lazy var separateView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray
@@ -279,6 +280,41 @@ extension FriendPopUpViewController: BaseVCDelegate {
                 else if data == "StartScroll" {
                     self.scrollView.isScrollEnabled = T
                 }
+                else if data == "NoTitle" {
+                    makeAlert(self, title: "경고", message: "제목 없이는\n예약을 할 수 없습니다.",
+                              actionTitle: ["확인"],style: [.destructive] ,handler: [{_ in}])
+                }
+            }
+            
+            else if let dict = data as? [String: Any] {
+                if let openDict = dict["OpenPopUp"] as? [String: String] {
+                    guard let key = openDict["key"] else { return }
+                    guard let limit = openDict["limit"] else { return }
+                    guard let data = openDict["data"] else { return }
+                    let nextVC = InputPopUpViewController(nibName: "InputPopUpViewController", bundle: nil)
+                    nextVC.setData(key: key, limitCount: Int(limit)!,data: data)
+                    nextVC.delegate = self
+                    self.presentVC(fromVC: self, nextVC: nextVC, presentAnimate: F)
+                }
+                if let sendDict = dict["SendMessage"] as? [String: String] {
+                    guard let data = sendDict["key"] else { return }
+                    DatabaseManager().createDataBase(.reserveSend, key: friendId, data: [data:""]) { dataBase in
+                        if let db = dataBase as? DB_SUCCESS {
+                            self.dismiss(animated: T)
+                        }
+                        else if let db = dataBase as? DB_FAILURE {
+                            
+                        }
+                    }
+                }
+            }
+        }
+        else if identifier == InputPopUpViewController.identifier {
+            if let dict = data as? [String: String] {
+                guard let key = dict["key"] else { return }
+                guard let data = dict["data"] else { return }
+                self.reserveView.setInputData(key: key, data: data)
+                
             }
         }
     }

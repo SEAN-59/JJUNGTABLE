@@ -10,7 +10,7 @@ import UIKit
 class ReservationListTableViewCell: UITableViewCell {
     weak var delegate: CellDelegate?
     
-    private var data: MessageData = .init(messageId: "", title: "", friendId: "", date: "", startTime: "", endTime: "", alarm: "Y", state: "", location: "", etc: "")
+    private var data: MessageData = .init(messageId: "", title: "", friendId: "", date: "", startTime: "", endTime: "", alarm: "", state: "", location: "", etc: "")
     
     @IBOutlet weak var profileImg: UIImageView!
     
