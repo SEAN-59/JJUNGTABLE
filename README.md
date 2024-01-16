@@ -3,10 +3,33 @@ README.md
 [1. 개발 기록](#개발-기록)   
 [2. 생각 거리](#생각-거리)
 
----  
+--- 
 ---
 
 # 개발 일지
+
+### 2024.01.16
+<details>
+<summary>내용</summary>
+
+1. 예약 PAGE view 작동
+    - DB 작업해서 다른 아이디에서도 아무 이상없이 잘 뜨는지 확인 필요
+2. Add Friends 부분에서 문제점이 발견
+    - 친구 조회가 안되는 문제가 발견 
+        - 검색하는 DBManager 부분이 오류가 생긴듯
+
+</details> 
+
+### 2024.01.13
+<details>
+<summary>내용</summary>
+
+1. SecondReserveView 추가
+    - View 추가
+2. reserveData 추가해서 데이터 모델변경
+
+</details> 
+
 ### 2024.01.10
 <details>
 <summary>내용</summary>
@@ -17,8 +40,8 @@ README.md
 2. ReserveView 정리
     - 날짜 선택과 관련한 오류들 수정
     - 빈 값인데도 스크롤이 되는 오류 수정
-    - 날짜, 시간, 장소 저장까지는 완료 이제 다음 예약 루틴으로 넘어가면 됨
-    
+    - 날짜, 시간, 장소 저장까지는 완료 이제 다음 예약 로직으로 넘어가면 됨
+
 </details> 
 
 ### 2024.01.09
