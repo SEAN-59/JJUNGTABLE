@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class FriendsListView: BaseView {
-    private let cellSize = 90
+    private let cellSize = 105
     
     private var friendsCount = 0
     private var cellIdentifier = ""

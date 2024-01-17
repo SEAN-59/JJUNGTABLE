@@ -43,7 +43,7 @@ class FriendPopUpViewController: BaseVC {
     
     private lazy var separateView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .separateColor
         return view
     }()
     
@@ -298,7 +298,7 @@ extension FriendPopUpViewController: BaseVCDelegate {
                 }
                 if let sendDict = dict["SendMessage"] as? [String: String] {
                     guard let data = sendDict["key"] else { return }
-                    DatabaseManager().createDataBase(.reserveSend, key: friendId, data: [data:""]) { dataBase in
+                    DatabaseManager().updateDataBase(.reserveGet, key: "\(self.friendId)/\(data)", data: "") { dataBase in
                         if let db = dataBase as? DB_SUCCESS {
                             self.dismiss(animated: T)
                         }
@@ -306,6 +306,7 @@ extension FriendPopUpViewController: BaseVCDelegate {
                             
                         }
                     }
+                    
                 }
             }
         }

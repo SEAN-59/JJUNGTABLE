@@ -58,10 +58,11 @@ class ReservationListView: BaseView {
                         // 정상 동작
                         // 여기서 부터 하면 됩니다. 1.4
 //                        self.dbManager.readData(.user, key: "\(friendId)")
+                        // 친구가 탈퇴를 했나 안했나
                         DatabaseManager().readDataBase(.user, key: messageData.friendId) { dataBase in
                             if let db = dataBase as? DB_SUCCESS {
+                                self.cellDataArray.append(messageData)
                                 self.updateData()
-                                
                             } 
                             else if let db = dataBase as? DB_FAILURE {
                                 self.listCount -= 1

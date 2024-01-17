@@ -43,9 +43,7 @@ class AddFriendView: BaseView {
     
     override func viewLoad() {
         self.setLayout()
-        
         self.friendIDTxf.delegate = self
-//        self.dbManager.delegate = self
     }
     
     func initData(_ myTableId: String, getFriendLsit: [String]) {
@@ -160,35 +158,6 @@ class AddFriendView: BaseView {
                         }
                         
                     }
-                    
-                    
-                    /*
-                         let friendList = data.allKeys
-                         var isHave = false
-                         for f in friendList {
-                             if self.friendTableId == optStr(f) {
-                                 isHave = true
-                             }
-                         }
-                         
-                         if isHave {
-                             makeAlert(viewControllers[viewControllers.count - 1],
-                                       title: "안내", message: "이미 추가된 친구입니다.",
-                                       actionTitle: ["확인"],
-                                       handler: [
-                                         { _ in
-                                             self.friendIDTxf.text = ""
-                                             self.friendIDTxf.isSelected = true
-                                             self.isFind = false
-                                             self.setChangeView()
-                                         }
-                                       ])
-                         }
-                         else {
-                             self.dbManager.updateData(.friends, key: "\(loginId)/\(self.friendTableId)",data: "")
-                             
-                         }
-                     */
                 }
             }
             
@@ -207,6 +176,7 @@ class AddFriendView: BaseView {
                 else if self.friendTableId.count == 16 {
                     ConnectData().connectTableId(key: self.friendTableId) { tableData in
                         if tableData != "" {
+                            self.friendId = tableData
                             // 성공
                             ConnectData().connectUser(key: self.friendId) { userData in
                                 if userData.name == "", userData.birth == "", userData.isSwitch == "", userData.pushToken == "", userData.tableId == "" {

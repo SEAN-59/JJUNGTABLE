@@ -36,7 +36,7 @@ class ReservationListTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.setLayout()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -49,14 +49,15 @@ class ReservationListTableViewCell: UITableViewCell {
         self.underNameView.layer.cornerRadius = 2.0
         self.underDateView.layer.cornerRadius = 2.0
         self.underLocationView.layer.cornerRadius = 2.0
+        self.shakeView.layer.cornerRadius = 20.0
     }
     
     func setData(_ data: MessageData) {
         self.data = data
         self.convertDate()
         self.locationLbl.frame.size.width = 30
-        self.locationLbl.text = "\(self.data.location)"
-//        self.dbManager.readData(.user, key: self.data.friendId)
+        self.locationLbl.text = self.data.location == "" ? "장소가 정해지지 않았어요." : "\(self.data.location)"
+        //        self.dbManager.readData(.user, key: self.data.friendId)
         ConnectData().connectUser(key: self.data.friendId) { userData in
             if userData.id == "", userData.name == "", userData.birth == "", userData.isSwitch == "", userData.pushToken == "", userData.tableId == "" {
                 // 오류
@@ -93,7 +94,7 @@ class ReservationListTableViewCell: UITableViewCell {
                   handler: [
                     {_ in
                         
-//                        self.dbManager.updateData(.reserveMessage, key: "\(self.data.messageId)/state", data: "Y")
+                        //                        self.dbManager.updateData(.reserveMessage, key: "\(self.data.messageId)/state", data: "Y")
                         DatabaseManager().updateDataBase(.reserveMessage, key: "\(self.data.messageId)/state", data: "Y") { dataBase in
                             if let db = dataBase as? DB_SUCCESS {
                                 
@@ -102,8 +103,8 @@ class ReservationListTableViewCell: UITableViewCell {
                                 
                             }
                         }
-//                        self.dbManager.updateData(.reserveList, key: "\(loginId)/\(date)/\(self.data.messageId)", data: "")
-                        DatabaseManager().updateDataBase(.reserveMessage, key: "\(loginId)/\(date)/\(self.data.messageId)", data: "") { dataBase in
+                        //                        self.dbManager.updateData(.reserveList, key: "\(loginId)/\(date)/\(self.data.messageId)", data: "")
+                        DatabaseManager().updateDataBase(.reserveList, key: "\(loginId)/\(date)/\(self.data.messageId)", data: "") { dataBase in
                             if let db = dataBase as? DB_SUCCESS {
                                 
                             }
@@ -111,7 +112,7 @@ class ReservationListTableViewCell: UITableViewCell {
                                 
                             }
                         }
-//                        self.dbManager.deleteData(.reserveGet, key: "\(loginId)/\(self.data.messageId)")
+                        //                        self.dbManager.deleteData(.reserveGet, key: "\(loginId)/\(self.data.messageId)")
                         DatabaseManager().deleteDataBase(.reserveGet, key: "\(loginId)/\(self.data.messageId)") { dataBase in
                             if let db = dataBase as? DB_SUCCESS {
                                 self.delegate?.doCellSomething()
@@ -122,7 +123,7 @@ class ReservationListTableViewCell: UITableViewCell {
                         }
                     },
                     {_ in
-//                        self.dbManager.updateData(.reserveMessage, key: "\(self.data.messageId)/state", data: "N")
+                        //                        self.dbManager.updateData(.reserveMessage, key: "\(self.data.messageId)/state", data: "N")
                         DatabaseManager().updateDataBase(.reserveMessage, key: "\(self.data.messageId)/state", data: "N") { dataBase in
                             if let db = dataBase as? DB_SUCCESS {
                                 
@@ -131,7 +132,7 @@ class ReservationListTableViewCell: UITableViewCell {
                                 
                             }
                         }
-//                        self.dbManager.deleteData(.reserveGet, key: "\(loginId)/\(self.data.messageId)")
+                        //                        self.dbManager.deleteData(.reserveGet, key: "\(loginId)/\(self.data.messageId)")
                         DatabaseManager().deleteDataBase(.reserveGet, key: "\(loginId)/\(self.data.messageId)") { dataBase in
                             if let db = dataBase as? DB_SUCCESS {
                                 self.delegate?.doCellSomething()

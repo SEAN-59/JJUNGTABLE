@@ -52,14 +52,29 @@ class GetFriendTableViewCell: UITableViewCell {
         // 수락
         if sender.tag == 0 {
             // friends에 친구 tableId 추가
-            DatabaseManager().updateDataBase(.friends, key: "\(loginId)/\(self.cellData.tableId)", data: "") { _ in }
-//            self.dbManager.updateData(.friends, key: "\(loginId)/\(self.cellData.tableId)", data: "")
+            DatabaseManager().updateDataBase(.friends, key: "\(loginId)/\(self.cellData.tableId)", data: "") { dataBase in
+                if let db = dataBase as? DB_SUCCESS {
+                    // 무사 등록했으면 날려야지
+                    DatabaseManager().deleteDataBase(.getFriend, key: "\(loginId)/\(self.cellData.tableId)") { dataBase in
+                        if let db = dataBase as? DB_SUCCESS {
+                            self.delegate?.sendCellData(self.cellIndex)
+                        }
+                        else if let db = dataBase as? DB_FAILURE {}
+                    }
+                } else if let db = dataBase as? DB_FAILURE {
+                    
+                }
+            }
         }
         // 거절
         else if sender.tag == 1 {
             // getFriend에서 친구 tableId 삭제
-            DatabaseManager().deleteDataBase(.getFriend, key: "\(loginId)/\(self.cellData.tableId)") { _ in }
-//            self.dbManager.deleteData(.getFriend, key: "\(loginId)/\(self.cellData.tableId)")
+            DatabaseManager().deleteDataBase(.getFriend, key: "\(loginId)/\(self.cellData.tableId)") { dataBase in
+                if let db = dataBase as? DB_SUCCESS {
+                    self.delegate?.sendCellData(self.cellIndex)
+                }
+                else if let db = dataBase as? DB_FAILURE {}
+            }
         }
     }
 }

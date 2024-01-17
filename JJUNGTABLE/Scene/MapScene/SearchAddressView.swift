@@ -84,7 +84,7 @@ extension SearchAddressView: WKScriptMessageHandler, WKUIDelegate {
         printLog("message: \(message)")
         if message.name == "callBackHandler", let data = message.body as? [String: Any] {
             let address = data["roadAddress"] as? String ?? ""
-            self.delegate?.sendViewData(identifier: SearchAddressView.identifier,data: address)
+            self.delegate?.sendViewData(identifier: SearchAddressView.identifier, data: address)
             printLog("address: \(address)")
         }
     }

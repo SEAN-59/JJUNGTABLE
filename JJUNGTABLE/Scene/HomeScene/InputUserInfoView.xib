@@ -54,16 +54,16 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hq4-hX-gU1" userLabel="NameView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hq4-hX-gU1" userLabel="NameView">
                                     <rect key="frame" x="10" y="41" width="315" height="34"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="이름 :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq5-30-SVd" userLabel="NameLbl">
-                                            <rect key="frame" x="0.0" y="4.6666666666666572" width="55.333333333333336" height="24.666666666666671"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름 :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq5-30-SVd" userLabel="NameLbl">
+                                            <rect key="frame" x="0.0" y="4.666666666666659" width="55.333333333333336" height="24.666666666666671"/>
                                             <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcj-v4-S9s" userLabel="NameTxf">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dcj-v4-S9s" userLabel="NameTxf">
                                             <rect key="frame" x="65.333333333333329" y="0.0" width="249.66666666666669" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -79,7 +79,7 @@
                                         <constraint firstItem="uq5-30-SVd" firstAttribute="centerY" secondItem="dcj-v4-S9s" secondAttribute="centerY" id="zGe-mm-WR3"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fs4-mZ-1fF" userLabel="BirthView">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fs4-mZ-1fF" userLabel="BirthView">
                                     <rect key="frame" x="10" y="85" width="315" height="34"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생일 :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAK-R2-GhM" userLabel="BirthLbl">
@@ -119,15 +119,15 @@
                                         <constraint firstItem="TT1-0r-Lnv" firstAttribute="top" secondItem="fs4-mZ-1fF" secondAttribute="top" id="wpB-Si-Qs4"/>
                                     </constraints>
                                 </view>
-                                <view alpha="0.5" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cxt-mm-v3O" userLabel="SeparateView">
-                                    <rect key="frame" x="10" y="129" width="315" height="2"/>
-                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxt-mm-v3O" userLabel="SeparateView">
+                                    <rect key="frame" x="10" y="129" width="315" height="1"/>
+                                    <color key="backgroundColor" name="SeparateColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="76L-VS-nBL"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="선택 사항" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwc-nS-XsF" userLabel="OptionalLbl">
-                                    <rect key="frame" x="10" y="141" width="66.666666666666671" height="26"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="선택 사항" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwc-nS-XsF" userLabel="OptionalLbl">
+                                    <rect key="frame" x="10" y="140" width="66.666666666666671" height="26"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="LIc-dh-FAf"/>
                                     </constraints>
@@ -135,8 +135,8 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="*입력하지 않아도 사용에 지장은 없습니다." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Y-1X-P37" userLabel="NotiLbl">
-                                    <rect key="frame" x="10" y="167" width="208" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*입력하지 않아도 사용에 지장은 없습니다." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5Y-1X-P37" userLabel="NotiLbl">
+                                    <rect key="frame" x="10" y="166" width="208" height="18"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="18" id="Shc-6j-d7I"/>
                                     </constraints>
@@ -144,16 +144,16 @@
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pTZ-Ie-lh3" userLabel="EmailView">
-                                    <rect key="frame" x="10" y="190" width="315" height="34"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTZ-Ie-lh3" userLabel="EmailView">
+                                    <rect key="frame" x="10" y="189" width="315" height="34"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="이메일 :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d5-WF-vGP" userLabel="EmailLbl">
-                                            <rect key="frame" x="0.0" y="4.6666666666666856" width="55.333333333333336" height="24.666666666666671"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d5-WF-vGP" userLabel="EmailLbl">
+                                            <rect key="frame" x="0.0" y="4.6666666666666874" width="55.333333333333336" height="24.666666666666671"/>
                                             <fontDescription key="fontDescription" name="NPS-font-Regular" family="NPS font" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ep9-xk-ncj" userLabel="EmailTxf">
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ep9-xk-ncj" userLabel="EmailTxf">
                                             <rect key="frame" x="65.333333333333329" y="0.0" width="249.66666666666669" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="email"/>
@@ -176,7 +176,6 @@
                                 <constraint firstItem="v5Y-1X-P37" firstAttribute="leading" secondItem="Gwc-nS-XsF" secondAttribute="leading" id="7Bi-sa-gmr"/>
                                 <constraint firstItem="pTZ-Ie-lh3" firstAttribute="top" secondItem="v5Y-1X-P37" secondAttribute="bottom" constant="5" id="AVm-GZ-fO7"/>
                                 <constraint firstItem="Cxt-mm-v3O" firstAttribute="top" secondItem="fs4-mZ-1fF" secondAttribute="bottom" constant="10" id="BVP-zI-2Ko"/>
-                                <constraint firstAttribute="bottom" secondItem="pTZ-Ie-lh3" secondAttribute="bottom" constant="10" id="CjN-v6-2Ax"/>
                                 <constraint firstItem="Gwc-nS-XsF" firstAttribute="top" secondItem="Cxt-mm-v3O" secondAttribute="bottom" constant="10" id="HhL-2x-mEa"/>
                                 <constraint firstItem="wAK-R2-GhM" firstAttribute="trailing" secondItem="6d5-WF-vGP" secondAttribute="trailing" id="KPu-ff-EdR"/>
                                 <constraint firstItem="ME2-nJ-pIn" firstAttribute="leading" secondItem="X26-ez-CyG" secondAttribute="leading" constant="10" id="QeT-rT-fJk"/>
@@ -240,6 +239,9 @@
     <resources>
         <namedColor name="BrandColor">
             <color red="0.90200001001358032" green="0.32499998807907104" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="SeparateColor">
+            <color red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -85,6 +85,27 @@ class DatabaseManager {
     /// Completion 활용한 Update
     ///
     /// if let db = dataBase as? DB_SUCCESS {} else if let db = dataBase as? DB_FAILURE {}
+    func updateDataBase(_ dbType: DBType, key: String, data: [String:String], completion: @escaping (DataBase) -> Void) {
+        let path: String = {
+            if key == "" { return "\(dbType)" }
+            else { return "\(dbType)/\(key)" }
+        }()
+        
+        if let ref = ref {
+            ref.child("\(path)").setValue(data) { error, _ in
+                if error != nil {
+                    printLog("[ERROR] Update Database")
+                    completion(DB_FAILURE(key: key, type: dbType))
+                }
+                else {
+                    completion(DB_SUCCESS(key: key, type: dbType, value: nil))
+                }
+            }
+        }
+    }
+    /// Completion 활용한 Update
+    ///
+    /// if let db = dataBase as? DB_SUCCESS {} else if let db = dataBase as? DB_FAILURE {}
     func updateDataBase(_ dbType: DBType, key: String, data: String, completion: @escaping (DataBase) -> Void) {
         let path: String = {
             if key == "" { return "\(dbType)" }

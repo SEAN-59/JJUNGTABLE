@@ -14,6 +14,9 @@ import SnapKit
 //})
 
 class TodayPlanView: BaseView {
+    static let identifier = "TodayPlanView"
+    weak var delegate: BaseVCDelegate?
+    
     private let cellSize = 75
     
     private var planCount = 0
@@ -34,38 +37,92 @@ class TodayPlanView: BaseView {
                                 forCellReuseIdentifier: "TodayPlanTableViewCell")
         self.tableView.register(self.emptyTableViewCellNib,
                                 forCellReuseIdentifier: "EmptyTableViewCell")
+
+        self.listDataLoad()
     }
     
-    func setData(_ count: Int, data: [String] = []) {
-        self.planCount = count
-        if self.planCount == 0 {
+    // Deprecated
+//    func setData(_ count: Int, data: [String] = []) {
+//        self.planCount = count
+//        if self.planCount == 0 {
+//            self.cellIdentifier = self.checkTableCell()
+//            self.updateTableViewSetting()
+//            self.tableView.reloadData()
+//        }
+//        else {
+//            for i in 0 ..< count {
+//                ConnectData().connectReserveMessage(key: data[i]) { messageData in
+//                    if messageData.messageId == EMPTY_STR, messageData.title == EMPTY_STR, messageData.friendId == EMPTY_STR, messageData.date == EMPTY_STR, messageData.startTime == EMPTY_STR, messageData.endTime == EMPTY_STR, messageData.alarm == EMPTY_STR, messageData.state == EMPTY_STR { 
+//                        // 오류
+//                    }
+//                    else {
+//                        // 정상 동작
+//                        self.cellDataArray.append(messageData)
+//                        
+//                        if self.planCount == self.cellDataArray.count {
+//                            self.cellIdentifier = self.checkTableCell()
+//                            self.sortArray()
+//                            self.updateTableViewSetting()
+//                            
+//                            self.tableView.reloadData()
+//                        }
+//                    }
+//                    
+//                    
+//                    
+//                    
+//                }
+//            }
+//        }
+//    }
+    
+    private func listDataLoad() {
+        let cellSetting = {
             self.cellIdentifier = self.checkTableCell()
             self.updateTableViewSetting()
             self.tableView.reloadData()
         }
-        else {
-            for i in 0 ..< count {
-                ConnectData().connectReserveMessage(key: data[i]) { messageData in
-                    if messageData.messageId == EMPTY_STR, messageData.title == EMPTY_STR, messageData.friendId == EMPTY_STR, messageData.date == EMPTY_STR, messageData.startTime == EMPTY_STR, messageData.endTime == EMPTY_STR, messageData.alarm == EMPTY_STR, messageData.state == EMPTY_STR { 
-                        // 오류
-                    }
-                    else {
-                        // 정상 동작
-                        self.cellDataArray.append(messageData)
-                        
-                        if self.planCount == self.cellDataArray.count {
-                            self.cellIdentifier = self.checkTableCell()
-                            self.sortArray()
-                            self.updateTableViewSetting()
-                            
-                            self.tableView.reloadData()
+        
+        ConnectData().connectReserveList { data in
+            if !data.isEmpty {
+                if data[0] == DB_EMPTY_ARRAY_KEY {
+                    self.planCount = 0
+                    cellSetting()
+                    // 추가
+                    // 성공했으니까 여기서 Completion 반환 코드 작성
+                    self.delegate?.sendVCData(identifier: TodayPlanView.identifier, data: "Load")
+                }
+                else {
+                    self.planCount = data.count
+                    for i in 0 ..< self.planCount {
+                        ConnectData().connectReserveMessage(key: data[i]) { messageData in
+                            if messageData.messageId == EMPTY_STR,  messageData.title == EMPTY_STR,
+                               messageData.friendId == EMPTY_STR,   messageData.date == EMPTY_STR,
+                               messageData.startTime == EMPTY_STR,  messageData.endTime == EMPTY_STR,
+                               messageData.alarm == EMPTY_STR,      messageData.state == EMPTY_STR {
+                                // 추가
+                                // 오류났음
+                                // 여기 오류 난거 처리하는거 필요 할듯
+                                printLog("TodayPlanView 오류")
+                                self.delegate?.sendVCData(identifier: TodayPlanView.identifier, data: "ERROR")
+                            }
+                            else {
+                                self.cellDataArray.append(messageData)
+                                if self.planCount == self.cellDataArray.count {
+                                    self.sortArray()
+                                    cellSetting()
+                                    // 추가
+                                    // 성공했으니까 여기서 Completion 반환 코드 작성
+                                    self.delegate?.sendVCData(identifier: TodayPlanView.identifier, data: "Load")
+                                }
+                            }
                         }
                     }
-                    
-                    
-                    
-                    
                 }
+            }
+            else {
+                // 추가
+                // 오류
             }
         }
     }
@@ -80,8 +137,6 @@ class TodayPlanView: BaseView {
         }
         
         array = array.sorted(by: {$0.0 < $1.0 })
-//        printLog(startArray)
-//        printLog(startArray.sorted(by: {$0.0 < $1.0 }))
         
         for i in array {
             dataArray.append(self.cellDataArray[i.1])

@@ -17,6 +17,8 @@ class FriendsListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var profileImg: UIImageView!
     
+    @IBOutlet weak var viewBackView: UIView!
+    
     @IBOutlet weak var checkPlanBtn: UICustomButton!
     @IBOutlet weak var reservationBtn: UICustomButton!
     
@@ -46,6 +48,7 @@ class FriendsListTableViewCell: UITableViewCell {
     }
     
     private func setLayOut() {
+        self.viewBackView.layer.cornerRadius = 20.0
         self.profileImg.layer.cornerRadius = 10.0
         self.profileImg.layer.borderColor = UIColor.black.cgColor
         self.profileImg.backgroundColor = .backColor
@@ -99,7 +102,7 @@ class FriendsListTableViewCell: UITableViewCell {
                 nextVC.sendData("calendar", friendId: friendData.id)
             }
             else if sender.tag == 1 {
-                nextVC.sendData("reserve",friendId: "")
+                nextVC.sendData("reserve",friendId: friendData.id)
             }
             
             if let vc = viewControllers.last as? MainViewController {

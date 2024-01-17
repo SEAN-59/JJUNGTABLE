@@ -9,14 +9,11 @@ import UIKit
 
 
 class MainViewController: BaseVC {
-//    private let dbManager: DatabaseManager = DatabaseManager()
-    
     var userData: UserData = .init(id: "", name: "", birth: "", isSwitch: "",pushToken: "", tableId: "")
     
-    private var dataCheckCount = (0, 0)
+    private var dataCheckCount = 0 // = (0, 0)
     private var listDateArray = [String]()
     private var getFriendList = [String]()
-    
     
     @IBOutlet weak var bottomView: BottomView!
     @IBOutlet weak var topView: TopView!
@@ -39,6 +36,11 @@ class MainViewController: BaseVC {
         return view
     }()
     
+//    override func loadView() {
+//        super.loadView()
+//        
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,15 +50,18 @@ class MainViewController: BaseVC {
         self.bottomView.delegate = self
         self.reservationListView.delegate = self
         
+        self.todayPlanView.delegate = self
+        
         // Top에 뜨는 뷰 설정
         self.topView.changeBtnHidden(isTitleHidden: F, is1stHidden: F, is2ndHidden: F, is3rdHidden: F)
         self.topView.toggleCircleHidden()
         
-        self.startCheckData()
+//        self.startCheckData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         // 유저데이터를 받아오면서 VC 자체에 큰 Indicator show 해줌
         self.toggleIndicator(T)
     }
@@ -75,12 +80,12 @@ class MainViewController: BaseVC {
     }
     
     private func startCheckData() {
-        self.dataCheckCount = (0, 5)
+//        self.dataCheckCount = (0, 5)
         // 유저 정보 읽어오기 -> 비동기 처리
         self.checkUserData()
         
         // 오늘의 일정 데이터 읽어오기 -> 비동기 처리
-        self.checkTodayPlan()
+//        self.checkTodayPlan()
         
         // 예약 리스트 데이터 읽어오기 -> 비동기 처리
         self.checkReservationList()
@@ -155,7 +160,7 @@ class MainViewController: BaseVC {
 
             } else if let db = dataBase as? DB_FAILURE {
                 // 비정상
-                self.dataCheckCount.1 -= 1
+//                self.dataCheckCount.1 -= 1
             }
             self.addLoadCount()
         }
@@ -182,7 +187,7 @@ class MainViewController: BaseVC {
                 }
             }
             else {
-                self.dataCheckCount.1 -= 1
+//                self.dataCheckCount.1 -= 1
             }
             self.addLoadCount()
         }
@@ -190,20 +195,21 @@ class MainViewController: BaseVC {
     
     // TodayPlanView 에서 데이터 받아가는 부분
     private func checkTodayPlan() {
-        ConnectData().connectReserveList { data in
-            if !data.isEmpty {
-                if data[0] == DB_EMPTY_ARRAY_KEY {
-                    self.todayPlanView.setData(0)
-                }
-                else {
-                    self.todayPlanView.setData(data.count,data: data)
-                }
-            }
-            else {
-                self.dataCheckCount.1 -= 1
-            }
-            self.addLoadCount()
-        }
+        
+//        ConnectData().connectReserveList { data in
+//            if !data.isEmpty {
+//                if data[0] == DB_EMPTY_ARRAY_KEY {
+//                    self.todayPlanView.setData(0)
+//                }
+//                else {
+//                    self.todayPlanView.setData(data.count,data: data)
+//                }
+//            }
+//            else {
+//                self.dataCheckCount.1 -= 1
+//            }
+//            self.addLoadCount()
+//        }
     }
     
     private func checkReservationList() {
@@ -217,7 +223,7 @@ class MainViewController: BaseVC {
                 }
             }
             else {
-                self.dataCheckCount.1 -= 1
+//                self.dataCheckCount.1 -= 1
             }
             self.addLoadCount()
         }
@@ -246,7 +252,7 @@ class MainViewController: BaseVC {
                                     }
                                     else if let db = dataBase as? DB_FAILURE {
                                         // 이거도 안된다고????? 그럼 문제가 있는거지...
-                                        self.dataCheckCount.1 -= 1
+//                                        self.dataCheckCount.1 -= 1
                                     }
 
                                 }
@@ -261,7 +267,7 @@ class MainViewController: BaseVC {
                                             // 오류기 친구로 등록되있고 데이터도 있는데 값을 못받아오면 에러 > -= 1
                                             if data.name == "", data.birth == "", data.isSwitch == "", data.pushToken == "", data.tableId == "" {
                                                 // faiure 부분
-                                                self.dataCheckCount.1 -= 1
+//                                                self.dataCheckCount.1 -= 1
                                             }
                                             // 정상적으로 cell 데이터를 모으는 작업 > 다 모아지면 setData 해주고 addLoadCount() 해줌
                                             else {
@@ -287,7 +293,7 @@ class MainViewController: BaseVC {
                 }
             }
             else {
-                self.dataCheckCount.1 -= 1
+//                self.dataCheckCount.1 -= 1
                 self.addLoadCount()
             }
             
@@ -307,28 +313,45 @@ class MainViewController: BaseVC {
     
     // MainViewController에서 데이터 전부다 불러올 경우를 처리하는 부분
     private func addLoadCount() {
-        self.dataCheckCount.0 += 1
-        
-        if self.dataCheckCount.0 == 5 {
-            if self.dataCheckCount.1 == 5 {
-                self.toggleIndicator(F)
-            }
-            else {
-                makeAlert(self,
-                          title: "안내",
-                          message: "오류가 발생하였습니다.\n다시 시도하시겠습니까?",
-                          actionTitle: ["다시 시도", "종료"],
-                          style: [.default, .destructive],
-                          handler: [
-                            // 다시 userData부르는 동작
-                            {_ in
-                                self.checkUserData()
-                                return
-                            },
-                            {_ in exit(1)}
-                          ])
-            }
+        if self.dataCheckCount == 1 {
+            self.toggleIndicator(F)
         }
+        else {
+            makeAlert(self,
+                      title: "안내",
+                      message: "오류가 발생하였습니다.\n다시 시도하시겠습니까?",
+                      actionTitle: ["다시 시도", "종료"],
+                      style: [.default, .destructive],
+                      handler: [
+                        // 다시 userData부르는 동작
+                        {_ in
+                            self.checkUserData()
+                            return
+                        },
+                        {_ in exit(1)}
+                      ])
+        }
+        
+//        if self.dataCheckCount.0 == 1 {
+//            if self.dataCheckCount.1 == 5 {
+//                self.toggleIndicator(F)
+//            }
+//            else {
+//                makeAlert(self,
+//                          title: "안내",
+//                          message: "오류가 발생하였습니다.\n다시 시도하시겠습니까?",
+//                          actionTitle: ["다시 시도", "종료"],
+//                          style: [.default, .destructive],
+//                          handler: [
+//                            // 다시 userData부르는 동작
+//                            {_ in
+//                                self.checkUserData()
+//                                return
+//                            },
+//                            {_ in exit(1)}
+//                          ])
+//            }
+//        }
     }
     
     // MARK: - TAP_TOP VIEW
@@ -338,10 +361,11 @@ class MainViewController: BaseVC {
         
         // 이건 원래 동작하는 기능
         self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-        
+        DatabaseManager().updateDataBase(.test, key: "TEST", data: ["aa":""]) { _ in
+        }
         // Test 코드
 //        printLog("\(self.userData)")
-        printLog(Date().setTenMinDate())
+//        printLog(Date().setTenMinDate())
 //        let messageId = self.dbManager.makeMessageId("1700", "1900")
 //        self.dbManager.createData(.reserveMessage, key: "\(messageId)", data: [
 //            "friendId": "23039923",
@@ -404,6 +428,17 @@ extension MainViewController: BaseVCDelegate {
         self.checkFriendsList()
         self.checkReservationList()
         self.checkTodayPlan()
+    }
+    func sendVCData(identifier: String, data: Any) {
+        if let data = data as? String {
+            if data == "Load" {
+                self.dataCheckCount += 1
+                self.addLoadCount()
+            }
+            else if data == "ERROR" {
+                self.dataCheckCount -= 1
+            }
+        }
     }
 }
 

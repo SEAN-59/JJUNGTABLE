@@ -649,6 +649,9 @@ extension UIColor {
     class var backColor: UIColor? { return UIColor(named: "BackColor")}
     class var accentColor: UIColor? { return UIColor(named: "AccentColor")}
     class var greenColor: UIColor? { return UIColor(named: "GreenColor")}
+    class var separateColor: UIColor? { return UIColor(named: "SeparateColor")}
+    class var viewBackColor: UIColor? { return UIColor(named: "ViewBackColor")}
+    
 }
 
 extension String {

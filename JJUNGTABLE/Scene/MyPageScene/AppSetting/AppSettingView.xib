@@ -62,9 +62,9 @@
                                 <constraint firstItem="pAf-Sc-ktW" firstAttribute="leading" secondItem="Wmk-ub-CAz" secondAttribute="leading" constant="20" id="fBh-Yz-OwN"/>
                             </constraints>
                         </view>
-                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1af-9Y-vdS" userLabel="MtoTSeparateView">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1af-9Y-vdS" userLabel="MtoTSeparateView">
                             <rect key="frame" x="20" y="63.333333333333371" width="313" height="1"/>
-                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" name="SeparateColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="Nn4-Vx-tkd"/>
                             </constraints>
@@ -131,6 +131,9 @@
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <namedColor name="BrandColor">
             <color red="0.90200001001358032" green="0.32499998807907104" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="SeparateColor">
+            <color red="0.25098040700000002" green="0.25098040700000002" blue="0.25098040700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

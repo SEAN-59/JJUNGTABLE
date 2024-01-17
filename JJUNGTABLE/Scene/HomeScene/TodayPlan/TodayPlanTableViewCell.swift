@@ -69,7 +69,7 @@ class TodayPlanTableViewCell: UITableViewCell {
             if update {
                 DatabaseManager().updateDataBase(.reserveMessage, key: "\(self.data.messageId)/alarm", data: "N") { dataBase in
                     if let db = dataBase as? DB_SUCCESS {
-                        
+                        //
                     }
                     else if let db = dataBase as? DB_FAILURE {
                         
