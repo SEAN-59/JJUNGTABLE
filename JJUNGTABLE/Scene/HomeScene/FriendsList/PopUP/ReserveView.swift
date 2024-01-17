@@ -289,7 +289,8 @@ class ReserveView: BaseView {
 //            }
             // messageID = date/start/end/myID
             let key = "\(self.reserveData.date)\(self.reserveData.startTime)\(self.reserveData.endTime)\(loginId)"
-            DatabaseManager().createDataBase(.reserveMessage, key: key, data: [
+            // 요거 잠시 다운
+            DatabaseManager().updateDataBase(.reserveMessage, key: key, data: [
                 "friendId": loginId,
                 "state": "N",
                 "title": self.reserveData.title,
@@ -302,31 +303,22 @@ class ReserveView: BaseView {
             ]) { dataBase in
                 if let db = dataBase as? DB_SUCCESS {
                     // 만들기 성공
-                    DatabaseManager().createDataBase(.reserveGet, key: loginId, data: [key:""]) { dataBase in
+                    // GET = 친구가 내 예약 정보를 받음  : KEY = friendID
+                    // SEND = 내가 친구에게 보냄       : KEY = loginID
+                    DatabaseManager().updateDataBase(.reserveSend, key: "\(loginId)/\(key)", data: "", completion: { dataBase in
                         if let db = dataBase as? DB_SUCCESS {
                             self.delegate?.sendVCData(identifier: ReserveView.identifier, data: ["SendMessage":["key":key]])
-                            
                         }
                         else if let db = dataBase as? DB_FAILURE {
                             
                         }
-                    }
+                    })
                 }
                 else if let db = dataBase as? DB_FAILURE {
                     // 만들기 실패
                 }
             }
-//            self.dbManager.createData(.reserveMessage, key: "\(messageId)", data: [
-            //            "friendId": "23039923",
-            //            "state": "N",
-            //            "title": "명동 어때?",
-            //            "date": "20231227",
-            //            "startTime": "1700",
-            //            "endTime": "1900",
-            //            "alarm" : "Y",
-            //            "location": "명동역 1번 출구",
-            //            "etc": ""
-            //        ])
+
         }
         
     }
