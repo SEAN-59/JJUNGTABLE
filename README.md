@@ -7,6 +7,18 @@ README.md
 ---
 
 # 개발 일지
+
+### 2024.01.18
+<details>
+<summary>내용</summary>
+
+1. 예약 PAGE 수정
+    - 뒤에 시간 건들고 앞에 건들면 뒤에꺼 날아가는 오류
+2. Main 자체에서 오류들 발생
+    - 싹다 로직 전체 수정으로 해결
+
+</details> 
+
 ### 2024.01.17
 <details>
 <summary>내용</summary>
