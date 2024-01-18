@@ -10,8 +10,10 @@ import UIKit
 
 class MainViewController: BaseVC {
     var userData: UserData = .init(id: "", name: "", birth: "", isSwitch: "",pushToken: "", tableId: "")
-    
-    private var dataCheckCount = 0 // = (0, 0)
+
+    // 정상 체크, 오류 체크
+    private var dataCheckCount = (0, 0)
+
     private var listDateArray = [String]()
     private var getFriendList = [String]()
     
@@ -36,10 +38,6 @@ class MainViewController: BaseVC {
         return view
     }()
     
-//    override func loadView() {
-//        super.loadView()
-//        
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,15 +46,19 @@ class MainViewController: BaseVC {
         self.scrollView.delegate = self
         self.topView.delegate    = self
         self.bottomView.delegate = self
-        self.reservationListView.delegate = self
         
+        self.reservationListView.delegate = self
         self.todayPlanView.delegate = self
+        self.friendsListView.delegate = self
         
         // Top에 뜨는 뷰 설정
         self.topView.changeBtnHidden(isTitleHidden: F, is1stHidden: F, is2ndHidden: F, is3rdHidden: F)
         self.topView.toggleCircleHidden()
         
-//        self.startCheckData()
+        self.checkUserData()
+        // 나를 추가한 친구 목록 읽어오기 -> 비동기 처리
+//        self.checkGetFriend()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,25 +80,6 @@ class MainViewController: BaseVC {
         self.trSeparateView.layer.cornerRadius = 2.0
         self.rfSeparateView.layer.cornerRadius = 2.0
     }
-    
-    private func startCheckData() {
-//        self.dataCheckCount = (0, 5)
-        // 유저 정보 읽어오기 -> 비동기 처리
-        self.checkUserData()
-        
-        // 오늘의 일정 데이터 읽어오기 -> 비동기 처리
-//        self.checkTodayPlan()
-        
-        // 예약 리스트 데이터 읽어오기 -> 비동기 처리
-        self.checkReservationList()
-        
-        // 친구 목록 읽어오기 -> 비동기 처리
-        self.checkFriendsList()
-        
-        // 나를 추가한 친구 목록 읽어오기 -> 비동기 처리
-        self.checkGetFriend()
-    }
-        
     
     
     private func toggleIndicator(_ isOn: Bool) {
@@ -160,8 +143,10 @@ class MainViewController: BaseVC {
 
             } else if let db = dataBase as? DB_FAILURE {
                 // 비정상
-//                self.dataCheckCount.1 -= 1
+                self.dataCheckCount.0 -= 1
             }
+            
+            self.dataCheckCount.0 += 1
             self.addLoadCount()
         }
         
@@ -193,112 +178,6 @@ class MainViewController: BaseVC {
         }
     }
     
-    // TodayPlanView 에서 데이터 받아가는 부분
-    private func checkTodayPlan() {
-        
-//        ConnectData().connectReserveList { data in
-//            if !data.isEmpty {
-//                if data[0] == DB_EMPTY_ARRAY_KEY {
-//                    self.todayPlanView.setData(0)
-//                }
-//                else {
-//                    self.todayPlanView.setData(data.count,data: data)
-//                }
-//            }
-//            else {
-//                self.dataCheckCount.1 -= 1
-//            }
-//            self.addLoadCount()
-//        }
-    }
-    
-    private func checkReservationList() {
-        ConnectData().connectReserveGet { data in
-            if !data.isEmpty {
-                if data[0] == DB_EMPTY_ARRAY_KEY {
-                    self.reservationListView.setData(0)
-                }
-                else {
-                    self.reservationListView.setData(data.count, data: data)
-                }
-            }
-            else {
-//                self.dataCheckCount.1 -= 1
-            }
-            self.addLoadCount()
-        }
-    }
-    
-    private func checkFriendsList() {
-        var friendList = [String]()
-        var friendCount = 0
-        
-        ConnectData().connectFriends { friendsData in
-            if !friendsData.isEmpty {
-                if friendsData[0] == DB_EMPTY_ARRAY_KEY {
-                    self.friendsListView.setData(0)
-                    self.addLoadCount()
-                }
-                else {
-                    friendCount = friendsData.count
-                    for i in 0 ..< friendCount {
-                        ConnectData().connectTableId(key: friendsData[i]) { tableData in
-                            // 없다? 탈퇴 한거임 그럼 friends에서 삭제를 해야겠네.
-                            if tableData == "" {
-                                DatabaseManager().deleteDataBase(.friends, key: friendsData[i]) { dataBase in
-                                    if let db = dataBase as? DB_SUCCESS {
-                                        // 삭제 된거임 > 정상 작동 시키면 됨
-                                        friendCount -= 1
-                                    }
-                                    else if let db = dataBase as? DB_FAILURE {
-                                        // 이거도 안된다고????? 그럼 문제가 있는거지...
-//                                        self.dataCheckCount.1 -= 1
-                                    }
-
-                                }
-                            }
-                            else {
-                                friendList.append(tableData)
-                                if friendList.count == friendCount {
-                                    var cellDataList = [FriendData]()
-                                    // 이 반복문에서는 아무 이상없이 에러 처리를 다 해줬음
-                                    for i in 0 ..< friendList.count{
-                                        ConnectData().connectUser(key: friendList[i]) { data in
-                                            // 오류기 친구로 등록되있고 데이터도 있는데 값을 못받아오면 에러 > -= 1
-                                            if data.name == "", data.birth == "", data.isSwitch == "", data.pushToken == "", data.tableId == "" {
-                                                // faiure 부분
-//                                                self.dataCheckCount.1 -= 1
-                                            }
-                                            // 정상적으로 cell 데이터를 모으는 작업 > 다 모아지면 setData 해주고 addLoadCount() 해줌
-                                            else {
-                                                let friendData: FriendData = .init(id: friendList[i],
-                                                                                   name: data.name,
-                                                                                   isSwitch: data.isSwitch,
-                                                                                   tableId: data.tableId,
-                                                                                   state: data.state)
-                                                cellDataList.append(friendData)
-                                                if friendList.count == cellDataList.count {
-                                                    self.friendsListView.setData(cellDataList.count,friendData: cellDataList)
-                                                    self.addLoadCount()
-                                                }
-                                            }
-                                        }
-                                    }
-                                    // 만약 이 반복문을 안 타게 되면? count가 0 인데 이리 들어올 일은 없음
-                                }
-                            }
-                        }
-                    }
-                    // 다시 말하지만 count가 0인 경우에는 이 분기 안으로 들어 올 수 없음
-                }
-            }
-            else {
-//                self.dataCheckCount.1 -= 1
-                self.addLoadCount()
-            }
-            
-        }
-    }
     
     private func toggleReserveStateBtn(isSwitch: String) {
         if isSwitch == "Y" {
@@ -313,45 +192,28 @@ class MainViewController: BaseVC {
     
     // MainViewController에서 데이터 전부다 불러올 경우를 처리하는 부분
     private func addLoadCount() {
-        if self.dataCheckCount == 1 {
-            self.toggleIndicator(F)
-        }
-        else {
-            makeAlert(self,
-                      title: "안내",
-                      message: "오류가 발생하였습니다.\n다시 시도하시겠습니까?",
-                      actionTitle: ["다시 시도", "종료"],
-                      style: [.default, .destructive],
-                      handler: [
-                        // 다시 userData부르는 동작
-                        {_ in
-                            self.checkUserData()
-                            return
-                        },
-                        {_ in exit(1)}
-                      ])
+        self.dataCheckCount.1 += 1
+        if self.dataCheckCount.1 == 4 {
+            if self.dataCheckCount.0 == 4 {
+                self.toggleIndicator(F)
+            }
+            else {
+                makeAlert(self,
+                          title: "안내",
+                          message: "오류가 발생하였습니다.\n다시 시도하시겠습니까?",
+                          actionTitle: ["다시 시도", "종료"],
+                          style: [.default, .destructive],
+                          handler: [
+                            // 다시 userData부르는 동작
+                            {_ in
+                                self.checkUserData()
+                                return
+                            },
+                            {_ in exit(1)}
+                          ])
+            }
         }
         
-//        if self.dataCheckCount.0 == 1 {
-//            if self.dataCheckCount.1 == 5 {
-//                self.toggleIndicator(F)
-//            }
-//            else {
-//                makeAlert(self,
-//                          title: "안내",
-//                          message: "오류가 발생하였습니다.\n다시 시도하시겠습니까?",
-//                          actionTitle: ["다시 시도", "종료"],
-//                          style: [.default, .destructive],
-//                          handler: [
-//                            // 다시 userData부르는 동작
-//                            {_ in
-//                                self.checkUserData()
-//                                return
-//                            },
-//                            {_ in exit(1)}
-//                          ])
-//            }
-//        }
     }
     
     // MARK: - TAP_TOP VIEW
@@ -361,8 +223,9 @@ class MainViewController: BaseVC {
         
         // 이건 원래 동작하는 기능
         self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-        DatabaseManager().updateDataBase(.test, key: "TEST", data: ["aa":""]) { _ in
-        }
+//        DatabaseManager().updateDataBase(.test, key: "TEST", data: ["aa":""]) { _ in
+//        }
+        self.reloadVC()
         // Test 코드
 //        printLog("\(self.userData)")
 //        printLog(Date().setTenMinDate())
@@ -418,27 +281,114 @@ class MainViewController: BaseVC {
         presentVC(fromVC: self, nextVC: nextVC,
                   modalStyle: .automatic,
                   presentAnimate: true, completion: nil)
+
     }
     
 }
 
 extension MainViewController: BaseVCDelegate {
     func reloadVC() {
-        self.checkGetFriend()
-        self.checkFriendsList()
-        self.checkReservationList()
-        self.checkTodayPlan()
+        self.todayPlanView.reloadView()
+        self.reservationListView.reloadView()
+        self.friendsListView.reloadView()
     }
+    
     func sendVCData(identifier: String, data: Any) {
-        if let data = data as? String {
+        let loadView = { (data: String) in
             if data == "Load" {
-                self.dataCheckCount += 1
+                self.dataCheckCount.0 += 1
                 self.addLoadCount()
             }
             else if data == "ERROR" {
-                self.dataCheckCount -= 1
+                self.dataCheckCount.0 -= 1
+                self.addLoadCount()
             }
         }
+        
+        if identifier == TodayPlanView.identifier {
+            if let data = data as? String {
+                loadView(data)
+            }
+        }
+        else if identifier == ReservationListView.identifier {
+            if let data = data as? String {
+                loadView(data)
+            }
+            else if let data = data as? [String: String] {
+                printLog(data)
+                printLog(data["messageId"])
+                printLog(data["date"])
+                guard let date = data["date"] else { return }
+                guard let messageId = data["messageId"] else { return }
+                @UserDefault(key: "loginId", defaultValue: "") var loginId
+                makeAlert(self,
+                          title: "예약 확인", message: "예약을 받아주시겠습니까?",
+                          actionTitle: ["수락", "거절", "취소"],
+                          style: [.cancel,.destructive,.default],
+                          handler: [
+                            {_ in
+                                // 수락 한거니까
+                                // reserveMessage에서 상태 수락으로 변경
+                                // reserveList(예약 확정 정보)에 추가
+                                // reserveGet에서 삭제 => list 다시 한 번 초기화 해야 함
+                                DatabaseManager().updateDataBase(.reserveMessage, key: "\(messageId)/state", data: "Y") { dataBase in
+                                    if dataBase is DB_SUCCESS {}
+                                    else if dataBase is DB_FAILURE {}
+                                }
+                                DatabaseManager().updateDataBase(.reserveList, key: "\(loginId)/\(date)/\(messageId)", data: "") { dataBase in
+                                    if dataBase is DB_SUCCESS {
+                                        
+                                    }
+                                    else if dataBase is DB_FAILURE {
+                                        
+                                    }
+                                }
+                                DatabaseManager().deleteDataBase(.reserveGet, key: "\(loginId)/\(messageId)") { dataBase in
+                                    if dataBase is DB_SUCCESS {
+//                                        self.delegate?.doCellSomething()
+                                        // list View 초기화를 해야함
+                                    }
+                                    else if dataBase is DB_FAILURE {
+                                        
+                                    }
+                                }
+                            },
+                            {_ in
+                                // 거절한거임
+                                // reserveMessage 의 상태 변경
+                                // reserveGet 에서 삭제
+                                DatabaseManager().updateDataBase(.reserveMessage, key: "\(messageId)/state", data: "N") { dataBase in
+                                    if dataBase is DB_SUCCESS {
+                                        
+                                    }
+                                    else if dataBase is DB_FAILURE {
+                                        
+                                    }
+                                }
+                                DatabaseManager().deleteDataBase(.reserveGet, key: "\(loginId)/\(messageId)") { dataBase in
+                                    if dataBase is DB_SUCCESS {
+//                                        self.delegate?.doCellSomething()
+                                        // list View 초기화를 해야함
+                                    }
+                                    else if dataBase is DB_FAILURE {
+                                        
+                                    }
+                                }
+                                // 후에 이 작업을 하게 되면 상대방도 거절한게 떠야 하니까 상대방 로드시에
+                            },
+                            {_ in}
+                          ])
+            }
+        }
+        else if identifier == FriendsListView.identifier {
+            if let data = data as? String {
+                loadView(data)
+            }
+            else if let data = data as? FriendPopUpViewController {
+                self.presentVC(fromVC: self, nextVC: data, presentAnimate: T)
+            }
+        }
+        
     }
 }
 

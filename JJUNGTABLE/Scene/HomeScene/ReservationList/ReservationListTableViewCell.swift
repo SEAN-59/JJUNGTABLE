@@ -87,6 +87,9 @@ class ReservationListTableViewCell: UITableViewCell {
         @UserDefault(key: "loginId", defaultValue: "") var loginId
         let date = self.data.date
         
+        self.delegate?.sendCellData(["messageId":self.data.messageId, "date":self.data.date])
+        
+        // 필요한거 .date / .messageId
         makeAlert(viewControllers[viewControllers.count - 1],
                   title: "예약 확인", message: "예약을 받아주시겠습니까?",
                   actionTitle: ["확인", "거절", "취소"],
@@ -115,6 +118,7 @@ class ReservationListTableViewCell: UITableViewCell {
                         //                        self.dbManager.deleteData(.reserveGet, key: "\(loginId)/\(self.data.messageId)")
                         DatabaseManager().deleteDataBase(.reserveGet, key: "\(loginId)/\(self.data.messageId)") { dataBase in
                             if let db = dataBase as? DB_SUCCESS {
+                                // 예약 거절했음
                                 self.delegate?.doCellSomething()
                             }
                             else if let db = dataBase as? DB_FAILURE {

@@ -331,7 +331,7 @@ class ReserveView: BaseView {
             //            self.reserveData2["endTime"] = String()
             
             self.reserveData.startTime = sender.date.convertString("HHmm")
-            self.reserveData.endTime = String()
+            self.reserveData.endTime = self.endTimePicker.date.convertString("HHmm")
         }
         else if sender.tag == 1 {
             //            self.reserveData2["endTime"] = sender.date.convertString("HHmm")

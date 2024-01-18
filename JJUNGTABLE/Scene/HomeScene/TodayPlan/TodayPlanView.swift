@@ -41,40 +41,9 @@ class TodayPlanView: BaseView {
         self.listDataLoad()
     }
     
-    // Deprecated
-//    func setData(_ count: Int, data: [String] = []) {
-//        self.planCount = count
-//        if self.planCount == 0 {
-//            self.cellIdentifier = self.checkTableCell()
-//            self.updateTableViewSetting()
-//            self.tableView.reloadData()
-//        }
-//        else {
-//            for i in 0 ..< count {
-//                ConnectData().connectReserveMessage(key: data[i]) { messageData in
-//                    if messageData.messageId == EMPTY_STR, messageData.title == EMPTY_STR, messageData.friendId == EMPTY_STR, messageData.date == EMPTY_STR, messageData.startTime == EMPTY_STR, messageData.endTime == EMPTY_STR, messageData.alarm == EMPTY_STR, messageData.state == EMPTY_STR { 
-//                        // 오류
-//                    }
-//                    else {
-//                        // 정상 동작
-//                        self.cellDataArray.append(messageData)
-//                        
-//                        if self.planCount == self.cellDataArray.count {
-//                            self.cellIdentifier = self.checkTableCell()
-//                            self.sortArray()
-//                            self.updateTableViewSetting()
-//                            
-//                            self.tableView.reloadData()
-//                        }
-//                    }
-//                    
-//                    
-//                    
-//                    
-//                }
-//            }
-//        }
-//    }
+    func reloadView() {
+        self.listDataLoad()
+    }
     
     private func listDataLoad() {
         let cellSetting = {
@@ -123,6 +92,7 @@ class TodayPlanView: BaseView {
             else {
                 // 추가
                 // 오류
+                self.delegate?.sendVCData(identifier: TodayPlanView.identifier, data: "ERROR")
             }
         }
     }

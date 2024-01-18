@@ -9,6 +9,9 @@ import UIKit
 import SnapKit
 
 class FriendsListView: BaseView {
+    static let identifier = "FriendsListView"
+    weak var delegate: BaseVCDelegate?
+    
     private let cellSize = 105
     
     private var friendsCount = 0
@@ -38,23 +41,100 @@ class FriendsListView: BaseView {
                                 forCellReuseIdentifier: "FriendsListTableViewCell")
         self.tableView.register(self.emptyTableViewCellNib,
                                 forCellReuseIdentifier: "EmptyTableViewCell")
+        
+        self.listDataLoad()
     }
     
-    func setData(_ count: Int, data: [String] = [""], friendData: [FriendData] = [FriendData]()) {
-        self.friendsCount = count
-        self.cellIdentifier = self.checkTableCell()
-        self.updateTableViewSetting()
-        
-        if self.friendsCount == 0 {
-            self.tableView.reloadData()
-        }
-        else {
-            self.cellDataArray = friendData
-            self.cellDataArray = self.cellDataArray.sorted(by: { $0.name < $1.name })
-            self.tableView.reloadData()
-
-        }
+    func reloadView() {
+        self.listDataLoad()
     }
+    
+    private func listDataLoad() {
+        let cellSetting = {
+            self.cellIdentifier = self.checkTableCell()
+            self.updateTableViewSetting()
+            self.tableView.reloadData()
+        }
+        
+        ConnectData().connectFriends { friendsData in
+            if !friendsData.isEmpty {
+                if friendsData[0] == DB_EMPTY_ARRAY_KEY {
+                    // 친구가 한 명도 없는것
+                    self.friendsCount = 0
+                    cellSetting()
+                    self.delegate?.sendVCData(identifier: FriendsListView.identifier, data: "Load")
+                }
+                else {
+                    // 친구가 있음
+                    var friendCount = friendsData.count > 0 ? friendsData.count : 0
+                    var friendList = [String]()
+                    
+                    for i in 0 ..< friendCount {
+                        // 이제 그 친구가 진짜 있는 친구인지 확인하기
+                        ConnectData().connectTableId(key: friendsData[i]) { tableData in
+                            if tableData == "" { 
+                                // 없다? 탈퇴 한것
+                                DatabaseManager().deleteDataBase(.friends, key: friendsData[i]) { dataBase in
+                                    if dataBase is DB_SUCCESS {
+                                        // 삭제 시킨것
+                                        friendCount -= 1
+                                    }
+                                    else if dataBase is DB_FAILURE {
+                                        self.delegate?.sendVCData(identifier: FriendsListView.identifier, data: "ERROR")
+                                        // 삭제가 안된다? 오류가 있는건데 이건 어떻게 처리를 해야하나...
+                                    }
+                                }
+                            }
+                            else {
+                                // 탈퇴 안했으니 제대로 처리 해야겠지?
+                                friendList.append(tableData)
+                                if friendList.count == friendCount {
+                                    var cellDataList = [FriendData]()
+                                    for i in 0 ..< friendList.count{
+                                        ConnectData().connectUser(key: friendList[i]) { data in
+                                            // 오류로 친구가 등록되있고 데이터도 있는데 값을 못받아오면 에러 > -= 1
+                                            if data.name == "", data.birth == "", data.isSwitch == "", data.pushToken == "", data.tableId == "" {
+                                                // faiure 부분
+//                                                self.dataCheckCount.1 -= 1
+                                                self.delegate?.sendVCData(identifier: FriendsListView.identifier, data: "ERROR")
+                                            }
+                                            // 정상적으로 cell 데이터를 모으는 작업 > 다 모아지면 setData 해주고 addLoadCount() 해줌
+                                            else {
+                                                let friendData: FriendData = .init(id: friendList[i],
+                                                                                   name: data.name,
+                                                                                   isSwitch: data.isSwitch,
+                                                                                   tableId: data.tableId,
+                                                                                   state: data.state)
+                                                cellDataList.append(friendData)
+                                                if friendList.count == cellDataList.count {
+                                                    // 다 불러와졌을때나 여기 들오는것
+//                                                    self.friendsListView.setData(cellDataList.count,friendData: cellDataList)
+                                                    self.friendsCount = cellDataList.count
+                                                    self.cellDataArray = cellDataList
+                                                    self.cellDataArray = self.cellDataArray.sorted(by: { $0.name < $1.name })
+                                                    cellSetting()
+                                                    self.delegate?.sendVCData(identifier: FriendsListView.identifier, data: "Load")
+                                                    // 정상 작동
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else {
+                // 친구 데이터가 안불러와짐
+                self.delegate?.sendVCData(identifier: FriendsListView.identifier, data: "ERROR")
+            }
+            
+        }
+        
+    }
+    
     
     func toggleIndicator(_ flag: Bool) {
         if flag {
@@ -70,9 +150,9 @@ class FriendsListView: BaseView {
         }
     }
     
-    func reloadView() {
-        self.tableView.reloadData()
-    }
+//    func reloadView() {
+//        self.tableView.reloadData()
+//    }
     
 }
 extension FriendsListView: UITableViewDelegate, UITableViewDataSource {
@@ -87,6 +167,7 @@ extension FriendsListView: UITableViewDelegate, UITableViewDataSource {
                 }
                 
                 cell.selectionStyle = .none
+                cell.delegate = self
                 return cell
             }
         }
@@ -166,6 +247,14 @@ extension FriendsListView: UITableViewDelegate, UITableViewDataSource {
                 $0.height.equalTo(self.cellSize * self.friendsCount)
             }
             self.tableView.isScrollEnabled = false
+        }
+    }
+}
+
+extension FriendsListView: CellDelegate {
+    func sendCellData(_ data: Any) {
+        if let data = data as? FriendPopUpViewController {
+            self.delegate?.sendVCData(identifier: FriendsListView.identifier, data: data)
         }
     }
 }

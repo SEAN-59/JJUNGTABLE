@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class FriendsListTableViewCell: UITableViewCell {
+    weak var delegate: CellDelegate?
     private var friendData = FriendData(id: "", name: "", isSwitch: "", tableId: "", state: "")
     
     @IBOutlet weak var nameLbl: UILabel!
@@ -98,6 +99,7 @@ class FriendsListTableViewCell: UITableViewCell {
     @IBAction func tapFriendBtn(_ sender: UICustomButton) {
         if self.friendData.isSwitch == "Y" {
             let nextVC = FriendPopUpViewController(nibName: "FriendPopUpViewController", bundle: nil)
+            
             if sender.tag == 0 {
                 nextVC.sendData("calendar", friendId: friendData.id)
             }
@@ -105,12 +107,13 @@ class FriendsListTableViewCell: UITableViewCell {
                 nextVC.sendData("reserve",friendId: friendData.id)
             }
             
-            if let vc = viewControllers.last as? MainViewController {
-                vc.presentVC(fromVC: vc,
-                             nextVC: nextVC,
-                             modalStyle: .automatic,
-                             presentAnimate: T)
-            }
+            self.delegate?.sendCellData(nextVC)
+//            if let vc = viewControllers.last as? MainViewController {
+//                vc.presentVC(fromVC: vc,
+//                             nextVC: nextVC,
+//                             modalStyle: .automatic,
+//                             presentAnimate: T)
+//            }
             
         }
         

@@ -57,7 +57,6 @@ class FriendPopUpViewController: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.calendarView.delegate = self
-        
         self.setDrawView()
     }
     
