@@ -7,6 +7,16 @@ README.md
 ---
 
 # 개발 일지
+### 2024.01.22
+<details>
+<summary>내용</summary>
+
+1. 개발 무기한 중단
+    - 서버 및 데이터 전환 작업
+        - firebase -> node.js
+        - firebase.realtiemDB -> MariaDB
+
+</details> 
 
 ### 2024.01.18
 <details>
