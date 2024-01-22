@@ -336,12 +336,8 @@ extension MainViewController: BaseVCDelegate {
                                     else if dataBase is DB_FAILURE {}
                                 }
                                 DatabaseManager().updateDataBase(.reserveList, key: "\(loginId)/\(date)/\(messageId)", data: "") { dataBase in
-                                    if dataBase is DB_SUCCESS {
-                                        
-                                    }
-                                    else if dataBase is DB_FAILURE {
-                                        
-                                    }
+                                    if dataBase is DB_SUCCESS {}
+                                    else if dataBase is DB_FAILURE {}
                                 }
                                 DatabaseManager().deleteDataBase(.reserveGet, key: "\(loginId)/\(messageId)") { dataBase in
                                     if dataBase is DB_SUCCESS {
