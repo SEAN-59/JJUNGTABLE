@@ -7,6 +7,33 @@ README.md
 ---
 
 # 개발 일지
+
+### 2024.01.25
+<details>
+<summary>내용</summary>
+
+1. 프로젝트 진행 방향에 대한 생각 변경
+    - 최대한 빠르게 만들어지는 대로 만들어서 앱을 스토어에 올릴 생각이었으나 데이터를 관리하는 서버와 DB단의 변경으로 인해서 프로젝트 자체의 대규모 변경이 필요함을 느낌
+
+2. 변경 내용
+    1. iOS APP 관련
+        - Design Pattern 도입 (Coordinator Pattern, Observer Pattern)
+        - UI 작성 방식 변경 (xib -> code)
+        - 서버가 추가 됨으로 인해 내부 로직들 대거 변경
+    2. 서버 추가
+        - firebase 의 realTime DB를 활용한 데이터 이용을 하였으나 실 서버에 대한 필요성을 느끼게 되어 서버를 추가 하기로 결정
+        - 물리적인 서버는 개인 NAS가 존재하여 해당 기기를 활용
+        - Back 단은 Node.js 를 사용
+        - DB 는 MongoDB(MySQL) 를 사용
+    3. MongoDB 에 테이블 생성
+    <div align = center>
+        <img src ="./JJUNGTABLE/Resource/Images/tableArchitecture.png" width=300>
+    </div>
+        
+
+
+</details> 
+
 ### 2024.01.22
 <details>
 <summary>내용</summary>
