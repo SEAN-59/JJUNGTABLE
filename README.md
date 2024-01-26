@@ -1,6 +1,6 @@
 README.md
 # 목차
-[1. 개발 기록](#개발-기록)   
+[1. 개발 일지](#개발-일지)   
 [2. 생각 거리](#생각-거리)
 
 --- 
@@ -8,8 +8,28 @@ README.md
 
 # 개발 일지
 
-### 2024.01.25
+### 2024.01.26
 <details>
+<summary>내용</summary>
+
+1. Coordinator 패턴 적용 중 
+    - AppCoordinator 생성
+    - IntroCoordinator 생성 - IntroVC 와 적용
+    - LoginCoordinator 생성 - LoginVC 와 적용
+    - MainCoordinator 생성 - MainVC 미적용
+2. .xib -> SnapKit Code 전환
+    - IntroVC 에 대한 화면 UI 코드 전환 완료
+    - LoginVC 에 대한 화면 UI 코드 전환 완료
+    - MainVC 화면 UI 코드 전환 중
+3. VC 기능 동작 확인
+    - IntroVC 패턴 적용하고 코드 전환 후 기능 적용 완료
+    - LoginVC 패턴 적용하고 코드 전환 후 기능 적용 완료
+    - MainVC 전환 적용 중
+
+</details> 
+
+### 2024.01.25
+<details>git 
 <summary>내용</summary>
 
 1. 프로젝트 진행 방향에 대한 생각 변경
