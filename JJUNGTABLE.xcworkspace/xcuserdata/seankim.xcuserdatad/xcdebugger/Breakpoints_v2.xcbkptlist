@@ -3,4 +3,102 @@
    uuid = "821E3B5D-51C3-4FFC-B087-93F99A77899C"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A46E5F1A-275E-4724-80DE-0B342715A93D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JJUNGTABLE/Scene/Common/IntroViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "IntroViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "A46E5F1A-275E-4724-80DE-0B342715A93D - c9a610c94d0d6aec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JJUNGTABLE.IntroViewController.__deallocating_deinit"
+                  moduleName = "JJUNGTABLE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seankim/1.Program/5.%20Project/JJUNGTABLE/30.%20%23%23%23%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%23%23%23/01.%20APP/01.%20iOS/JJUNGTABLE%20V.0.2/JJUNGTABLE/Scene/Common/IntroViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "364">
+               </Location>
+               <Location
+                  uuid = "A46E5F1A-275E-4724-80DE-0B342715A93D - c9a610c94d0d6aec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JJUNGTABLE.IntroViewController.__deallocating_deinit"
+                  moduleName = "JJUNGTABLE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seankim/1.Program/5.%20Project/JJUNGTABLE/30.%20%23%23%23%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%23%23%23/01.%20APP/01.%20iOS/JJUNGTABLE%20V.0.2/JJUNGTABLE/Scene/Common/IntroViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24F20DB5-D9D5-46D5-87A4-73D88CBC9C7B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JJUNGTABLE/Scene/Common/IntroViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "gotoMainVC()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "24F20DB5-D9D5-46D5-87A4-73D88CBC9C7B - da6ccbc0d073ec08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JJUNGTABLE.IntroViewController.gotoMainVC() -&gt; ()"
+                  moduleName = "JJUNGTABLE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seankim/1.Program/5.%20Project/JJUNGTABLE/30.%20%23%23%23%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%23%23%23/01.%20APP/01.%20iOS/JJUNGTABLE%20V.0.2/JJUNGTABLE/Scene/Common/IntroViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "652">
+               </Location>
+               <Location
+                  uuid = "24F20DB5-D9D5-46D5-87A4-73D88CBC9C7B - da6ccbc0d073ecca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JJUNGTABLE.IntroViewController.gotoMainVC() -&gt; ()"
+                  moduleName = "JJUNGTABLE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/seankim/1.Program/5.%20Project/JJUNGTABLE/30.%20%23%23%23%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%20%23%23%23/01.%20APP/01.%20iOS/JJUNGTABLE%20V.0.2/JJUNGTABLE/Scene/Common/IntroViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "528">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

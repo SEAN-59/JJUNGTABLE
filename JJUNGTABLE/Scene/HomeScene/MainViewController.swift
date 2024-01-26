@@ -9,6 +9,7 @@ import UIKit
 
 
 class MainViewController: BaseVC {
+    weak var coordinator: MainCoordinator?
     var userData: UserData = .init(id: "", name: "", birth: "", isSwitch: "",pushToken: "", tableId: "")
 
     // 정상 체크, 오류 체크
@@ -37,6 +38,12 @@ class MainViewController: BaseVC {
         view.backgroundColor = UIColor.backColor
         return view
     }()
+    
+// MARK: - END CREATE UI
+    deinit {
+        printLog("deinit")
+        self.coordinator?.popVC()
+    }
     
     
     override func viewDidLoad() {

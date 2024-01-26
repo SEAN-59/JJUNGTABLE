@@ -18,7 +18,7 @@ class ReserveMapView: BaseView {
     override func viewLoad() {
         self.searchAddressView.delegate = self
         
-        self.contentView.layer.borderColor = UIColor.brandColor?.cgColor
+        self.contentView.layer.borderColor = UIColor.brandColor.cgColor
         self.contentView.layer.borderWidth = 2
         self.contentView.layer.cornerRadius = 20.0
         

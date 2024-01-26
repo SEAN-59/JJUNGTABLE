@@ -67,7 +67,7 @@ class AddFriendView: BaseView {
     private func setLayout() {
         self.setChangeView()
         self.contentView.layer.cornerRadius = 20.0
-        self.contentView.layer.borderColor = UIColor.brandColor?.cgColor
+        self.contentView.layer.borderColor = UIColor.brandColor.cgColor
         self.contentView.layer.borderWidth = 2.0
         
         self.myIDView.layer.cornerRadius = 5.0

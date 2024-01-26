@@ -40,11 +40,11 @@ class InputUserInfoView: BaseView {
     private func setLayout() {
         self.contentView.layer.cornerRadius = 10.0
         self.contentView.layer.borderWidth = 2.0
-        self.contentView.layer.borderColor = UIColor.brandColor?.cgColor
+        self.contentView.layer.borderColor = UIColor.brandColor.cgColor
         
         self.nextBtn.layer.cornerRadius = 5.0
         self.nextBtn.layer.borderWidth = 2.0
-        self.nextBtn.layer.borderColor = UIColor.brandColor?.cgColor
+        self.nextBtn.layer.borderColor = UIColor.brandColor.cgColor
         
         
     }

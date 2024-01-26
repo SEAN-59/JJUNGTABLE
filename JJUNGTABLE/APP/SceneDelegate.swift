@@ -11,15 +11,29 @@ import KakaoSDKAuth
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    private var appCoordinator: AppCordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-//        guard let _ = (scene as? UIWindowScene) else { return }
-        let introVC = IntroViewController(nibName: "IntroViewController", bundle: nil)
-        setNavigationController(scene,firstVC: introVC)
+//        let introVC = IntroViewController(nibName: "IntroViewController", 
+//                                          bundle: nil)
+//        setNavigationController(scene,firstVC: introVC)
+        
+        guard let windowScene = scene as? UIWindowScene else { return }
+        
+        let navigationController = UINavigationController()
+        
+        navigationController.navigationBar.isHidden = true
+        navigationController.interactivePopGestureRecognizer?.isEnabled = false
+        
+        self.appCoordinator = AppCordinator(navigationController: navigationController)
+        self.appCoordinator?.choiceVC(.intro, isPop: F)
+        
+        window = UIWindow(windowScene: windowScene)
+        window?.windowScene = windowScene
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

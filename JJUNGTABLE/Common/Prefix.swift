@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 // MARK: - TYPEALIAS
 typealias VOID_TO_VOID = () -> ()
@@ -15,18 +16,33 @@ let T = true
 let F = false
 
 
-
-
 // MARK: - VARIABLE
 public let naviController = BaseNaviController()
 public let viewControllers = naviController.viewControllers
 
-public var KEYBOARD_UP_HEIGHT: CGFloat = 46.0
+// 폰트 설정
+
+public enum FONT_TYPE: String{
+    case regular     = "NPS-font-Regular"
+    //NPS-font-Bold
+    case bold        = "NPSfont_bold.otf"
+    // NPS-font-ExtraBold
+    case extrabold   = "NPSfont_extrabold.otf"
+}
+
+public let font_NPS = { (type: FONT_TYPE, size: CGFloat) -> UIFont in
+    guard let font = UIFont(name: type.rawValue, size: size) else { return .systemFont(ofSize: 12) }
+    return font
+}
+
+public let KEYBOARD_UP_HEIGHT: CGFloat = 46.0
 
 enum DEError: Error {
     case eseanError
     case dseanError
 }
+
+
 
 
 
@@ -58,6 +74,7 @@ public func getDeviceHeight() -> CGFloat { UIScreen.main.bounds.size.height }
 
 /// 탈옥 여부 파악 함수 : true 면 탈옥임
 public func isIllegalDevice() -> Bool {
+    printLog("탈옥 검사")
     func canOpen(path: String) -> Bool {
         let file = fopen(path, "r")
         guard file != nil else { return false }
@@ -161,6 +178,17 @@ func dseae(_ key: String, str: String) -> Result<String,DEError> {
         return .success(devseae)
     } else {
         return .failure(.dseanError)
+    }
+}
+
+// 폰트 이름 알아내는 함수
+func getFontName() {
+    for f in UIFont.familyNames {
+        let s: String = f as String
+        printLog("family: \(s)")
+        for name in UIFont.fontNames(forFamilyName: s) {
+            printLog("name \(name as String)")
+        }
     }
 }
 
@@ -400,7 +428,6 @@ extension UIViewController {
 }
 
 extension UILabel {
-    
 }
 
 extension UIView {
@@ -420,6 +447,7 @@ extension UIView {
         case top
         case down
     }
+    
     
     private func makeToast(message: String) -> UICustomLabel {
         let label: UICustomLabel = {
@@ -644,14 +672,39 @@ extension UIView {
 
 
 extension UIColor {
+    
     // RGB CODE: E65344
-    class var brandColor: UIColor? { return UIColor(named: "BrandColor")}
-    class var backColor: UIColor? { return UIColor(named: "BackColor")}
+    class var jjungColor: UIColor {
+        guard let color = UIColor(named: "JJungColor") else { return .black }
+        return color
+    }
+    class var kakaoColor: UIColor {
+        guard let color = UIColor(named: "KakaoColor") else { return .black }
+        return color
+    }
+    
+    class var backColor: UIColor {
+        guard let color = UIColor(named: "BackColor") else { return .black }
+        return color
+    }
+    
+    class var viewBackColor: UIColor {
+        guard let color = UIColor(named: "ViewBackColor") else { return .black }
+        return color
+    }
+    
+    
+    class var brandColor: UIColor {
+        guard let color = UIColor(named: "BrandColor") else { return .black }
+        return color
+    }
+    
+    
+//    class var backColor: UIColor? { return UIColor(named: "BackColor")}
     class var accentColor: UIColor? { return UIColor(named: "AccentColor")}
     class var greenColor: UIColor? { return UIColor(named: "GreenColor")}
     class var separateColor: UIColor? { return UIColor(named: "SeparateColor")}
-    class var viewBackColor: UIColor? { return UIColor(named: "ViewBackColor")}
-    
+//    class var viewBackColor: UIColor? { return UIColor(named: "ViewBackColor")}
 }
 
 extension String {
@@ -966,4 +1019,23 @@ struct UserDefault<T> {
     }
 }
 
+// MARK: - make UI
+func makeSeparateView(color: UIColor) -> UIView {
+    let view = UIView()
+    view.backgroundColor = color
+    view.layer.cornerRadius = 1
+    return view
+}
 
+func makeLabel(text: String, color: UIColor = .black, size: CGFloat) -> UILabel {
+    let label = UILabel()
+    let attribute = NSMutableAttributedString(string: text)
+    attribute.addAttribute(.font,
+                           value: font_NPS(.regular, size),
+                           range: (text as NSString).range(of: text))
+    attribute.addAttribute(.foregroundColor,
+                           value: color,
+                           range: (text as NSString).range(of: text))
+    label.attributedText = attribute
+    return label
+}

@@ -19,7 +19,7 @@ class NotificationTableViewCell: UITableViewCell {
         super.awakeFromNib()
 //        self.contentMainView.layer.borderWidth = 1
         self.contentMainView.layer.cornerRadius = 15
-        self.contentMainView.backgroundColor = UIColor.brandColor?.withAlphaComponent(0.025)
+        self.contentMainView.backgroundColor = UIColor.brandColor.withAlphaComponent(0.025)
         
     }
 

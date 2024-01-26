@@ -25,6 +25,12 @@ typealias DB_RESULT_DICT = Result<NSDictionary, DB_ERROR>
 let DB_EMPTY_ARRAY_KEY = "EMPTYDATAARRAY"
 let EMPTY_STR = ""
 
+enum VCType {
+    case intro
+    case login
+    case main
+    case popUp
+}
 
 // MARK: - ENUM
 enum CommonError: Error {

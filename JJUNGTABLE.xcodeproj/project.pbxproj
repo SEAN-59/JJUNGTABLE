@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A70670D02AF236C4006A982D /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70670CF2AF236C4006A982D /* DatabaseManager.swift */; };
+		A70670D02AF236C4006A982D /* [DEPRE]DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70670CF2AF236C4006A982D /* [DEPRE]DatabaseManager.swift */; };
 		A70670E62AF2464C006A982D /* CommonAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70670E42AF2464C006A982D /* CommonAlertViewController.swift */; };
 		A70670E72AF2464C006A982D /* CommonAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70670E52AF2464C006A982D /* CommonAlertViewController.xib */; };
 		A7097DE72B15E052001BF022 /* GetFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7097DE52B15E051001BF022 /* GetFriendTableViewCell.swift */; };
@@ -18,6 +18,7 @@
 		A7097DF12B19ADF7001BF022 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7097DF02B19ADF7001BF022 /* CalendarView.xib */; };
 		A70B0A102AF2B9AD002E310B /* InputUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B0A0F2AF2B9AD002E310B /* InputUserInfoView.swift */; };
 		A70B0A122AF2B9B6002E310B /* InputUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70B0A112AF2B9B6002E310B /* InputUserInfoView.xib */; };
+		A712131B2B63AA68001D9D48 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712131A2B63AA68001D9D48 /* MainCoordinator.swift */; };
 		A71381E72B32C6CA009DA477 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71381E62B32C6CA009DA477 /* MapView.swift */; };
 		A71381E92B32C6CF009DA477 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A71381E82B32C6CF009DA477 /* MapView.xib */; };
 		A71A89272B19BF1B00CBD3D1 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A89252B19BF1B00CBD3D1 /* CalendarCollectionViewCell.swift */; };
@@ -33,14 +34,17 @@
 		A72BE8D62B26EE2B00C37B40 /* AppUserIDSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A72BE8D52B26EE2B00C37B40 /* AppUserIDSettingView.xib */; };
 		A72BE8D82B28563100C37B40 /* JJUNGIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A72BE8D72B28563100C37B40 /* JJUNGIcon.png */; };
 		A73F5EAB2AED3A2100EC6E81 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73F5EA92AED3A2100EC6E81 /* LoginViewController.swift */; };
-		A73F5EAC2AED3A2100EC6E81 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A73F5EAA2AED3A2100EC6E81 /* LoginViewController.xib */; };
 		A7580B9E2AED7090008CBBBB /* AppleIcon.PNG in Resources */ = {isa = PBXBuildFile; fileRef = A7580B9C2AED7090008CBBBB /* AppleIcon.PNG */; };
 		A7580B9F2AED7090008CBBBB /* KakaoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A7580B9D2AED7090008CBBBB /* KakaoIcon.png */; };
 		A75F34502B02F80F005F04B0 /* pushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F344F2B02F80F005F04B0 /* pushManager.swift */; };
 		A75F34522B033E96005F04B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A75F34512B033E96005F04B0 /* GoogleService-Info.plist */; };
-		A75F34562B05D623005F04B0 /* CloudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F34552B05D623005F04B0 /* CloudFunctions.swift */; };
+		A75F34562B05D623005F04B0 /* [DEPRE]CloudFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F34552B05D623005F04B0 /* [DEPRE]CloudFunctions.swift */; };
 		A75F34592B067AF8005F04B0 /* AddFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A75F34582B067AF8005F04B0 /* AddFriendView.xib */; };
 		A75F345B2B067B02005F04B0 /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F345A2B067B02005F04B0 /* AddFriendView.swift */; };
+		A761D0832B62326100813CB7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A761D0822B62326100813CB7 /* Coordinator.swift */; };
+		A761D0852B623B6500813CB7 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A761D0842B623B6500813CB7 /* LoginCoordinator.swift */; };
+		A761D0872B62538500813CB7 /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A761D0862B62538500813CB7 /* IntroCoordinator.swift */; };
+		A761D08A2B63365500813CB7 /* IntroVC_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A761D0892B63365500813CB7 /* IntroVC_Extension.swift */; };
 		A768757C2B3417CB00044807 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A768757B2B3417CB00044807 /* KakaoSDK */; };
 		A768757E2B3417CB00044807 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A768757D2B3417CB00044807 /* KakaoSDKAuth */; };
 		A76875802B3417CB00044807 /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = A768757F2B3417CB00044807 /* KakaoSDKCert */; };
@@ -62,12 +66,11 @@
 		A77857CC2AED059800621BB7 /* NPSfont_bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A77857C92AED059800621BB7 /* NPSfont_bold.otf */; };
 		A77857CD2AED059800621BB7 /* NPSfont_extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A77857CA2AED059800621BB7 /* NPSfont_extrabold.otf */; };
 		A780F8662AED02C4003E3367 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A780F8642AED02C4003E3367 /* IntroViewController.swift */; };
-		A780F8672AED02C4003E3367 /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A780F8652AED02C4003E3367 /* IntroViewController.xib */; };
 		A78DAF242B09021D003955EE /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78DAF222B09021D003955EE /* NotificationViewController.swift */; };
 		A78DAF252B09021D003955EE /* NotificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A78DAF232B09021D003955EE /* NotificationViewController.xib */; };
 		A78DAF282B09221E003955EE /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78DAF262B09221E003955EE /* NotificationTableViewCell.swift */; };
 		A78DAF292B09221E003955EE /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A78DAF272B09221E003955EE /* NotificationTableViewCell.xib */; };
-		A7959AAF2B43A95E00FBC31A /* ConnectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7959AAE2B43A95E00FBC31A /* ConnectData.swift */; };
+		A7959AAF2B43A95E00FBC31A /* [DEPRE]ConnectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7959AAE2B43A95E00FBC31A /* [DEPRE]ConnectData.swift */; };
 		A7A6BD932B19B99300B2CCEB /* ReserveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6BD922B19B99300B2CCEB /* ReserveView.swift */; };
 		A7A6BD952B19B99B00B2CCEB /* ReserveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6BD942B19B99A00B2CCEB /* ReserveView.xib */; };
 		A7AABEA02B4E50E60061F7CB /* SearchAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AABE9F2B4E50E60061F7CB /* SearchAddressView.swift */; };
@@ -87,11 +90,12 @@
 		A7B4672F2AEF8D9B00A6A559 /* TodayPlanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B4672E2AEF8D9B00A6A559 /* TodayPlanView.xib */; };
 		A7B467322AEF9DC000A6A559 /* TodayPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B467302AEF9DC000A6A559 /* TodayPlanTableViewCell.swift */; };
 		A7B467332AEF9DC000A6A559 /* TodayPlanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B467312AEF9DC000A6A559 /* TodayPlanTableViewCell.xib */; };
+		A7BDD77F2B63735C00B3382E /* LoginVC_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDD77E2B63735C00B3382E /* LoginVC_Extension.swift */; };
 		A7C240AC2AE9F60D001E0925 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C240AB2AE9F60D001E0925 /* AppDelegate.swift */; };
 		A7C240AE2AE9F60D001E0925 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C240AD2AE9F60D001E0925 /* SceneDelegate.swift */; };
 		A7C240B52AE9F60E001E0925 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C240B42AE9F60E001E0925 /* Assets.xcassets */; };
 		A7C240B82AE9F60E001E0925 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C240B62AE9F60E001E0925 /* LaunchScreen.storyboard */; };
-		A7C240C62AE9F967001E0925 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C240C02AE9F967001E0925 /* Protocol.swift */; };
+		A7C240C62AE9F967001E0925 /* [DEPRE]Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C240C02AE9F967001E0925 /* [DEPRE]Protocol.swift */; };
 		A7C240C72AE9F967001E0925 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C240C12AE9F967001E0925 /* DataModels.swift */; };
 		A7C240C82AE9F967001E0925 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C240C22AE9F967001E0925 /* BaseVC.swift */; };
 		A7C240C92AE9F967001E0925 /* Prefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C240C32AE9F967001E0925 /* Prefix.swift */; };
@@ -163,7 +167,7 @@
 		0ED741719FC8497EBF8D3021 /* Pods_JJUNGTABLE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JJUNGTABLE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69EB80E332E7BC4DF778CE73 /* Pods-JJUNGTABLE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JJUNGTABLE.release.xcconfig"; path = "Target Support Files/Pods-JJUNGTABLE/Pods-JJUNGTABLE.release.xcconfig"; sourceTree = "<group>"; };
 		A3E3F8B281287F643C8D34C6 /* Pods-JJUNGTABLE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JJUNGTABLE.debug.xcconfig"; path = "Target Support Files/Pods-JJUNGTABLE/Pods-JJUNGTABLE.debug.xcconfig"; sourceTree = "<group>"; };
-		A70670CF2AF236C4006A982D /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		A70670CF2AF236C4006A982D /* [DEPRE]DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[DEPRE]DatabaseManager.swift"; sourceTree = "<group>"; };
 		A70670E42AF2464C006A982D /* CommonAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAlertViewController.swift; sourceTree = "<group>"; };
 		A70670E52AF2464C006A982D /* CommonAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonAlertViewController.xib; sourceTree = "<group>"; };
 		A7097DE52B15E051001BF022 /* GetFriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendTableViewCell.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 		A7097DF02B19ADF7001BF022 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
 		A70B0A0F2AF2B9AD002E310B /* InputUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputUserInfoView.swift; sourceTree = "<group>"; };
 		A70B0A112AF2B9B6002E310B /* InputUserInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputUserInfoView.xib; sourceTree = "<group>"; };
+		A712131A2B63AA68001D9D48 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A71381E22B32BDF7009DA477 /* Document.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Document.md; sourceTree = "<group>"; };
 		A71381E62B32C6CA009DA477 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A71381E82B32C6CF009DA477 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
@@ -190,15 +195,18 @@
 		A72BE8D52B26EE2B00C37B40 /* AppUserIDSettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppUserIDSettingView.xib; sourceTree = "<group>"; };
 		A72BE8D72B28563100C37B40 /* JJUNGIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JJUNGIcon.png; sourceTree = "<group>"; };
 		A73F5EA92AED3A2100EC6E81 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A73F5EAA2AED3A2100EC6E81 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		A73F5EAD2AED3F0D00EC6E81 /* JJUNGTABLE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JJUNGTABLE.entitlements; sourceTree = "<group>"; };
 		A7580B9C2AED7090008CBBBB /* AppleIcon.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleIcon.PNG; sourceTree = "<group>"; };
 		A7580B9D2AED7090008CBBBB /* KakaoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KakaoIcon.png; sourceTree = "<group>"; };
 		A75F344F2B02F80F005F04B0 /* pushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pushManager.swift; sourceTree = "<group>"; };
 		A75F34512B033E96005F04B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A75F34552B05D623005F04B0 /* CloudFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudFunctions.swift; sourceTree = "<group>"; };
+		A75F34552B05D623005F04B0 /* [DEPRE]CloudFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[DEPRE]CloudFunctions.swift"; sourceTree = "<group>"; };
 		A75F34582B067AF8005F04B0 /* AddFriendView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFriendView.xib; sourceTree = "<group>"; };
 		A75F345A2B067B02005F04B0 /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddFriendView.swift; path = ../AddFriendView.swift; sourceTree = "<group>"; };
+		A761D0822B62326100813CB7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A761D0842B623B6500813CB7 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		A761D0862B62538500813CB7 /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		A761D0892B63365500813CB7 /* IntroVC_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC_Extension.swift; sourceTree = "<group>"; };
 		A7689BA62B3E963F00A520A4 /* ReserveMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveMapView.swift; sourceTree = "<group>"; };
 		A7689BA82B3E964600A520A4 /* ReserveMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReserveMapView.xib; sourceTree = "<group>"; };
 		A7739BE82B4D76C3009B2DC0 /* KEY.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KEY.swift; sourceTree = "<group>"; };
@@ -215,12 +223,11 @@
 		A77857C92AED059800621BB7 /* NPSfont_bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NPSfont_bold.otf; sourceTree = "<group>"; };
 		A77857CA2AED059800621BB7 /* NPSfont_extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NPSfont_extrabold.otf; sourceTree = "<group>"; };
 		A780F8642AED02C4003E3367 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
-		A780F8652AED02C4003E3367 /* IntroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
 		A78DAF222B09021D003955EE /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		A78DAF232B09021D003955EE /* NotificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationViewController.xib; sourceTree = "<group>"; };
 		A78DAF262B09221E003955EE /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		A78DAF272B09221E003955EE /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
-		A7959AAE2B43A95E00FBC31A /* ConnectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectData.swift; sourceTree = "<group>"; };
+		A7959AAE2B43A95E00FBC31A /* [DEPRE]ConnectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[DEPRE]ConnectData.swift"; sourceTree = "<group>"; };
 		A7A6BD922B19B99300B2CCEB /* ReserveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveView.swift; sourceTree = "<group>"; };
 		A7A6BD942B19B99A00B2CCEB /* ReserveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReserveView.xib; sourceTree = "<group>"; };
 		A7AABE9F2B4E50E60061F7CB /* SearchAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAddressView.swift; sourceTree = "<group>"; };
@@ -240,13 +247,14 @@
 		A7B4672E2AEF8D9B00A6A559 /* TodayPlanView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayPlanView.xib; sourceTree = "<group>"; };
 		A7B467302AEF9DC000A6A559 /* TodayPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPlanTableViewCell.swift; sourceTree = "<group>"; };
 		A7B467312AEF9DC000A6A559 /* TodayPlanTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayPlanTableViewCell.xib; sourceTree = "<group>"; };
+		A7BDD77E2B63735C00B3382E /* LoginVC_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC_Extension.swift; sourceTree = "<group>"; };
 		A7C240A82AE9F60D001E0925 /* JJUNGTABLE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JJUNGTABLE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C240AB2AE9F60D001E0925 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7C240AD2AE9F60D001E0925 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A7C240B42AE9F60E001E0925 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7C240B72AE9F60E001E0925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7C240B92AE9F60E001E0925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7C240C02AE9F967001E0925 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		A7C240C02AE9F967001E0925 /* [DEPRE]Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "[DEPRE]Protocol.swift"; sourceTree = "<group>"; };
 		A7C240C12AE9F967001E0925 /* DataModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		A7C240C22AE9F967001E0925 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		A7C240C32AE9F967001E0925 /* Prefix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefix.swift; sourceTree = "<group>"; };
@@ -366,16 +374,15 @@
 		A71C23462AEB90A700E06BD3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				A761D0882B63364100813CB7 /* Intro */,
+				A71DE6962AED762600EF6EC7 /* Login */,
 				A7F7F16F2AEE85F40029EA6D /* TopView.swift */,
 				A7F7F1712AEE86000029EA6D /* TopView.xib */,
 				A71C23402AEA433A00E06BD3 /* BottomView.swift */,
 				A71C23422AEA434100E06BD3 /* BottomView.xib */,
-				A780F8642AED02C4003E3367 /* IntroViewController.swift */,
-				A780F8652AED02C4003E3367 /* IntroViewController.xib */,
 				A7CF5AC82B5515CC00BA5BBB /* InputPopUpViewController.swift */,
 				A7CF5AC92B5515CC00BA5BBB /* InputPopUpViewController.xib */,
 				A70670D12AF23D92006A982D /* Alert */,
-				A71DE6962AED762600EF6EC7 /* Login */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -448,7 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				A73F5EA92AED3A2100EC6E81 /* LoginViewController.swift */,
-				A73F5EAA2AED3A2100EC6E81 /* LoginViewController.xib */,
+				A7BDD77E2B63735C00B3382E /* LoginVC_Extension.swift */,
 				A71DE69B2AED791300EF6EC7 /* LoginManager.swift */,
 			);
 			path = Login;
@@ -474,6 +481,37 @@
 				A78A38E82B0B36220064BE18 /* NotificationCenter */,
 			);
 			path = TopViewAlert;
+			sourceTree = "<group>";
+		};
+		A761D0812B62325600813CB7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A761D0822B62326100813CB7 /* Coordinator.swift */,
+				A761D0862B62538500813CB7 /* IntroCoordinator.swift */,
+				A761D0842B623B6500813CB7 /* LoginCoordinator.swift */,
+				A712131A2B63AA68001D9D48 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A761D0882B63364100813CB7 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				A780F8642AED02C4003E3367 /* IntroViewController.swift */,
+				A761D0892B63365500813CB7 /* IntroVC_Extension.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		A761D08B2B633A2600813CB7 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				A7C240C02AE9F967001E0925 /* [DEPRE]Protocol.swift */,
+				A70670CF2AF236C4006A982D /* [DEPRE]DatabaseManager.swift */,
+				A7959AAE2B43A95E00FBC31A /* [DEPRE]ConnectData.swift */,
+				A75F34552B05D623005F04B0 /* [DEPRE]CloudFunctions.swift */,
+			);
+			path = Deprecated;
 			sourceTree = "<group>";
 		};
 		A77645E12B26E3BB00A7E94E /* AppSetting */ = {
@@ -650,16 +688,14 @@
 				A7C240C52AE9F967001E0925 /* BaseView.swift */,
 				A7739BE92B4D76C3009B2DC0 /* APICall.swift */,
 				A7739BE82B4D76C3009B2DC0 /* KEY.swift */,
-				A7B4672A2AEF73CF00A6A559 /* AES.swift */,
 				A7C240C32AE9F967001E0925 /* Prefix.swift */,
-				A7C240C02AE9F967001E0925 /* Protocol.swift */,
-				A70670CF2AF236C4006A982D /* DatabaseManager.swift */,
-				A7959AAE2B43A95E00FBC31A /* ConnectData.swift */,
 				A7C240C12AE9F967001E0925 /* DataModels.swift */,
 				A7C240C42AE9F967001E0925 /* CommonUtils.swift */,
 				A7CEF7D32B0C89CA00714BDB /* Animation.swift */,
 				A75F344F2B02F80F005F04B0 /* pushManager.swift */,
-				A75F34552B05D623005F04B0 /* CloudFunctions.swift */,
+				A7B4672A2AEF73CF00A6A559 /* AES.swift */,
+				A761D08B2B633A2600813CB7 /* Deprecated */,
+				A761D0812B62325600813CB7 /* Coordinator */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -842,7 +878,6 @@
 				A7AF70472AEFA3DE0016E790 /* EmptyTableViewCell.xib in Resources */,
 				A7AABEA22B4E5ED30061F7CB /* SearchAddressView.xib in Resources */,
 				A7AF703F2AEFA3AC0016E790 /* ReservationListTableViewCell.xib in Resources */,
-				A780F8672AED02C4003E3367 /* IntroViewController.xib in Resources */,
 				A75F34522B033E96005F04B0 /* GoogleService-Info.plist in Resources */,
 				A70B0A122AF2B9B6002E310B /* InputUserInfoView.xib in Resources */,
 				A7097DED2B19AC7A001BF022 /* FriendPopUpViewController.xib in Resources */,
@@ -857,7 +892,6 @@
 				A71C23432AEA434100E06BD3 /* BottomView.xib in Resources */,
 				A71DEDDB2B146F3E008BD333 /* GetFriendView.xib in Resources */,
 				A7F7F16E2AEE85120029EA6D /* ReportViewController.xib in Resources */,
-				A73F5EAC2AED3A2100EC6E81 /* LoginViewController.xib in Resources */,
 				A70670E72AF2464C006A982D /* CommonAlertViewController.xib in Resources */,
 				A77645EE2B26E4AF00A7E94E /* AppTermsView.xib in Resources */,
 				A7F7F1662AEE847E0029EA6D /* CalendarViewController.xib in Resources */,
@@ -924,6 +958,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A761D0872B62538500813CB7 /* IntroCoordinator.swift in Sources */,
 				A73F5EAB2AED3A2100EC6E81 /* LoginViewController.swift in Sources */,
 				A7E2E0B72AFCB1CD00A09B9F /* MyInfoView.swift in Sources */,
 				A7AF70372AEF9F680016E790 /* FriendsListView.swift in Sources */,
@@ -932,6 +967,7 @@
 				A7AABEA02B4E50E60061F7CB /* SearchAddressView.swift in Sources */,
 				A7F7F1692AEE84B00029EA6D /* MapViewController.swift in Sources */,
 				A7097DEC2B19AC7A001BF022 /* FriendPopUpViewController.swift in Sources */,
+				A761D08A2B63365500813CB7 /* IntroVC_Extension.swift in Sources */,
 				A77645E62B26E47100A7E94E /* AppSettingView.swift in Sources */,
 				A780F8662AED02C4003E3367 /* IntroViewController.swift in Sources */,
 				A7AF703E2AEFA3AC0016E790 /* ReservationListTableViewCell.swift in Sources */,
@@ -939,16 +975,17 @@
 				A7097DEF2B19ADEF001BF022 /* CalendarView.swift in Sources */,
 				A7C240AC2AE9F60D001E0925 /* AppDelegate.swift in Sources */,
 				A71DEDD92B146F3A008BD333 /* GetFriendView.swift in Sources */,
-				A70670D02AF236C4006A982D /* DatabaseManager.swift in Sources */,
+				A70670D02AF236C4006A982D /* [DEPRE]DatabaseManager.swift in Sources */,
 				A7C240C72AE9F967001E0925 /* DataModels.swift in Sources */,
 				A75F34502B02F80F005F04B0 /* pushManager.swift in Sources */,
 				A7F7F1702AEE85F40029EA6D /* TopView.swift in Sources */,
 				A72BE8D42B26EE1600C37B40 /* AppUserIDSettingView.swift in Sources */,
 				A71DE69C2AED791300EF6EC7 /* LoginManager.swift in Sources */,
-				A75F34562B05D623005F04B0 /* CloudFunctions.swift in Sources */,
+				A75F34562B05D623005F04B0 /* [DEPRE]CloudFunctions.swift in Sources */,
 				A77645F02B26E4B500A7E94E /* AppTermsView.swift in Sources */,
 				A7CEF7D42B0C89CA00714BDB /* Animation.swift in Sources */,
 				A78DAF242B09021D003955EE /* NotificationViewController.swift in Sources */,
+				A7BDD77F2B63735C00B3382E /* LoginVC_Extension.swift in Sources */,
 				A7C240C92AE9F967001E0925 /* Prefix.swift in Sources */,
 				A7097DE72B15E052001BF022 /* GetFriendTableViewCell.swift in Sources */,
 				A7739BEB2B4D76C3009B2DC0 /* APICall.swift in Sources */,
@@ -957,19 +994,22 @@
 				A75F345B2B067B02005F04B0 /* AddFriendView.swift in Sources */,
 				A7B4672B2AEF73CF00A6A559 /* AES.swift in Sources */,
 				A7C240CB2AE9F967001E0925 /* BaseView.swift in Sources */,
+				A761D0852B623B6500813CB7 /* LoginCoordinator.swift in Sources */,
 				A7E2E0BB2AFCCDCB00A09B9F /* ChangeStateView.swift in Sources */,
 				A7B4672D2AEF8D9600A6A559 /* TodayPlanView.swift in Sources */,
 				A7C240D12AE9FA68001E0925 /* MainViewController.swift in Sources */,
 				A7AF70422AEFA3BC0016E790 /* FriendsListTableViewCell.swift in Sources */,
 				A78DAF282B09221E003955EE /* NotificationTableViewCell.swift in Sources */,
-				A7959AAF2B43A95E00FBC31A /* ConnectData.swift in Sources */,
+				A7959AAF2B43A95E00FBC31A /* [DEPRE]ConnectData.swift in Sources */,
 				A77645EA2B26E48400A7E94E /* AppSupportView.swift in Sources */,
 				A7CF5ACA2B5515CC00BA5BBB /* InputPopUpViewController.swift in Sources */,
 				A71381E72B32C6CA009DA477 /* MapView.swift in Sources */,
 				A71C23522AEB9B5200E06BD3 /* MyPageViewController.swift in Sources */,
 				A7C240CA2AE9F967001E0925 /* CommonUtils.swift in Sources */,
-				A7C240C62AE9F967001E0925 /* Protocol.swift in Sources */,
+				A761D0832B62326100813CB7 /* Coordinator.swift in Sources */,
+				A7C240C62AE9F967001E0925 /* [DEPRE]Protocol.swift in Sources */,
 				A7689BA72B3E963F00A520A4 /* ReserveMapView.swift in Sources */,
+				A712131B2B63AA68001D9D48 /* MainCoordinator.swift in Sources */,
 				A7739BEA2B4D76C3009B2DC0 /* KEY.swift in Sources */,
 				A70B0A102AF2B9AD002E310B /* InputUserInfoView.swift in Sources */,
 				A7AF70462AEFA3DE0016E790 /* EmptyTableViewCell.swift in Sources */,
@@ -1124,10 +1164,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = JJUNGTABLE/JJUNGTABLE.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.0.0;
 				DEVELOPMENT_TEAM = 45MYH7ZHUQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JJUNGTABLE/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = JJungTable;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "최적화된 개인 간 연결과 맞춤 헤택을 위해 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1159,10 +1200,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = JJUNGTABLE/JJUNGTABLE.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.0.0;
 				DEVELOPMENT_TEAM = 45MYH7ZHUQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JJUNGTABLE/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = JJungTable;
 				INFOPLIST_KEY_NSUserTrackingUsageDescription = "최적화된 개인 간 연결과 맞춤 헤택을 위해 사용합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

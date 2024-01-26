@@ -1,37 +1,11 @@
 //
-//  IntroViewController.swift
+//  IntroVC_Layout.swift
 //  JJUNGTABLE
 //
-//  Created by Sean Kim on 10/28/23.
+//  Created by Sean Kim on 1/26/24.
 //
 
-import UIKit
-
-class IntroViewController: BaseVC {
-//    private let dbManager = DatabaseManager()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        self.dbManager.delegate = self
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        // 탈옥 확인 부분
-        if isIllegalDevice() {
-            makeAlert(self, title: "경고", message: "변경된 OS('탈옥'등)의 스마트폰은 \n서비스를 이용할수 없습니다.",
-                      actionTitle: ["종료"], style: [.destructive], handler: [ {_ in exit(1)} ])
-        }
-        else {
-            ConnectData().connectVersion { [weak self] alert in
-                guard let self = self else {return}
-                self.showAlert(alert)
-            }
-        }
-    }
-    
-    
-    
+extension IntroViewController {
     private func gotoMainVC() {
         if LoginManager().checkAutoLogin() {
             @UserDefault(key: "loginType", defaultValue: "") var loginType
@@ -47,25 +21,36 @@ class IntroViewController: BaseVC {
             LoginManager().emailStartFunc(loginId, type) { emailResult in
                 switch emailResult {
                 case .success(_):
+
                     // SEAN: 20231029 - 자동로그인 성공! 바로 넘어갑시다 메인으로~
-                    self.popAndPushVC(nextVC: MainViewController(nibName: "MainViewController", bundle: nil))
+                    // SEAN: 20240125 - Coordinator Pattern 적용중
+//                    self.popAndPushVC(nextVC: MainViewController(nibName: "MainViewController", bundle: nil))
+                    
+                    
+                    break
                 case .failure(_):
                         // SEAN: 20231029 - 자동로그인 실패한 거임 즉 알럿 띄우고 로그인 창으로~
                         makeAlert(self, title: "안내", message: "로그인 과정에서 문제가 발생하였습니다.\n 다시 시도해주시길 바랍니다.",
                                   actionTitle: ["확인"], handler: [{_ in
-                            self.popAndPushVC(nextVC: LoginViewController(nibName: "LoginViewController", bundle: nil))
+//                            self.popAndPushVC(nextVC: LoginViewController(nibName: "LoginViewController", bundle: nil))
+//                            self.coordinator?.puchLoginVC()
+//                            self.coordinator?.end()
                         }])
                 }
             }
         }
         else {
+            
             // SEAN: 20231029 - 자동로그인이 활성화 되어있지 않으니까 로그인 로직을 타야 함
             // SEAN: 20231029 - 값을 못불러온 경우나 해당 키가 없는 경우도 있을 테니까 그때도 로그인 로직
-            self.popAndPushVC(nextVC: LoginViewController(nibName: "LoginViewController", bundle: nil))
+            self.coordinator?.choiceVC(.login, isPop: T)
+//            self.popAndPushVC(nextVC: LoginViewController(nibName: "LoginViewController", bundle: nil))
+//            self.coordinator?.puchLoginVC()
+//            self.coordinator?.end()
         }
     }
     
-    private func showAlert(_ type: VersionAlert) {
+    internal func showAlert(_ type: VersionAlert) {
         switch type {
         case .none:
             self.gotoMainVC()
@@ -106,3 +91,4 @@ class IntroViewController: BaseVC {
     
 
 }
+

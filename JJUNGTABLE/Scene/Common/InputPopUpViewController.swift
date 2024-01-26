@@ -27,7 +27,7 @@ class InputPopUpViewController: BaseVC {
     
     private func setLayout() {
 
-        self.contentView.layer.borderColor = UIColor.brandColor?.cgColor
+        self.contentView.layer.borderColor = UIColor.brandColor.cgColor
         self.contentView.layer.borderWidth = 2
         self.contentView.layer.cornerRadius = 20.0
         self.inputTxf.placeholder = "1~\(self.limitCount) 글자를 입력해주세요."

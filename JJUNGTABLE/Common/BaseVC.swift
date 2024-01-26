@@ -12,7 +12,7 @@ class BaseVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // 스와이프 뒤로가기 막기
-        naviController.interactivePopGestureRecognizer?.isEnabled = false
+//        naviController.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     func tapFirstBtn() {}

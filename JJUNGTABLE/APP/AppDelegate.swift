@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // 카카오 SDK 초기화 코드
-        KakaoSDK.initSDK(appKey: "8ff66cbbf8fb74673db5c642c64dda73")
+        KakaoSDK.initSDK(appKey: KEY.kakaoAppKey)
         
         #if FCM
         // fcm 세팅

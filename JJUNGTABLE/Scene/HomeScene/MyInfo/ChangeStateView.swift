@@ -20,7 +20,7 @@ class ChangeStateView: BaseView {
         
         self.confirmBtn.layer.cornerRadius = 20
         self.confirmBtn.layer.borderWidth = 1
-        self.confirmBtn.layer.borderColor = UIColor.brandColor?.cgColor
+        self.confirmBtn.layer.borderColor = UIColor.brandColor.cgColor
         self.contentView.layer.maskedCorners = CACornerMask(arrayLiteral: .layerMinXMinYCorner, .layerMaxXMinYCorner)
         self.contentView.layer.cornerRadius = 25
         self.stateTxf.becomeFirstResponder()

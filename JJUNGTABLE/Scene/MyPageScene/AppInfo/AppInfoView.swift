@@ -29,7 +29,8 @@ class AppInfoView: BaseView {
         }
         else {
             self.updateBtn.setTitle("업데이트", for: .normal)
-            self.updateBtn.layer.borderColor = UIColor.backColor?.withAlphaComponent(0.5).cgColor
+            self.updateBtn.layer.borderColor = UIColor.backColor
+                .withAlphaComponent(0.5).cgColor
             self.updateBtn.setTitleColor(.backColor, for: .normal)
         }
     }
