@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 
 class MainViewController: BaseVC {
@@ -17,6 +18,41 @@ class MainViewController: BaseVC {
 
     private var listDateArray = [String]()
     private var getFriendList = [String]()
+//    internal lazy var topView 
+    
+
+//    internal lazy var scrollView: UIScrollView = {
+//        let scroll = UIScrollView()
+//
+//        return scroll
+//    }()
+
+
+    
+// MARK: - END CREATE UI
+    deinit {
+        printFunc()
+        self.coordinator?.popVC()
+    }
+    
+    //    override func viewDidLoad() {
+    //        super.viewDidLoad()
+    //        printFunc()
+    //        self.setLayout()
+    //    }
+        
+    
+    private func setLayout() {
+        [
+            self.scrollView
+        ].forEach { self.view.addSubview($0) }
+    }
+
+
+    
+    //MARK: - 아래는 전 꺼..
+    
+    
     
     @IBOutlet weak var bottomView: BottomView!
     @IBOutlet weak var topView: TopView!
@@ -31,21 +67,13 @@ class MainViewController: BaseVC {
     @IBOutlet weak var trSeparateView: UIView!
     @IBOutlet weak var rfSeparateView: UIView!
     
-    
     // 이거 BaseView 로 하면 에러 터지니까 이 부분 바꾸지 마세용~
     private lazy var blackView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.backColor
         return view
     }()
-    
-// MARK: - END CREATE UI
-    deinit {
-        printLog("deinit")
-        self.coordinator?.popVC()
-    }
-    
-    
+        ///
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -396,3 +424,4 @@ extension MainViewController: BaseVCDelegate {
 }
 
 extension MainViewController: UIScrollViewDelegate {}
+

@@ -69,6 +69,7 @@ extension LoginViewController {
         
         if self.isAutoLogin {
             self.autoLoginImg.image = UIImage(systemName: "square.fill")
+//            self.autoLoginImg.image.
         } else {
             self.autoLoginImg.image = UIImage(systemName: "square")
         }

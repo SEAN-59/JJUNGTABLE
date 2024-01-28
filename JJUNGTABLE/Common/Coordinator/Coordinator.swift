@@ -57,7 +57,6 @@ class AppCordinator: Coordinator {
                                                     navigationController: self.navigationController)
             self.startChildCoordinator(loginCoordinator)
         case .main:
-            
             let mainCoordinator = MainCoordinator(parentCoordinator: self,
                                                   navigationController: self.navigationController)
             self.startChildCoordinator(mainCoordinator)

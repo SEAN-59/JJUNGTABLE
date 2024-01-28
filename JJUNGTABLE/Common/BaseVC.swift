@@ -8,7 +8,6 @@
 import UIKit
 
 class BaseVC: UIViewController{
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // 스와이프 뒤로가기 막기

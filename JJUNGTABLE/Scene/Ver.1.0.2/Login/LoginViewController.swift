@@ -17,7 +17,8 @@ class LoginViewController: BaseVC {
     
     private lazy var titleView: UIView = {
         let view = UIView()
-        let titleLbl = makeLabel(text: "로그인", color: .black, size: 28)
+        let titleLbl = makeLabel(text: "로그인", font: font_NPS(.regular,28)
+        )
         let separateView = makeSeparateView(color: .jjungColor)
         [
             titleLbl,
@@ -42,92 +43,50 @@ class LoginViewController: BaseVC {
     
     
     private lazy var appleLoginBtn: UICustomButton = {
-        let button = UICustomButton()
+        let button = makeButton(text: "Apple 계정으로 시작하기",
+                                font: font_NPS(.regular, 16), fontColor: .white,
+                                backColor: .black,
+                                animate: (T,F))
         
-        // Text 설정
-        let text: String = "  Apple 계정으로 시작하기"
-        let attribute = NSMutableAttributedString(string: text)
-        attribute.addAttribute(.font,
-                               value: font_NPS(.regular, 16),
-                               range: (text as NSString).range(of: text))
-        attribute.addAttribute(.foregroundColor,
-                               value: UIColor.white,
-                               range: (text as NSString).range(of: text))
-        button.setAttributedTitle(attribute, for: .normal)
-        
-        button.backgroundColor = .black
         button.layer.cornerRadius = 15
-        button.animateBig = T
+        
         button.tag = 0
         return button
     }()
     
     private lazy var kakaoLoginBtn: UICustomButton = {
-        let button = UICustomButton()
+        let button = makeButton(text: "Kakao 계정으로 시작하기",
+                             font: font_NPS(.regular, 16),
+                             backColor: .kakaoColor,
+                             animate: (T,F))
         
-        // Text 설정
-        let text: String = "Kakao 계정으로 시작하기"
-        let attribute = NSMutableAttributedString(string: text)
-        attribute.addAttribute(.font,
-                               value: font_NPS(.regular, 16),
-                               range: (text as NSString).range(of: text))
-        attribute.addAttribute(.foregroundColor,
-                               value: UIColor.black,
-                               range: (text as NSString).range(of: text))
-        button.setAttributedTitle(attribute, for: .normal)
-        
-        button.backgroundColor = .kakaoColor
         button.layer.cornerRadius = 15
-        
-        button.animateBig = T
         button.tag = 1
         return button
     }()
     
     private lazy var appleLogoImg: UIImageView = {
-        let img = UIImageView()
-        var configuration = UIImage.SymbolConfiguration(pointSize: 25,
-                                                        weight: .unspecified, scale: .large)
-        configuration = .init(paletteColors: [.white])
-        img.image = .init(systemName: "applelogo", withConfiguration: configuration)
-        img.contentMode = .scaleAspectFit
+        let img = makeImgView(systemName: "applelogo",
+                          pallete: [.white],
+                          tint: .white)
         return img
     }()
     
     private lazy var kakaoLogoImg: UIImageView = {
-        let img = UIImageView()
-        var configuration = UIImage.SymbolConfiguration(pointSize: 25,
-                                                        weight: .unspecified, scale: .large)
-        img.image = .init(named: "KakaoIcon.png", in: nil, with: configuration)
-        img.contentMode = .scaleAspectFit
+        let img = makeImgView(name: "KakaoIcon.png")
         return img
     }()
     
     internal lazy var autoLoginImg: UIImageView = {
-        let img = UIImageView()
-        var configuration = UIImage.SymbolConfiguration(pointSize: 25,
-                                                        weight: .unspecified, scale: .large)
-        configuration = .init(paletteColors: [.jjungColor])
-        img.image = .init(systemName: "square", withConfiguration: configuration)
-        img.contentMode = .scaleAspectFit
+        let img = makeImgView(systemName: "square",
+                          pallete: [.jjungColor],
+                          tint: .jjungColor)
         return img
     }()
     
     private lazy var autoLoginView: UIView = {
         let view = UIView()
-        let label: UILabel = {
-            let label = UILabel()
-            let text: String = "자동로그인"
-            let attribute = NSMutableAttributedString(string: text)
-            attribute.addAttribute(.font,
-                                   value: font_NPS(.regular, 20),
-                                   range: (text as NSString).range(of: text))
-            attribute.addAttribute(.foregroundColor,
-                                   value: UIColor.black,
-                                   range: (text as NSString).range(of: text))
-            label.attributedText = attribute
-            return label
-        }()
+        let label = makeLabel(text: "자동로그인", font: font_NPS(.regular, 20))
         
         let autoBtn: UIButton = {
             let button = UIButton()
@@ -224,10 +183,12 @@ class LoginViewController: BaseVC {
         view.backgroundColor = .viewBackColor
         view.layer.cornerRadius = 15
         
-        let label = makeLabel(text: "Login ID", size: 20)
+        let label = makeLabel(text: "Login ID", font: font_NPS(.regular, 20))
+        
         let loginbtn: UICustomButton = {
             let button = UICustomButton()
             let text: String = "Login"
+            
             let attribute = NSMutableAttributedString(string: text)
             attribute.addAttribute(.font,
                                    value: font_NPS(.regular, 20),
@@ -276,13 +237,13 @@ class LoginViewController: BaseVC {
     
 // MARK: - END CREATE UI
     deinit {
-        printLog("deinit")
+        printFunc()
         self.coordinator?.popVC()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        printLog("viewDidLoad")
+        printFunc()
         self.setLayout()
     }
     

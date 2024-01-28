@@ -9,7 +9,37 @@ import UIKit
 
 class TopView: BaseView {
     weak var delegate: topButtonDelegate?
+    
+    private lazy var logoBtn: UICustomButton = {
+        let button = makeButton(systemName: "j.square.on.square", tint: .jjungColor)
+        return button
+    }()
+    
+    /*
+    private lazy var firstBtn: UICustomButton = {
+        let button = makeButton(systemName: "circle",animate: (T,F))
+        return button
+    }()
+    
+    private lazy var secondBtn: UICustomButton = {
+        let button = makeButton(systemName: "person.badge.plus",animate: (T,F))
+        return button
+    }()
+    private lazy var thirdBtn: UICustomButton = {
+        let button = makeButton(systemName: "bell",animate: (T,F))
+        return button
+    }()
+    private lazy var fourtgBtn: UICustomButton = {
+        let button = makeButton(systemName: "gearshape",animate: (T,F))
+        return button
+    }()
 
+    */
+    override func viewLoad() {
+    }
+    
+    //}
+    
     @IBOutlet weak var firstBtn: UICustomButton!
     @IBOutlet weak var secondBtn: UICustomButton!
     @IBOutlet weak var thirdBtn: UICustomButton!
@@ -21,8 +51,6 @@ class TopView: BaseView {
     @IBOutlet weak var thirdCircleImg: UIImageView!
     @IBOutlet weak var forthCircleImg: UIImageView!
     
-    override func viewLoad() {
-    }
     
     func toggleCircleHidden(is1stHidden: Bool = T, is2ndHidden: Bool = T, is3rdHidden: Bool = T, is4thHidden: Bool = T) {
         self.firstCircleImg.isHidden = is1stHidden
@@ -63,3 +91,4 @@ class TopView: BaseView {
     }
     
 }
+

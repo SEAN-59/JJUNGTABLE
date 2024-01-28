@@ -64,7 +64,16 @@ public func printLog<T>(_ object: T, _ file: String = #file, _ function: String 
     //    let threadId = tid
     //    Swift.print("\(dateString) \(process.processName)[\(process.processIdentifier):\(threadId)] \(file.lastPathComponent)(\(line)) \(function):\t \(object)")
 #else
-    
+#endif
+}
+
+public func printFunc(_ file: String = #file, _ function: String = #function){
+#if DEBUG
+    let simpleDate = Date().convertString("yyMMdd HH:mm:ss")
+    Swift.print("""
+                [FUNC_CHECK] : \(function) - \(file.lastPathComponent) - [\(simpleDate)]
+                """)
+#else
 #endif
 }
 
@@ -693,6 +702,12 @@ extension UIColor {
         return color
     }
     
+    class var separateColor: UIColor {
+        guard let color = UIColor(named: "SeparateColor") else { return .black }
+        return color
+    }
+    
+    
     
     class var brandColor: UIColor {
         guard let color = UIColor(named: "BrandColor") else { return .black }
@@ -703,7 +718,7 @@ extension UIColor {
 //    class var backColor: UIColor? { return UIColor(named: "BackColor")}
     class var accentColor: UIColor? { return UIColor(named: "AccentColor")}
     class var greenColor: UIColor? { return UIColor(named: "GreenColor")}
-    class var separateColor: UIColor? { return UIColor(named: "SeparateColor")}
+//    class var separateColor: UIColor? { return UIColor(named: "SeparateColor")}
 //    class var viewBackColor: UIColor? { return UIColor(named: "ViewBackColor")}
 }
 
@@ -1020,22 +1035,83 @@ struct UserDefault<T> {
 }
 
 // MARK: - make UI
-func makeSeparateView(color: UIColor) -> UIView {
+func makeTextAttribute(text: String, font: UIFont = font_NPS(.regular, 12), color: UIColor = .black) -> NSMutableAttributedString {
+    let attribute = NSMutableAttributedString(string: text)
+    attribute.addAttribute(.font,
+                           value: font,
+                           range: (text as NSString).range(of: text))
+    attribute.addAttribute(.foregroundColor,
+                           value: color,
+                           range: (text as NSString).range(of: text))
+    return attribute
+}
+func makeImgConfiguration(pallete: [UIColor] = []) -> UIImage.SymbolConfiguration {
+    var configuration = UIImage.SymbolConfiguration(pointSize: 25,
+                                                    weight: .unspecified, scale: .large)
+    configuration = .init(paletteColors: pallete)
+    return configuration
+}
+
+func makeSeparateView(color: UIColor = .separateColor) -> UIView {
     let view = UIView()
     view.backgroundColor = color
     view.layer.cornerRadius = 1
     return view
 }
 
-func makeLabel(text: String, color: UIColor = .black, size: CGFloat) -> UILabel {
+func makeLabel(text: String, font: UIFont = font_NPS(.regular, 12), color: UIColor = .black ) -> UILabel {
     let label = UILabel()
-    let attribute = NSMutableAttributedString(string: text)
-    attribute.addAttribute(.font,
-                           value: font_NPS(.regular, size),
-                           range: (text as NSString).range(of: text))
-    attribute.addAttribute(.foregroundColor,
-                           value: color,
-                           range: (text as NSString).range(of: text))
-    label.attributedText = attribute
+    label.attributedText = makeTextAttribute(text: text,font: font, color: color)
     return label
+}
+
+// 이미지 여기서 이미지 뷰에서 하는거 처럼 시스템이랑 일반이랑 구분 지어야 함
+func makeButton(text: String = "", 
+                systemName: String = "", name: String = "",
+                font: UIFont = font_NPS(.regular, 12), fontColor: UIColor = .black,
+                tint: UIColor = .tintColor, backColor: UIColor = .systemBackground,
+                animate: (Bool,Bool) = (F,F) ) -> UICustomButton {
+    
+    let button = UICustomButton()
+    
+//    button.setImage(image, for: .normal)
+    button.setImage(makeImg(systemName: systemName, name: name), for: .normal)
+    button.setPreferredSymbolConfiguration(makeImgConfiguration(), forImageIn: .normal)
+    button.tintColor = tint
+    
+    if text != "" {
+        button.setAttributedTitle(makeTextAttribute(text: text, font: font, color: fontColor), for: .normal)
+    }
+    button.backgroundColor = backColor
+    
+    if animate.0 && animate.1 { return button }
+    else if animate.0 { button.animateBig = T }
+    else if animate.1 { button.animateSmall = T }
+    
+    return button
+}
+func makeImg(systemName: String = "", name: String = "", pallete: [UIColor] = []) -> UIImage? {
+
+    if systemName != "" {
+        let img = UIImage.init(systemName: systemName, 
+                               withConfiguration: makeImgConfiguration(pallete: pallete))
+        return img
+    }
+    else if name != "" {
+        let img = UIImage.init(named: name, in: nil, 
+                               with: makeImgConfiguration(pallete: pallete))
+        return img
+    }
+    else {
+        return UIImage()
+    }
+    
+}
+
+func makeImgView(systemName: String = "", name: String = "", pallete: [UIColor] = [], tint: UIColor = .tintColor) -> UIImageView {
+    let img = UIImageView()
+    img.image = makeImg(systemName: systemName, name: name, pallete: pallete)
+    img.tintColor = tint
+    img.contentMode = .scaleAspectFit
+    return img
 }

@@ -19,6 +19,7 @@
 		A70B0A102AF2B9AD002E310B /* InputUserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70B0A0F2AF2B9AD002E310B /* InputUserInfoView.swift */; };
 		A70B0A122AF2B9B6002E310B /* InputUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70B0A112AF2B9B6002E310B /* InputUserInfoView.xib */; };
 		A712131B2B63AA68001D9D48 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712131A2B63AA68001D9D48 /* MainCoordinator.swift */; };
+		A712131F2B66242A001D9D48 /* MainVC_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A712131E2B66242A001D9D48 /* MainVC_Extension.swift */; };
 		A71381E72B32C6CA009DA477 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71381E62B32C6CA009DA477 /* MapView.swift */; };
 		A71381E92B32C6CF009DA477 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A71381E82B32C6CF009DA477 /* MapView.xib */; };
 		A71A89272B19BF1B00CBD3D1 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71A89252B19BF1B00CBD3D1 /* CalendarCollectionViewCell.swift */; };
@@ -179,6 +180,7 @@
 		A70B0A0F2AF2B9AD002E310B /* InputUserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputUserInfoView.swift; sourceTree = "<group>"; };
 		A70B0A112AF2B9B6002E310B /* InputUserInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputUserInfoView.xib; sourceTree = "<group>"; };
 		A712131A2B63AA68001D9D48 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A712131E2B66242A001D9D48 /* MainVC_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC_Extension.swift; sourceTree = "<group>"; };
 		A71381E22B32BDF7009DA477 /* Document.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Document.md; sourceTree = "<group>"; };
 		A71381E62B32C6CA009DA477 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A71381E82B32C6CF009DA477 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
@@ -371,16 +373,41 @@
 			path = PopUP;
 			sourceTree = "<group>";
 		};
+		A712131C2B6623D8001D9D48 /* Ver.1.0.2 */ = {
+			isa = PBXGroup;
+			children = (
+				A712131D2B6623E9001D9D48 /* Main */,
+				A71DE6962AED762600EF6EC7 /* Login */,
+				A761D0882B63364100813CB7 /* Intro */,
+				A71213202B662AE4001D9D48 /* Common */,
+			);
+			path = Ver.1.0.2;
+			sourceTree = "<group>";
+		};
+		A712131D2B6623E9001D9D48 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A7C240CF2AE9FA68001E0925 /* MainViewController.swift */,
+				A712131E2B66242A001D9D48 /* MainVC_Extension.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A71213202B662AE4001D9D48 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A7F7F16F2AEE85F40029EA6D /* TopView.swift */,
+				A71C23402AEA433A00E06BD3 /* BottomView.swift */,
+				A7CF5AC82B5515CC00BA5BBB /* InputPopUpViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		A71C23462AEB90A700E06BD3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A761D0882B63364100813CB7 /* Intro */,
-				A71DE6962AED762600EF6EC7 /* Login */,
-				A7F7F16F2AEE85F40029EA6D /* TopView.swift */,
 				A7F7F1712AEE86000029EA6D /* TopView.xib */,
-				A71C23402AEA433A00E06BD3 /* BottomView.swift */,
 				A71C23422AEA434100E06BD3 /* BottomView.xib */,
-				A7CF5AC82B5515CC00BA5BBB /* InputPopUpViewController.swift */,
 				A7CF5AC92B5515CC00BA5BBB /* InputPopUpViewController.xib */,
 				A70670D12AF23D92006A982D /* Alert */,
 			);
@@ -390,7 +417,6 @@
 		A71C23472AEB90BA00E06BD3 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
-				A7C240CF2AE9FA68001E0925 /* MainViewController.swift */,
 				A7C240D02AE9FA68001E0925 /* MainViewController.xib */,
 				A7AF70442AEFA3DE0016E790 /* EmptyTableViewCell.swift */,
 				A7AF70452AEFA3DE0016E790 /* EmptyTableViewCell.xib */,
@@ -719,6 +745,7 @@
 		A7C240CE2AE9F9EB001E0925 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				A712131C2B6623D8001D9D48 /* Ver.1.0.2 */,
 				A71C23472AEB90BA00E06BD3 /* HomeScene */,
 				A71C234B2AEB9A9000E06BD3 /* CalendarScene */,
 				A71C234C2AEB9A9800E06BD3 /* MapScene */,
@@ -1013,6 +1040,7 @@
 				A7739BEA2B4D76C3009B2DC0 /* KEY.swift in Sources */,
 				A70B0A102AF2B9AD002E310B /* InputUserInfoView.swift in Sources */,
 				A7AF70462AEFA3DE0016E790 /* EmptyTableViewCell.swift in Sources */,
+				A712131F2B66242A001D9D48 /* MainVC_Extension.swift in Sources */,
 				A71C23412AEA433A00E06BD3 /* BottomView.swift in Sources */,
 				A70670E62AF2464C006A982D /* CommonAlertViewController.swift in Sources */,
 				A77645F22B26E4C800A7E94E /* AppInfoView.swift in Sources */,

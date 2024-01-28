@@ -40,13 +40,13 @@ class IntroViewController: BaseVC {
     
 // MARK: - END CREATE UI
     deinit {
-        printLog("deinit")
+        printFunc()
         self.coordinator?.popVC()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        printLog("viewDidLoad")
+        printFunc()
         self.setLayout()
     }
     
@@ -54,7 +54,7 @@ class IntroViewController: BaseVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        printLog("viewDidAppear")
+        printFunc()
         // 탈옥 확인 부분
         if isIllegalDevice() {
             makeAlert(self, title: "경고", message: "변경된 OS('탈옥'등)의 스마트폰은 \n서비스를 이용할수 없습니다.",
