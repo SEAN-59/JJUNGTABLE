@@ -7,6 +7,15 @@ README.md
 ---
 
 # 개발 일지
+### 2024.01.28
+<details>
+<summary>내용</summary>
+
+1. UI 작성 코드들 모듈화(?) 처리를 통해서 중복되는 코드 줄임
+    - Common.TopView 변환 작업 중
+    - MainVC 변환 작업 중
+
+</details> 
 
 ### 2024.01.26
 <details>
