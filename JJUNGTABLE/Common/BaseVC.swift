@@ -14,6 +14,10 @@ class BaseVC: UIViewController{
 //        naviController.interactivePopGestureRecognizer?.isEnabled = false
     }
     
+    func moveToVC(type: VCType) {
+        
+    }
+    
     func tapFirstBtn() {}
     func tapSecondBtn() {}
     func tapThirdBtn() {}
@@ -41,23 +45,28 @@ extension BaseVC: bottomButtonDelegate, topButtonDelegate {
         switch buttonType {
         case .homeBtn:
             if nowVC != type(of: MainViewController()) {
-                popAndPushVC(nextVC: MainViewController(), popAnimate: false, pushAnimate: false)
+                self.moveToVC(type: .main)
+//                popAndPushVC(nextVC: MainViewController(/*), popAnimate: false, pushAnimate: false)*/
             }
         case .calendarBtn:
             if nowVC != type(of: CalendarViewController()) {
-                popAndPushVC(nextVC: CalendarViewController(), popAnimate: false, pushAnimate: false)
+                self.moveToVC(type: .calendar)
+//                popAndPushVC(nextVC: CalendarViewController(), popAnimate: false, pushAnimate: false)
             }
         case .mapBtn:
             if nowVC != type(of: MapViewController()) {
-                popAndPushVC(nextVC: MapViewController(), popAnimate: false, pushAnimate: false)
+                self.moveToVC(type: .map)
+//                popAndPushVC(nextVC: MapViewController(), popAnimate: false, pushAnimate: false)
             }
         case .historyBtn:
             if nowVC != type(of: ReportViewController()) {
-                popAndPushVC(nextVC: ReportViewController(), popAnimate: false, pushAnimate: false)
+                self.moveToVC(type: .history)
+//                popAndPushVC(nextVC: ReportViewController(), popAnimate: false, pushAnimate: false)
             }
         case .myPageBtn:
             if nowVC != type(of: MyPageViewController()) {
-                popAndPushVC(nextVC: MyPageViewController(), popAnimate: false, pushAnimate: false)
+                self.moveToVC(type: .mypage)
+//                popAndPushVC(nextVC: MyPageViewController(), popAnimate: false, pushAnimate: false)
             }
         case .error:
             break

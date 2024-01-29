@@ -76,6 +76,6 @@ extension LoginViewController {
     }
     
     private func moveMainVC () {
-        
+        self.coordinator?.choiceVC(.main, isPop: T)
     }
 }

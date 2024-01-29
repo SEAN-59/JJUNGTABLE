@@ -1,5 +1,5 @@
 //
-//  Coordinator.swift
+//  AppCordinator.swift
 //  JJUNGTABLE
 //
 //  Created by Sean Kim on 1/25/24.
@@ -8,8 +8,6 @@
 import UIKit
 
 protocol Coordinator: AnyObject {
-    
-    
     var childCoordinator: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
     func start()
@@ -56,11 +54,21 @@ class AppCordinator: Coordinator {
             let loginCoordinator = LoginCoordinator(parentCoordinator: self,
                                                     navigationController: self.navigationController)
             self.startChildCoordinator(loginCoordinator)
+        case .popUp:
+            break
         case .main:
             let mainCoordinator = MainCoordinator(parentCoordinator: self,
                                                   navigationController: self.navigationController)
             self.startChildCoordinator(mainCoordinator)
-        case .popUp:
+        case .calendar:
+            let calendarCoordinator = CalendarCoordinator(parentCoordinator: self,
+                                                          navigationController: self.navigationController)
+            self.startChildCoordinator(calendarCoordinator)
+        case .map:
+            break
+        case .history:
+            break
+        case .mypage:
             break
         }
         

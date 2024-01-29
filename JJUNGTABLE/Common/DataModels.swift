@@ -28,8 +28,12 @@ let EMPTY_STR = ""
 enum VCType {
     case intro
     case login
-    case main
     case popUp
+    case main
+    case calendar
+    case map
+    case history
+    case mypage
 }
 
 // MARK: - ENUM

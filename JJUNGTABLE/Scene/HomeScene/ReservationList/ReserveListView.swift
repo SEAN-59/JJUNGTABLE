@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+class ReserveListView: BaseView {}

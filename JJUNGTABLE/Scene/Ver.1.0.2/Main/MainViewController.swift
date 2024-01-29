@@ -26,13 +26,51 @@ class MainViewController: BaseVC {
 //
 //        return scroll
 //    }()
-
-
+//    
+//    internal lazy var myInfoView: MyInfoView = {
+//        let view = MyInfoView()
+//        return view
+//    }()
+//    
+//    internal lazy var todayPlaView: TodayPlanView = {
+//        let view = TodayPlanView()
+//        return view
+//    }()
+//    
+//    internal lazy var reserveListView: ReserveListView = {
+//        let view = ReserveListView()
+//        return view
+//    }()
+//
+//    internal lazy var friendsListView: FriendsListView = {
+//        let view = FriendsListView()
+//        return view
+//    }()
+    
+    private lazy var firstSeparateView = makeSeparateView()
+    private lazy var secondSeparateView = makeSeparateView()
+    private lazy var thirdSeparateView = makeSeparateView()
+    
     
 // MARK: - END CREATE UI
     deinit {
         printFunc()
         self.coordinator?.popVC()
+    }
+    
+    override func moveToVC(type: VCType) {
+        if type == .calendar {
+            self.coordinator?.choiceVC(.calendar, isPop: T)
+        }
+        else if type == .map {
+            
+        }
+        else if type == .history {
+            
+        }
+        else if type == .mypage {
+            
+        }
     }
     
     //    override func viewDidLoad() {

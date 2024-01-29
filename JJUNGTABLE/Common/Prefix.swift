@@ -1045,9 +1045,19 @@ func makeTextAttribute(text: String, font: UIFont = font_NPS(.regular, 12), colo
                            range: (text as NSString).range(of: text))
     return attribute
 }
-func makeImgConfiguration(pallete: [UIColor] = []) -> UIImage.SymbolConfiguration {
-    var configuration = UIImage.SymbolConfiguration(pointSize: 25,
-                                                    weight: .unspecified, scale: .large)
+func makeImgConfiguration(pallete: [UIColor] = [], size: CGFloat = 0) -> UIImage.SymbolConfiguration {
+    var symbolSize: CGFloat = {
+        if size == 0 {
+            return 25
+        } else {
+            return size
+        }
+    }()
+    
+    var configuration = UIImage.SymbolConfiguration(pointSize: symbolSize,
+                                                    weight: .unspecified,
+                                                    scale: .large)
+
     configuration = .init(paletteColors: pallete)
     return configuration
 }
@@ -1067,7 +1077,7 @@ func makeLabel(text: String, font: UIFont = font_NPS(.regular, 12), color: UICol
 
 // 이미지 여기서 이미지 뷰에서 하는거 처럼 시스템이랑 일반이랑 구분 지어야 함
 func makeButton(text: String = "", 
-                systemName: String = "", name: String = "",
+                systemName: String = "", name: String = "", size: CGFloat = 0,
                 font: UIFont = font_NPS(.regular, 12), fontColor: UIColor = .black,
                 tint: UIColor = .tintColor, backColor: UIColor = .systemBackground,
                 animate: (Bool,Bool) = (F,F) ) -> UICustomButton {
@@ -1076,8 +1086,10 @@ func makeButton(text: String = "",
     
 //    button.setImage(image, for: .normal)
     button.setImage(makeImg(systemName: systemName, name: name), for: .normal)
-    button.setPreferredSymbolConfiguration(makeImgConfiguration(), forImageIn: .normal)
+
+    button.setPreferredSymbolConfiguration(makeImgConfiguration(size: size), forImageIn: .normal)
     button.tintColor = tint
+    
     
     if text != "" {
         button.setAttributedTitle(makeTextAttribute(text: text, font: font, color: fontColor), for: .normal)

@@ -8,10 +8,10 @@
 import UIKit
 
 
-@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
-#Preview(traits: .portrait, body: {
-    ReportViewController()
-})
+//@available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
+//#Preview(traits: .portrait, body: {
+//    ReportViewController()
+//})
 class ReportViewController: BaseVC {
     @IBOutlet weak var bottomView: BottomView!
     
