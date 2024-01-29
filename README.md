@@ -7,6 +7,14 @@ README.md
 ---
 
 # 개발 일지
+### 2024.01.29
+<details>
+<summary>내용</summary>
+
+1. common 단 변화 시도 및 각종 VC들 변환 작업 중
+
+</details> 
+
 ### 2024.01.28
 <details>
 <summary>내용</summary>
