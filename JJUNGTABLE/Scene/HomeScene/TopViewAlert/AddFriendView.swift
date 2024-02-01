@@ -84,7 +84,7 @@ class AddFriendView: BaseView {
         
         self.getFriendBtn.isHidden = true
         self.getFriendBtn.layer.cornerRadius = 10.0
-        self.getFriendBtn.backgroundColor = .greenColor?.withAlphaComponent(0.3)
+        self.getFriendBtn.backgroundColor = .greenColor.withAlphaComponent(0.3)
         
     }
     

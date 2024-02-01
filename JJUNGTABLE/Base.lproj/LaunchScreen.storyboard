@@ -24,11 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gTx-ol-ybK">
-                                <rect key="frame" x="96.666666666666686" y="323" width="200" height="233"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="CVn-F5-Fnw"/>
-                                    <constraint firstAttribute="height" constant="200" id="ye1-de-KAa"/>
-                                </constraints>
+                                <rect key="frame" x="114.66666666666669" y="363.33333333333337" width="164" height="152.33333333333337"/>
                                 <imageReference key="image" image="j.square.on.square" catalog="system" symbolScale="large" renderingMode="hierarchical">
                                     <hierarchicalColors>
                                         <color name="BrandColor"/>
@@ -61,7 +57,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="j.square.on.square" catalog="system" width="32" height="32"/>
+        <image name="j.square.on.square" catalog="system" width="128" height="116"/>
         <namedColor name="BrandColor">
             <color red="0.90196079019999997" green="0.32549020649999999" blue="0.26666668059999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

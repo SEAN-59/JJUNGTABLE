@@ -23,8 +23,8 @@ class MyPageViewController: BaseVC {
         self.topView.delegate    = self
         self.bottomView.delegate = self
         
-        self.topView.changeBtnHidden()
-        self.topView.toggleCircleHidden()
+//        self.topView.changeBtnHidden()
+//        self.topView.toggleCircleHidden()
     }
     
     override func tapFirstBtn() {

@@ -108,7 +108,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
             self.lineView.layer.borderWidth = 1.5
         }
         
-        if today { self.backView.backgroundColor = .greenColor?.withAlphaComponent(0.2) }
+        if today { self.backView.backgroundColor = .greenColor.withAlphaComponent(0.2) }
         
     }
     

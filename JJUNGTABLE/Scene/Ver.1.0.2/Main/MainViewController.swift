@@ -20,13 +20,18 @@ class MainViewController: BaseVC {
     private var getFriendList = [String]()
 //    internal lazy var topView 
     
+/*
+    internal lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
 
-//    internal lazy var scrollView: UIScrollView = {
-//        let scroll = UIScrollView()
+        return scroll
+    }()
+    
+    private lazy var contentView: UIView = {
+        return UIView()
+    }()
+    */
 //
-//        return scroll
-//    }()
-//    
 //    internal lazy var myInfoView: MyInfoView = {
 //        let view = MyInfoView()
 //        return view
@@ -79,13 +84,23 @@ class MainViewController: BaseVC {
     //        self.setLayout()
     //    }
         
-    
+    /*
     private func setLayout() {
         [
             self.scrollView
         ].forEach { self.view.addSubview($0) }
+        self.scrollView.addSubview(self.contentView)
+        
+        self.scrollView.snp.updateConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        self.contentView.snp.updateConstraints {
+            $0.width.equalTo(self.scrollView.frameLayoutGuide)
+            $0.edges.equalTo(self.scrollView.contentLayoutGuide)
+        }
     }
-
+*/
 
     
     //MARK: - 아래는 전 꺼..
@@ -254,12 +269,10 @@ class MainViewController: BaseVC {
     
     private func toggleReserveStateBtn(isSwitch: String) {
         if isSwitch == "Y" {
-            self.topView.secondBtn.setImage(.init(systemName: "circle.inset.filled"), for: .normal)
-            self.topView.secondBtn.tintColor = UIColor.greenColor
+            self.topView.changeBtnImage(count: 1, systemName: "circle.inset.filled",pallete: [.greenColor])
         }
         else if isSwitch == "N" {
-            self.topView.secondBtn.setImage(.init(systemName: "xmark.circle"), for: .normal)
-            self.topView.secondBtn.tintColor = .lightGray
+            self.topView.changeBtnImage(count: 1, systemName: "xmark.circle", pallete: [.lightGray])
         }
     }
     
@@ -333,7 +346,7 @@ class MainViewController: BaseVC {
     
     // ADD_FRIEND_BTN
     override internal func tapThirdBtn() {
-        let nextVC = CommonAlertViewController(nibName: "CommonAlertViewController", bundle: nil)
+//        let nextVC = CommonAlertViewController(nibName: "CommonAlertViewController", bundle: nil)
         
         let contentView: AddFriendView = {
             let view = AddFriendView()
@@ -344,8 +357,10 @@ class MainViewController: BaseVC {
         contentView.getFriendView.delegate = self
         contentView.delegate = self
         
-        nextVC.setUpAlertVC(contentView, animate: false, type: .center, isKeyBoard: true)
-        pushVC(nextVC: nextVC)
+        self.coordinator?.startAlertChild(contentView, animate: F, type: .center, isKeyBoard: T)
+        
+//        nextVC.setUpAlertVC(contentView, animate: false, type: .center, isKeyBoard: true)
+//        pushVC(nextVC: nextVC)
     }
     
     // CHECK_NOTI_BTN

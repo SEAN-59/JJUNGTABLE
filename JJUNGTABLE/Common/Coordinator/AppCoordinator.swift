@@ -14,6 +14,7 @@ protocol Coordinator: AnyObject {
     func choiceVC(_ nextVC: VCType, isPop: Bool)
     func removeChildCoordinator(_ child: Coordinator)
 }
+
 extension Coordinator {
 //    func choiceVC(_ nextVC: VCType, isPop: Bool) { }
     

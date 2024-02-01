@@ -707,6 +707,10 @@ extension UIColor {
         return color
     }
     
+    class var greenColor: UIColor {
+        guard let color = UIColor(named: "GreenColor") else { return .black }
+        return color
+    }
     
     
     class var brandColor: UIColor {
@@ -717,7 +721,7 @@ extension UIColor {
     
 //    class var backColor: UIColor? { return UIColor(named: "BackColor")}
     class var accentColor: UIColor? { return UIColor(named: "AccentColor")}
-    class var greenColor: UIColor? { return UIColor(named: "GreenColor")}
+//    class var greenColor: UIColor? { return UIColor(named: "GreenColor")}
 //    class var separateColor: UIColor? { return UIColor(named: "SeparateColor")}
 //    class var viewBackColor: UIColor? { return UIColor(named: "ViewBackColor")}
 }
@@ -1035,6 +1039,7 @@ struct UserDefault<T> {
 }
 
 // MARK: - make UI
+
 func makeTextAttribute(text: String, font: UIFont = font_NPS(.regular, 12), color: UIColor = .black) -> NSMutableAttributedString {
     let attribute = NSMutableAttributedString(string: text)
     attribute.addAttribute(.font,
@@ -1045,7 +1050,8 @@ func makeTextAttribute(text: String, font: UIFont = font_NPS(.regular, 12), colo
                            range: (text as NSString).range(of: text))
     return attribute
 }
-func makeImgConfiguration(pallete: [UIColor] = [], size: CGFloat = 0) -> UIImage.SymbolConfiguration {
+
+func makeImgConfiguration(size: CGFloat = 0) -> UIImage.SymbolConfiguration {
     var symbolSize: CGFloat = {
         if size == 0 {
             return 25
@@ -1055,10 +1061,12 @@ func makeImgConfiguration(pallete: [UIColor] = [], size: CGFloat = 0) -> UIImage
     }()
     
     var configuration = UIImage.SymbolConfiguration(pointSize: symbolSize,
-                                                    weight: .unspecified,
-                                                    scale: .large)
-
-    configuration = .init(paletteColors: pallete)
+                                                    weight: .light)
+//    configuration = UIImage.SymbolConfiguration.
+    
+//    configuration.makeImgConfiguration(pallete: <#T##[UIColor]#>, size: <#T##CGFloat#>)
+    
+//    configuration = .init(paletteColors: pallete)
     return configuration
 }
 
@@ -1075,55 +1083,67 @@ func makeLabel(text: String, font: UIFont = font_NPS(.regular, 12), color: UICol
     return label
 }
 
-// 이미지 여기서 이미지 뷰에서 하는거 처럼 시스템이랑 일반이랑 구분 지어야 함
-func makeButton(text: String = "", 
-                systemName: String = "", name: String = "", size: CGFloat = 0,
-                font: UIFont = font_NPS(.regular, 12), fontColor: UIColor = .black,
-                tint: UIColor = .tintColor, backColor: UIColor = .systemBackground,
-                animate: (Bool,Bool) = (F,F) ) -> UICustomButton {
-    
-    let button = UICustomButton()
-    
-//    button.setImage(image, for: .normal)
-    button.setImage(makeImg(systemName: systemName, name: name), for: .normal)
-
-    button.setPreferredSymbolConfiguration(makeImgConfiguration(size: size), forImageIn: .normal)
-    button.tintColor = tint
-    
-    
-    if text != "" {
-        button.setAttributedTitle(makeTextAttribute(text: text, font: font, color: fontColor), for: .normal)
-    }
-    button.backgroundColor = backColor
-    
-    if animate.0 && animate.1 { return button }
-    else if animate.0 { button.animateBig = T }
-    else if animate.1 { button.animateSmall = T }
-    
-    return button
+func makeImgView(systemName: String = "", name: String = "", pallete: [UIColor] = [],size: CGFloat = 0, tint: UIColor = .tintColor) -> UIImageView {
+    let img = UIImageView()
+    img.image = makeImage(systemName: systemName, name: name, size: size, pallete: pallete)
+    img.tintColor = tint
+    img.contentMode = .scaleAspectFit
+    return img
 }
-func makeImg(systemName: String = "", name: String = "", pallete: [UIColor] = []) -> UIImage? {
 
+func makeImage(systemName: String = "", name: String = "", size: CGFloat = 0, pallete: [UIColor] = []) -> UIImage? {
+    let configuration: UIImage.SymbolConfiguration = {
+        return UIImage.SymbolConfiguration(pointSize: size == 0 ? 25 : size,
+                                           weight: .unspecified)
+    }()
+    
     if systemName != "" {
-        let img = UIImage.init(systemName: systemName, 
-                               withConfiguration: makeImgConfiguration(pallete: pallete))
-        return img
+        var image = UIImage(systemName: systemName,
+                            withConfiguration: configuration)
+        if pallete.count > 0 {
+            if pallete.count == 3 {
+                image = image?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(paletteColors: pallete))
+            }
+            else {
+                var copyPallete = pallete
+                for i in 0 ..< (3 - pallete.count) {
+                    copyPallete.append(pallete[0])
+                }
+                image = image?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(paletteColors: copyPallete))
+            }
+        }
+        else {
+            let pallete: [UIColor] = [.black, .black, .black]
+                image = image?.applyingSymbolConfiguration(UIImage.SymbolConfiguration(paletteColors: pallete))
+        }
+        
+        return image
     }
     else if name != "" {
-        let img = UIImage.init(named: name, in: nil, 
-                               with: makeImgConfiguration(pallete: pallete))
-        return img
+        let image = UIImage(named: name,
+                            in: nil,
+                            with: configuration)
+        return image
     }
     else {
         return UIImage()
     }
-    
 }
 
-func makeImgView(systemName: String = "", name: String = "", pallete: [UIColor] = [], tint: UIColor = .tintColor) -> UIImageView {
-    let img = UIImageView()
-    img.image = makeImg(systemName: systemName, name: name, pallete: pallete)
-    img.tintColor = tint
-    img.contentMode = .scaleAspectFit
-    return img
+func makeButton(text: String = "",
+                systemName: String = "", name: String = "", size: CGFloat = 0,
+                font: UIFont = font_NPS(.regular, 12), fontColor: UIColor = .black,
+                tint: UIColor = .tintColor, backColor: UIColor = .systemBackground, pallete: [UIColor] = [],
+                animate: (Bool,Bool) = (F,F), tag: Int? = nil ) -> UICustomButton {
+    let button = UICustomButton()
+    let image = makeImage(systemName: systemName, name: name, size: size, pallete: pallete)
+    
+    button.setImage(image, for: .normal)
+    button.setAttributedTitle(makeTextAttribute(text: text != "" ? text : "", font: font, color: fontColor), for: .normal)
+    button.tintColor = tint
+    button.backgroundColor = backColor
+    button.animateBig = animate.0 == T && animate.1 == T ? F : animate.0
+    button.animateSmall = animate.0 == T && animate.1 == T ? F : animate.1
+    if let tag = tag { button.tag = tag }
+    return button
 }

@@ -27,10 +27,10 @@ class MapViewController: BaseVC {
     }
     
     private func setLayout() {
-        self.topView.changeBtnHidden(isTitleHidden: F,
-                                     is1stHidden: T,
-                                     is2ndHidden: T,
-                                     is3rdHidden: T,
-                                     is4thHidden: T)
+//        self.topView.changeBtnHidden(isTitleHidden: F,
+//                                     is1stHidden: T,
+//                                     is2ndHidden: T,
+//                                     is3rdHidden: T,
+//                                     is4thHidden: T)
     }
 }

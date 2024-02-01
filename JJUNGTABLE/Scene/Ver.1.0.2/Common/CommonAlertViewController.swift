@@ -8,16 +8,19 @@
 import UIKit
 import SnapKit
 
-class CommonAlertViewController: JT_BaseVC {
+class CommonAlertViewController: BaseVC {
+    weak var coordinator: CommonAlertCoordinator?
+    
     private lazy var backView: UIView = {
         let view = UIView()
         view.backgroundColor = .backColor
         return view
     }()
     
-    private lazy var backBtn = makeButton()
+    private lazy var backBtn = makeButton(tint: .clear)
     
     private var contentView: UIView = .init()
+    
     private var alertType: AlertType = .bottom
     private var isAnimate: Bool = false
     private var layoutStruct: LayoutStruct = .init(top: 0, bottom: 0, leading: 0, trailing: 0)
@@ -43,6 +46,11 @@ class CommonAlertViewController: JT_BaseVC {
         }
     }
     
+    deinit {
+        printFunc()
+        self.coordinator?.popVC()
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setLayout()
@@ -61,6 +69,7 @@ class CommonAlertViewController: JT_BaseVC {
         self.backBtn.snp.updateConstraints {
             $0.edges.equalToSuperview()
         }
+//        
         switch alertType {
         case .top:
             break

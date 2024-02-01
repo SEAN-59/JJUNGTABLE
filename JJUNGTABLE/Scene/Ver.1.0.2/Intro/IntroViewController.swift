@@ -14,8 +14,15 @@ class IntroViewController: BaseVC {
     private lazy var logoImg: UIImageView = {
         let img = UIImageView()
         var configuration = UIImage.SymbolConfiguration(pointSize: 100,weight: .unspecified, scale: .large)
-        configuration = .init(paletteColors: [.jjungColor, .jjungColor, .jjungColor])
+//        configuration.isEqual(to: .init(paletteColors: [.jjungColor, .jjungColor, .jjungColor]))
+        
+//        configuration = .init(paletteColors: [.jjungColor, .jjungColor, .jjungColor])
+        let palleteConfig = UIImage.SymbolConfiguration(paletteColors: [.jjungColor, .jjungColor, .jjungColor])
+        
         img.image = .init(systemName: "j.square.on.square", withConfiguration: configuration)
+        img.image = img.image?.applyingSymbolConfiguration(palleteConfig)
+    
+//        applyingSymbolConfiguration
         img.contentMode = .scaleAspectFit
         return img
     }()
@@ -77,8 +84,8 @@ class IntroViewController: BaseVC {
         self.view.backgroundColor = .systemBackground
         
         self.logoImg.snp.updateConstraints {
-            $0.width.height.equalTo(200)
-            $0.centerX.centerY.equalToSuperview()
+//            $0.width.height.equalTo(200)
+            $0.centerX.centerY.equalTo(self.view.safeAreaLayoutGuide)
         }
         
         self.markLbl.snp.updateConstraints {
