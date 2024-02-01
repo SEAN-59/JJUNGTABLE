@@ -8,7 +8,14 @@
 import UIKit
 import SnapKit
 
-class CommonAlertViewController: BaseVC {
+class CommonAlertViewController: JT_BaseVC {
+    private lazy var backView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .backColor
+        return view
+    }()
+    
+    private lazy var backBtn = makeButton()
     
     private var contentView: UIView = .init()
     private var alertType: AlertType = .bottom
@@ -42,7 +49,18 @@ class CommonAlertViewController: BaseVC {
     }
     
     private func setLayout(){
-        self.view.addSubview(self.contentView)
+        self.backBtn.addTarget(self, action: #selector(tappedBtn(_:)), for: .touchUpInside)
+        [
+            self.backView,
+            self.backBtn,
+            self.contentView
+        ].forEach { self.view.addSubview($0)}
+        self.backView.snp.updateConstraints {
+            $0.edges.equalToSuperview()
+        }
+        self.backBtn.snp.updateConstraints {
+            $0.edges.equalToSuperview()
+        }
         switch alertType {
         case .top:
             break
@@ -62,7 +80,8 @@ class CommonAlertViewController: BaseVC {
         
     }
     
-    @IBAction func tapBackBtn(_ sender: UICustomButton) {
+//    @IBAction func tapBackBtn(_ sender: UICustomButton) {
+    @objc func tappedBtn(_ sender: UICustomButton) {
         self.view.endEditing(isKeyboard)
     }
     

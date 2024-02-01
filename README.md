@@ -7,6 +7,18 @@ README.md
 ---
 
 # 개발 일지
+### 2024.02.01
+<details>
+<summary>내용</summary>
+
+1. UI Code 전환
+    - TopView 전환 완료
+    - BottomView 전환 완료
+    - CommonAlertVC 에 Coordinator 적용완료
+        - 디테일한 부분은 전환 요소 파악해서 로직 자체를 다시 짤 필요가 있어 보임
+
+</details> 
+
 ### 2024.01.29
 <details>
 <summary>내용</summary>
